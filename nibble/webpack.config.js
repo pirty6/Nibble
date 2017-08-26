@@ -8,9 +8,9 @@ var _ = require('lodash');
 var PROD = process.argv.indexOf('-p') !== -1;
 
 var entries = {
-  app: './web/static/js/app.js',
-  appCSS: './web/static/css/app.pcss',
-  PageApp: './web/static/js/page/app.jsx',
+  app: './lib/nibble_web/static/js/app.js',
+  // appCSS: './web/static/css/app.pcss',
+  PageApp: './lib/nibble_web/static/js/page/app.jsx',
 };
 
 var cleanPlugin = new CleanWebpackPlugin(['static'], {
@@ -121,15 +121,15 @@ webpackConfiguration = {
         allChunks: true, }),
 
       // generateManifestPlugin,
-      new CopyWebpackPlugin([
-        { from: './web/static/assets' },
-        { from: './web/static/css/vendors/normalize.css', to: 'css/normalize.css' },
-        { from: './web/static/vendor/active_admin.css.css', to: 'css/active_admin.css.css' },
-        { from: './web/static/vendor/admin_lte2.css', to: 'css/admin_lte2.css' },
-        { from: './web/static/vendor/admin_lte2.js', to: 'js/admin_lte2.js' },
-        { from: './web/static/vendor/ex_admin_common.js', to: 'js/ex_admin_common.js' },
-        { from: './web/static/vendor/jquery.min.js', to: 'js/jquery.min.js' },
-      ]),
+      // new CopyWebpackPlugin([
+      //   { from: './web/static/assets' },
+      //   { from: './web/static/css/vendors/normalize.css', to: 'css/normalize.css' },
+      //   { from: './web/static/vendor/active_admin.css.css', to: 'css/active_admin.css.css' },
+      //   { from: './web/static/vendor/admin_lte2.css', to: 'css/admin_lte2.css' },
+      //   { from: './web/static/vendor/admin_lte2.js', to: 'js/admin_lte2.js' },
+      //   { from: './web/static/vendor/ex_admin_common.js', to: 'js/ex_admin_common.js' },
+      //   { from: './web/static/vendor/jquery.min.js', to: 'js/jquery.min.js' },
+      // ]),
   ],
 };
 
