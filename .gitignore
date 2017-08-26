@@ -5,6 +5,14 @@ erl_crash.dump
 *.ez
 *.beam
 
+<<<<<<< Updated upstream
 nibble/node_modules/
 
 nibble/config/dev\.exs
+=======
+nibble/_build/
+
+nibble/deps/
+
+nibble/node_modules/
+>>>>>>> Stashed changes
