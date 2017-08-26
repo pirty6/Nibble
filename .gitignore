@@ -1,6 +1,5 @@
 /_build
 /cover
-/deps
 erl_crash.dump
 *.ez
 *.beam
@@ -11,8 +10,6 @@ nibble/node_modules/
 nibble/config/dev\.exs
 =======
 nibble/_build/
-
-nibble/deps/
 
 nibble/node_modules/
 >>>>>>> Stashed changes
