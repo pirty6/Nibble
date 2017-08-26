@@ -16,3 +16,7 @@ nibble/deps/
 
 nibble/node_modules/
 >>>>>>> Stashed changes
+
+nibble/priv/static/
+
+nibble/priv/
