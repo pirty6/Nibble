@@ -9,7 +9,7 @@ var PROD = process.argv.indexOf('-p') !== -1;
 
 var entries = {
   app: './lib/nibble_web/static/js/app.js',
-  // appCSS: './web/static/css/app.pcss',
+  appCSS: './lib/nibble_web/static/css/app.pcss',
   PageApp: './lib/nibble_web/static/js/page/app.jsx',
 };
 
