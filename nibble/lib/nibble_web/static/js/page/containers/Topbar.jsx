@@ -15,6 +15,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     toggle: () => (dispatch(toggle())),
+    goToPage: (link) => (dispatch(push(`/app/${link}`))),
   };
 }
 

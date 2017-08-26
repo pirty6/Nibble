@@ -9,6 +9,32 @@
     justify-content:flex-end;
     width:100%;
   }
+  &>.navigation {
+    background-color: var(--white);
+    transition: all .6s ease-in-out;
+    height:100vh;
+    width:var(--width-drawer);
+    top:0;
+    position:fixed;
+    z-index:-1;
+    display: flex;
+    box-sizing: border-box;
+    justify-content:center;
+    align-items:center;
+    box-shadow: -6px 3px 6px var(--shadow);
+    &>.nav-container {
+
+      &>.nav {
+        margin-bottom:1rem;
+      }
+    }
+  }
+  &>.hidden {
+    right: calc(-var(--width-drawer)-6px);
+  }
+  &>.show {
+    right: 0px;
+  }
 }
 
 /*Menu animation*/
@@ -65,7 +91,7 @@
   display: block;
   width: 30px;
   height: 2px;
-  background-color: #666;
+  background-color: var(--black);
   position: absolute;
   z-index: 2000;
   left: 10px;
@@ -127,7 +153,7 @@
 }
 
 #menu.on>i>span>p {
-  background-color: #666;
+  background-color: var(--black);
 }
 
 #menu.on>i>span>p:nth-child(1) {

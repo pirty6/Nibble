@@ -7,7 +7,15 @@ class Topbar extends Component {
       links,
       slide,
       toggle,
+      goToPage,
     } = this.props;
+
+    let linksRender = links.map((element, index) => (
+      <div className = 'nav' key = { index } onClick = {
+        () => goToPage(element.link) }>
+        <h6>{ element.title }</h6>
+      </div>
+    ));
 
     return (
       <div className = 'topbar'>
@@ -21,6 +29,11 @@ class Topbar extends Component {
                 <p></p>
               </span>
             </i>
+          </div>
+        </div>
+        <div className = {'navigation ' + (slide ? 'show' : 'hidden')}>
+          <div className = 'nav-container'>
+            { linksRender }
           </div>
         </div>
       </div>
