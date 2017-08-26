@@ -2,9 +2,151 @@
   height:68px;
   display:flex;
   justify-content:center;
+  padding-right:2rem;
+  padding-left:2rem;
   &>.container{
-    width:1024px;
     display:flex;
     justify-content:flex-end;
+    width:100%;
   }
+}
+
+/*Menu animation*/
+
+.close {
+  transition-duration: 0.6s;
+}
+
+.menu{
+  margin-top:1rem;
+  /*@media(--tablet-screens){
+    margin-top:1.5rem;
+  }*/
+}
+
+#menu>i {
+  z-index: 1000;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+  -moz-transition-property: -moz-transform;
+  -moz-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+  -ms-transition-property: -ms-transform;
+  -ms-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1)
+}
+
+#menu>i>span {
+  display: block;
+  width: 50px;
+  height: 40px;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: .4s;
+  -webkit-transition-timing-function: cubic-bezier(0.17, 0.89, 0.44, 1.52);
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: .4s;
+  -moz-transition-timing-function: cubic-bezier(0.17, 0.89, 0.44, 1.52);
+  -ms-transition-property: -ms-transform;
+  -ms-transition-duration: .4s;
+  -ms-transition-timing-function: cubic-bezier(0.17, 0.89, 0.44, 1.52)
+}
+
+#menu>i>span>p {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #666;
+  position: absolute;
+  z-index: 2000;
+  left: 10px;
+  -webkit-transition-property: -webkit-transform, background-color;
+  -webkit-transition-duration: .6s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+  -moz-transition-property: -moz-transform, background-color;
+  -moz-transition-duration: .6s;
+  -moz-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+  -ms-transition-property: -ms-transform, background-color;
+  -ms-transition-duration: .6s;
+  -ms-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+  /*@media(--mobile-screens){
+    width:22px;
+  }*/
+}
+
+#menu>i>span>p:nth-child(1) {
+  top: 10px;
+  -webkit-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  -moz-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  -ms-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  /*@media(--mobile-screens){
+    top:11px;
+  }*/
+}
+
+#menu>i>span>p:nth-child(2) {
+  top: 19px;
+  -webkit-transform: translate3d(0px, 0px, 0px) scaleX(1);
+  -moz-transform: translate3d(0px, 0px, 0px) scaleX(1);
+  -ms-transform: translate3d(0px, 0px, 0px) scaleX(1)
+}
+
+#menu>i>span>p:nth-child(3) {
+  top: 28px;
+  -webkit-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  -moz-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  -ms-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  /*@media(--mobile-screens){
+    top:27px;
+  }*/
+}
+
+#menu.on {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  margin-top:1rem;
+  /*@media(--tablet-screens){
+    margin-top:1.5rem;
+  }*/
+}
+
+#menu.on>i {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px)
+}
+
+#menu.on>i>span>p {
+  background-color: #666;
+}
+
+#menu.on>i>span>p:nth-child(1) {
+  -webkit-transform: translate3d(0px, 9px, 0px) rotate(-45deg);
+  -moz-transform: translate3d(0px, 9px, 0px) rotate(-45deg);
+  -ms-transform: translate3d(0px, 9px, 0px) rotate(-45deg)
+}
+
+#menu.on>i>span>p:nth-child(2) {
+  -webkit-transform: translate3d(0px, 0px, 0px) scaleX(0);
+  -moz-transform: translate3d(0px, 0px, 0px) scaleX(0);
+  -ms-transform: translate3d(0px, 0px, 0px) scaleX(0)
+}
+
+#menu.on>i>span>p:nth-child(3) {
+  -webkit-transform: translate3d(0px, -9px, 0px) rotate(45deg);
+  -moz-transform: translate3d(0px, -9px, 0px) rotate(45deg);
+  -ms-transform: translate3d(0px, -9px, 0px) rotate(45deg);
+  /*@media(--mobile-screens){
+    top:29px;
+  }*/
 }
