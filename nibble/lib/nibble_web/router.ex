@@ -19,6 +19,12 @@ defmodule NibbleWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/app", NibbleWeb do
+    pipe_through :browser # Use the default browser stack
+
+    get "/*path", PageController, :app
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do
   #   pipe_through :api

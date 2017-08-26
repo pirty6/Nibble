@@ -6,3 +6,5 @@ erl_crash.dump
 *.beam
 
 nibble/node_modules/
+
+nibble/config/dev\.exs
