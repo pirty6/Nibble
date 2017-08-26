@@ -15,6 +15,9 @@ import {
 //initialize store
 const store = configureStore();
 
+//import containers
+import Topbar from './containers/Topbar.jsx';
+
 class App extends Component {
   render() {
     return (
@@ -22,6 +25,7 @@ class App extends Component {
         <Router history = { history }>
           <Route render = {({ location }) => (
             <div className = 'react-body'>
+              <Topbar/>
               Hello World!
             </div>
           )}>
