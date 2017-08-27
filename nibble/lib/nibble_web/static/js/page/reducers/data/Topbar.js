@@ -8,14 +8,17 @@ const initialState = {
     {
       title: 'Libreria Digital',
       link: 'libreria',
+      flag: true,
     },
     {
       title: 'Mapa Interactivo',
       link: 'mapa',
+      flag: true,
     },
     {
       title: 'Pagina Oficial',
       link: 'http://gomezmorin.queretaro.gob.mx/',
+      flag: false,
     },
   ],
 };
