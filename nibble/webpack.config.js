@@ -120,16 +120,16 @@ webpackConfiguration = {
         filename: (getPath) => (getPath('css/[name].css').replace('CSS', '')),
         allChunks: true, }),
 
-      // generateManifestPlugin,
-      // new CopyWebpackPlugin([
-      //   { from: './web/static/assets' },
-      //   { from: './web/static/css/vendors/normalize.css', to: 'css/normalize.css' },
-      //   { from: './web/static/vendor/active_admin.css.css', to: 'css/active_admin.css.css' },
-      //   { from: './web/static/vendor/admin_lte2.css', to: 'css/admin_lte2.css' },
-      //   { from: './web/static/vendor/admin_lte2.js', to: 'js/admin_lte2.js' },
-      //   { from: './web/static/vendor/ex_admin_common.js', to: 'js/ex_admin_common.js' },
-      //   { from: './web/static/vendor/jquery.min.js', to: 'js/jquery.min.js' },
-      // ]),
+      generateManifestPlugin,
+      new CopyWebpackPlugin([
+        { from: './lib/nibble_web/static/assets' },
+        // { from: './web/static/css/vendors/normalize.css', to: 'css/normalize.css' },
+        // { from: './web/static/vendor/active_admin.css.css', to: 'css/active_admin.css.css' },
+        // { from: './web/static/vendor/admin_lte2.css', to: 'css/admin_lte2.css' },
+        // { from: './web/static/vendor/admin_lte2.js', to: 'js/admin_lte2.js' },
+        // { from: './web/static/vendor/ex_admin_common.js', to: 'js/ex_admin_common.js' },
+        // { from: './web/static/vendor/jquery.min.js', to: 'js/jquery.min.js' },
+      ]),
   ],
 };
 

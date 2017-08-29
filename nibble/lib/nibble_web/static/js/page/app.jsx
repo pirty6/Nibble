@@ -17,6 +17,7 @@ const store = configureStore();
 
 //import containers
 import Topbar from './containers/Topbar.jsx';
+import Library from './containers/Library.jsx';
 
 class App extends Component {
   render() {
@@ -26,6 +27,8 @@ class App extends Component {
           <Route render = {({ location }) => (
             <div className = 'react-body'>
               <Topbar/>
+              <Route exact path = '/app/libreria'
+                component = { Library }/>
               Hello World!
             </div>
           )}>
