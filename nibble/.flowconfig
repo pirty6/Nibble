@@ -1,0 +1,46 @@
+# Found and modified from: https://github.com/facebook/react/blob/master/.flowconfig
+[ignore]
+
+<PROJECT_ROOT>/.*/__mocks__/.*
+<PROJECT_ROOT>/.*/__tests__/.*
+<PROJECT_ROOT>/.*/node_modules/*
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/fixtures/.*
+<PROJECT_ROOT>/scripts/.*
+
+# Ignore Docs
+<PROJECT_ROOT>/docs/.*
+<PROJECT_ROOT>/.*/docs/.*
+
+[include]
+
+[libs]
+./node_modules/fbjs/flow/lib/dev.js
+./flow
+
+[options]
+emoji=true
+
+module.system=haste
+
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+munge_underscores=true
+
+module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+suppress_type=$FixMe
+suppress_type=$FlowExpectedError
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(>=0\\.\\(4[0-7]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(>=0\\.\\(4[0-7]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)?:? #[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
+
+unsafe.enable_getters_and_setters=true
+
+[version]
+^0.52.0
