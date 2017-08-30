@@ -9,9 +9,8 @@ class Header extends Component{
           <h1>{ this.props.title }</h1>
           <h2>{ this.props.subtitle }</h2>
         </div>
-        <div className = 'image-container'>
-          { this.props.image.desktop }
-          <img className = 'image' src = '/images/book-1200.jpg'/>
+        <div className = 'image-container'
+          style = {{ backgroundImage: 'url('+ this.props.image.desktop +')' }}>
         </div>
       </div>
     );

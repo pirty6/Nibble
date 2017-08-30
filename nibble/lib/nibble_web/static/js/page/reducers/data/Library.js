@@ -10,7 +10,7 @@ const initialState = {
       title: 'Catálogo Digital',
       subtitle: 'Some really cool text about how cool it is',
       image: {
-        desktop: '/nibble/lib/nibble_web/static/assets/images/book-1200.jpg',
+        desktop: '/images/book-1200.jpg',
       },
     },
 };
