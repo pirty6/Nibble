@@ -20,6 +20,7 @@ import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
 
 class App extends Component {
+
   render() {
     return (
       <Provider store = { store }>
@@ -29,7 +30,6 @@ class App extends Component {
               <Topbar/>
               <Route exact path = '/app/libreria'
                 component = { Library }/>
-              Hello World!
             </div>
           )}>
         </Route>
