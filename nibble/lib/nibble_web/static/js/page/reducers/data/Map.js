@@ -10,7 +10,7 @@ const initialState = {
     title: 'Mapa Interactivo',
     subtitle: 'Some really cool text about how cool it is',
     image: {
-      dekstop: '/images/books-1200.jpg',
+      desktop: '/images/book-1200.jpg',
     },
   },
   sites:

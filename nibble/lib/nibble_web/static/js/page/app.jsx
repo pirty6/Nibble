@@ -32,7 +32,7 @@ class App extends Component {
               <Route exact path = '/app/libreria'
                 component = { Library }/>
               <Route exact path = '/app/mapa'
-                Component = { MapInteractive }/>
+                component = { MapInteractive }/>
             </div>
           )}>
         </Route>
