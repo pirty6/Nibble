@@ -6,6 +6,7 @@ import MapInteractive from '../components/MapInteractive/MapInteractive.jsx';
 function mapStateToProps(state) {
   return {
     header: state.map.header,
+    sites: state.map.sites,
   };
 }
 
