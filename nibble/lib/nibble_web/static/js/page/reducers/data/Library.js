@@ -21,6 +21,7 @@ const initialState = {
       editorial: 'Sector',
       id: '1',
       image: '/images/image8.jpg',
+      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
       genre: [
         'comedia',
         'terror',
@@ -32,6 +33,7 @@ const initialState = {
       editorial: 'International',
       id: '2',
       image: '/images/image11.jpg',
+      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
       genre: [
         'novela',
       ],
@@ -42,6 +44,7 @@ const initialState = {
       editorial: 'Self-Publish',
       id: '3',
       image: '',
+      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
       genre: [
         'comedy',
         'terror',
@@ -54,6 +57,7 @@ const initialState = {
       editorial: 'Sector',
       id: '4',
       image: '/images/image6.jpg',
+      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
       genre: [
         'comedy',
       ],

@@ -18,6 +18,7 @@ const store = configureStore();
 //import containers
 import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
+import MapInteractive from './containers/MapInteractive.jsx';
 
 class App extends Component {
 
@@ -30,6 +31,8 @@ class App extends Component {
               <Topbar/>
               <Route exact path = '/app/libreria'
                 component = { Library }/>
+              <Route exact path = '/app/mapa'
+                component = { MapInteractive }/>
             </div>
           )}>
         </Route>
