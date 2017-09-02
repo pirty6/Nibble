@@ -39,7 +39,7 @@ class Library extends Component{
       return (
         <div className = 'modal-container'>
           <div className = 'close'>
-            <div role = 'button' tabIndex = {0}
+            <div className = 'close-container' role = 'button' tabIndex = {0}
               onClick = { this.props.toggleModal }>
                 X
               </div>
