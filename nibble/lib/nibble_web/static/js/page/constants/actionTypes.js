@@ -16,3 +16,7 @@ export const MAP_FETCH = 'MAP_FETCH';
 export const MAP_FETCH_FAILED = 'MAP_FETCH_FAILED';
 export const MAP_FETCH_CANCEL = 'MAP_FETCH_CANCEL';
 export const MAP_FETCH_SUCCESS = 'MAP_FETCH_SUCCESS';
+
+// modal
+
+export const MODAL_TOGGLE = 'MODAL_TOGGLE';
