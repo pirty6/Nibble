@@ -7,11 +7,24 @@ class Library extends Component{
     super(props);
     this.showInformation = this.showInformation.bind(this);
     this.renderInformation = this.renderInformation.bind(this);
+    this.renderImage = this.renderImage.bind(this);
   }
 
   state = {
     element: null,
   };
+
+  //function for rendering a specific image
+  renderImage(image) {
+    console.log(image);
+    if (image) {
+      return (
+        <img src = { image }/>
+      );
+    }
+
+    return null;
+  }
 
   //function for returning the information
   //of a specific element in the modal
@@ -19,10 +32,12 @@ class Library extends Component{
     this.setState({ element });
   }
 
+  //function for rendering the information
+  //of a specific element
   renderInformation(element) {
     if (element) {
       return (
-        <div className = 'modal'>
+        <div className = 'modal-container'>
           <div className = 'close'>
             <div role = 'button' tabIndex = {0}
               onClick = { this.props.toggleModal }>
@@ -31,7 +46,7 @@ class Library extends Component{
           </div>
           <div className = 'container'>
             <div className = 'left-column'>
-
+              { this.renderImage(element.image)}
             </div>
             <div className = 'right-column'>
               <h2>{ element.title }</h2>
