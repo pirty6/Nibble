@@ -7,6 +7,7 @@ import MapReducer from './data/Map';
 
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
+import UIIDReducer from './ui/site.js';
 
 const reducersJson = {
   // form: formReducer,
@@ -16,6 +17,7 @@ const reducersJson = {
 //UI Reducers
 reducersJson['slide'] = UISlideReducer;
 reducersJson['modal'] = UIModalReducer;
+reducersJson['site'] = UIIDReducer;
 
 //Data Reducers
 reducersJson['topbar'] = TopbarReducer;

@@ -29,7 +29,12 @@ class MapInteractive extends Component{
     const {
       header,
       sites,
+      idVr,
+      setId,
+      goToPage,
     } = this.props;
+
+    console.log(idVr);
 
     let place = sites.map((element, index) => (
       <div className = 'sector' key = { index }>
@@ -38,7 +43,11 @@ class MapInteractive extends Component{
             <div className = 'site' key = { i }>
               <div className = 'left-column'>
                 <img className = 'image' src = { sec.image }/>
-                <img className = 'play' src = '/images/play.svg'/>
+                <img className = 'play' src = '/images/play.svg'
+              onClick = { () => {
+                setId(sec.imageVr); goToPage();
+              }
+             }/>
               </div>
               <div className = 'right-column'>
                 <h3>{ sec.title }</h3>

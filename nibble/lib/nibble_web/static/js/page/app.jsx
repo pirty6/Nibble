@@ -19,6 +19,7 @@ const store = configureStore();
 import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
 import MapInteractive from './containers/MapInteractive.jsx';
+import VRScene from './containers/VRScene.jsx';
 
 class App extends Component {
 
@@ -33,6 +34,8 @@ class App extends Component {
                 component = { Library }/>
               <Route exact path = '/app/mapa'
                 component = { MapInteractive }/>
+              <Route exact path = '/app/vr'
+                component = { VRScene }/>
             </div>
           )}>
         </Route>
