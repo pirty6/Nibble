@@ -20,3 +20,7 @@ export const MAP_FETCH_SUCCESS = 'MAP_FETCH_SUCCESS';
 // modal
 
 export const MODAL_TOGGLE = 'MODAL_TOGGLE';
+
+// 360 id
+
+export const SITE_ID = 'SITE_ID';

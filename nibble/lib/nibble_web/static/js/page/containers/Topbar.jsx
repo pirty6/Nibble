@@ -9,6 +9,7 @@ function mapStateToProps(state) {
   return {
     links: state.topbar.links,
     slide: state.slide.slide,
+    idVr: state.site.id,
   };
 }
 

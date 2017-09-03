@@ -19,8 +19,28 @@ const store = configureStore();
 import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
 import MapInteractive from './containers/MapInteractive.jsx';
+import VRScene from './containers/VRScene.jsx';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    store.subscribe(
+      () => {
+        const state = store.getState();
+        let root = document.getElementsByTagName('html')[0];
+        if (state.routing.location.pathname != '/app/vr'
+        && root.classList) {
+          root.classList.remove('a-html');
+        }
+
+        if (state.routing.location.pathname != '/app/vr'
+        && document.body.classList) {
+          document.body.classList.remove('a-body');
+        }
+      }
+    );
+  }
 
   render() {
     return (
@@ -33,6 +53,8 @@ class App extends Component {
                 component = { Library }/>
               <Route exact path = '/app/mapa'
                 component = { MapInteractive }/>
+              <Route exact path = '/app/vr'
+                component = { VRScene }/>
             </div>
           )}>
         </Route>

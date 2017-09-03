@@ -16,9 +16,23 @@ const initialState = {
   sites:
   [
     {
-      title: 'Biblioteca',
-      image: '/images/Venice.jpg',
-      information: 'The library is a really cool place to chill and read some awesome books. There is a lot of books that are available to all the public that wants to read them and learn something really cool they didnt know.',
+      sector:
+      [
+        {
+          id: 1,
+          title: 'Biblioteca',
+          imageVr: '/images/Venice.jpg',
+          image: '/images/library.jpg',
+          information: 'The library is a really cool place to chill and read some awesome books. There is a lot of books that are available to all the public that wants to read them and learn something really cool they didnt know.',
+        },
+        {
+          id: 2,
+          title: 'Bebeteca',
+          imageVr: '/images/Prueba.jpg',
+          image: '/images/baby.jpg',
+          information: 'The library is a really cool place to chill and read some awesome books. There is a lot of books that are available to all the public that wants to read them and learn something really cool they didnt know.',
+        },
+      ],
     },
   ],
 };

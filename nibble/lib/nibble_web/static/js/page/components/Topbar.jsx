@@ -8,6 +8,7 @@ class Topbar extends Component {
       slide,
       toggle,
       goToPage,
+      idVr,
     } = this.props;
 
     let linksRender = links.map((element, index) => (
@@ -20,7 +21,7 @@ class Topbar extends Component {
     ));
 
     return (
-      <div className = 'topbar'>
+      <div className = {'topbar ' + (idVr ? 'vr-active' : 'vr-not-active')}>
         <div className = 'container'>
           <div id = 'menu' className = {slide ? 'on' : 'menu'}
             onClick={ toggle }>
