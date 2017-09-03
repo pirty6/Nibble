@@ -24,12 +24,18 @@ class VRScene extends Component {
   render() {
     const {
       idVr,
+      goToPage,
+      setId,
     } = this.props;
 
-    console.log(idVr);
-
     return (
-      <div>
+      <div className = 'vr'>
+        <div className = 'close'
+          onClick = { () => {
+            goToPage(); setId(null);
+          }} >
+          X
+        </div>
         { this.renderVr(idVr) }
       </div>
     );

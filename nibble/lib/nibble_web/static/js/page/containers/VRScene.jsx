@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import VRScene from '../components/MapInteractive/VRScene.jsx';
+import { push } from 'react-router-redux';
+import { setId } from '../actions/app';
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +14,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    goToPage: () => (dispatch(push(`/app/mapa`))),
+    setId: (id) => (dispatch(setId(id))),
   };
 }
 
