@@ -16,7 +16,7 @@ class Hero extends Component {
           </div>
           <div className = 'right-column'>
             <h1>{ hero.title }</h1>
-            <h2>{ hero.subtitle }</h2>
+            <h2 className = 'subtitle'>{ hero.subtitle }</h2>
             <div className = 'rectangle'></div>
             <img src = { hero.logos.desktop }/>
           </div>

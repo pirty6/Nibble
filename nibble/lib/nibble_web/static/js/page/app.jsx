@@ -59,7 +59,7 @@ class App extends Component {
           <Route render = {({ location }) => (
             <div className = 'react-body'>
               {/* <Topbar/> */}
-              <Route exacth path = '/app'
+              <Route exact path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
                 component = { Library }/>
