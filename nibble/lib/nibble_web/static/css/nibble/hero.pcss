@@ -1,9 +1,22 @@
 .hero{
+  height:calc(100vh- 68px);
+  overflow:hidden;
   &>.container{
     display:flex;
     &>.left-column{
       &>img{
         top:0;
+        height:calc(100vh- 68px);
+        margin-bottom:0;
+        padding-bottom:0;
+      }
+    }
+    &>.right-column{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      &>img{
+        align-self:flex-end;
       }
     }
   }

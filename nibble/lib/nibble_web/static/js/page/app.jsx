@@ -39,6 +39,15 @@ class App extends Component {
         && document.body.classList) {
           document.body.classList.remove('a-body');
         }
+
+        if (state.routing.location.pathname == '/app') {
+          document.body.classList.add('toggle-hero');
+        }
+
+        if (state.routing.location.pathname != '/app'
+        && document.body.classList) {
+          document.body.classList.remove('toggle-hero');
+        }
       }
     );
   }
@@ -49,7 +58,7 @@ class App extends Component {
         <Router history = { history }>
           <Route render = {({ location }) => (
             <div className = 'react-body'>
-              <Topbar/>
+              {/* <Topbar/> */}
               <Route exacth path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
