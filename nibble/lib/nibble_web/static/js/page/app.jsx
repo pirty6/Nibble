@@ -20,6 +20,7 @@ import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
 import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
+import Hero from './containers/Hero.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +50,8 @@ class App extends Component {
           <Route render = {({ location }) => (
             <div className = 'react-body'>
               <Topbar/>
+              <Route exacth path = '/app'
+                component = { Hero }/>
               <Route exact path = '/app/libreria'
                 component = { Library }/>
               <Route exact path = '/app/mapa'
