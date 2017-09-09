@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import TopbarReducer from './data/Topbar';
 import LibraryReducer from './data/Library';
 import MapReducer from './data/Map';
+import HeroReducer from './data/Hero';
 
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
@@ -23,6 +24,7 @@ reducersJson['site'] = UIIDReducer;
 reducersJson['topbar'] = TopbarReducer;
 reducersJson['library'] = LibraryReducer;
 reducersJson['map'] = MapReducer;
+reducersJson['hero'] = HeroReducer;
 
 export const reducers = combineReducers(reducersJson);
 

@@ -84,9 +84,9 @@ class Library extends Component{
         style = { element.image
           ? { backgroundImage: 'url(' + element.image + ')' }
         : { backgroundColor: '#7AC9DD' } }>
-        <h3 className = { 'title ' + (element.image ? 'hidden' : 'show')}>
+        <h5 className = { 'title ' + (element.image ? 'hidden' : 'show')}>
           { element.title }
-        </h3>
+        </h5>
         <span className = { 'author ' + (element.image ? 'hidden' : 'show')}>
           { element.author }
         </span>
