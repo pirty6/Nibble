@@ -24,3 +24,6 @@ export const MODAL_TOGGLE = 'MODAL_TOGGLE';
 // 360 id
 
 export const SITE_ID = 'SITE_ID';
+
+// Hero
+export const HERO_FETCH = 'HERO_FETCH';
