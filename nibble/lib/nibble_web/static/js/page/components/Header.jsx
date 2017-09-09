@@ -7,12 +7,13 @@ class Header extends Component{
       <div className = 'header'>
         <div className = 'container'>
           <div className = 'container-text'>
-            <h1>{ this.props.title }</h1>
-            <h2>{ this.props.subtitle }</h2>
+            <h3>{ this.props.title }</h3>
+            <h4>{ this.props.subtitle }</h4>
+            <div className = 'rectangle'></div>
           </div>
         </div>
         <div className = 'image-container'
-          style = {{ backgroundImage: 'url('+ this.props.image.desktop +')' }}>
+          style = {{ backgroundImage: 'url(' + this.props.image.desktop + ')' }}>
         </div>
       </div>
     );

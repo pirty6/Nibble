@@ -14,8 +14,11 @@
   --yellow: #ffbc00;
   --shadow: rgba(173, 97, 28, 0.08);
   --black: #2a3136;
+  --black-book: #31393c;
+  --black-author:#403f3f;
   --font-menus:'Hind Vadodara', sans-serif;
   --font-title: 'SansSerifBldFLF';
+  --font-book-title: 'Roboto', sans-serif;
   --url: '/fonts/sansserifbldflf.otf';
 }
 
@@ -34,10 +37,32 @@ h1{
 
 h2{
   font-family: var(--font-title);
+  src:url(var(--url) );
   font-weight:400;
   color:var(--grey);
   font-size:2.25rem;
   letter-spacing:-0.01rem;
+}
+
+h3{
+  font-family: var(--font-title);
+  src:url(var(--url) );
+  font-size:3rem;
+  color: var(--black);
+}
+
+h4{
+  font-family: var(--font-title);
+  src:url(var(--url) );
+  font-size:2.5rem;
+  color: var(--grey);
+}
+
+h5{
+  font-family:var(--font-book-title);
+  font-size: 1.8rem;
+  color:var(--black-book);
+  font-weight:500;
 }
 
 h6{
@@ -45,6 +70,12 @@ h6{
   font-size:1.2rem;
   color: var(--grey);
   font-weight:400;
+}
+
+span{
+  font-family:var(--font-menus);
+  font-size:1.5rem;
+  color:var(--black-author);
 }
 
 .toggle-hero{
