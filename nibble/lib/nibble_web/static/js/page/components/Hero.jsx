@@ -12,12 +12,15 @@ class Hero extends Component {
         <div className = 'container'>
           <div className = 'left-column'>
             {/* TODO ASSETS */}
-            <img src = { hero.image.desktop }/>
+            <picture className = 'image'>
+              <source media = '(max-width:1366px)' srcSet={hero.image.desktop}/>
+              <source media = '(min-width:1366px)' srcSet={hero.image.hd}/>
+              <img src = { hero.image.desktop }/>
+            </picture>
           </div>
           <div className = 'right-column'>
             <h1>{ hero.title }</h1>
             <h2 className = 'subtitle'>{ hero.subtitle }</h2>
-            <div className = 'rectangle'></div>
             <img src = { hero.logos.desktop }/>
           </div>
         </div>

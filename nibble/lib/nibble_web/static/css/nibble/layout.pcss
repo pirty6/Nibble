@@ -20,6 +20,8 @@
   --font-title: 'SansSerifBldFLF';
   --font-book-title: 'Roboto', sans-serif;
   --url: '/fonts/sansserifbldflf.otf';
+  --font-subtitle: 'Subtitle';
+  --url-subtitle:'/fonts/sansserifflf.otf';
 }
 
 *{
@@ -27,34 +29,43 @@
   padding:0px;
 }
 
+@font-face{
+  font-family:var(--font-title);
+  src: url(var(--url));
+}
+
+@font-face{
+  font-family:var(--font-subtitle);
+  src: url(var(--url-subtitle));
+}
+
 h1{
   font-family:var(--font-title);
-  src:url(var(--url) );
   font-weight:600;
   color:var(--black);
   font-size:3.75rem;
+  letter-spacing:2.4px;
 }
 
 h2{
-  font-family: var(--font-title);
-  src:url(var(--url) );
-  font-weight:400;
+  font-family: var(--font-subtitle);
   color:var(--grey);
-  font-size:2.25rem;
+  font-size:2.2rem;
   letter-spacing:-0.01rem;
+  line-height:2.8rem;
 }
 
 h3{
   font-family: var(--font-title);
-  src:url(var(--url) );
   font-size:3rem;
   color: var(--black);
+  letter-spacing:2px;
 }
 
 h4{
-  font-family: var(--font-title);
-  src:url(var(--url) );
+  font-family: var(--font-subtitle);
   font-size:2.5rem;
+  line-height:3rem;
   color: var(--grey);
 }
 

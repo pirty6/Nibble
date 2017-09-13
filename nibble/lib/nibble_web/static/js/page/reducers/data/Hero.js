@@ -7,10 +7,11 @@ const initialState = {
     title: 'Manuel Gómez Morín',
     subtitle: 'Centro Educativo y Cultural del Estado de Querétaro',
     image: {
-      desktop: '/images/reading.png',
+      hd: '/images/capa-13@2x.png',
+      desktop: '/images/capa-13.png',
     },
     logos: {
-      desktop: '/images/logos.jpg',
+      desktop: '/images/capa-12.jpg',
     },
   },
 };

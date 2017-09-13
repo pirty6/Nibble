@@ -9,7 +9,6 @@ class Header extends Component{
           <div className = 'container-text'>
             <h3>{ this.props.title }</h3>
             <h4>{ this.props.subtitle }</h4>
-            <div className = 'rectangle'></div>
           </div>
         </div>
         <div className = 'image-container'
