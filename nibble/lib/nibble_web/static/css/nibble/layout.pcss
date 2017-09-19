@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,600,700|Oswald:600,700|Roboto:500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 @import './settings';
 @import './topbar';
 @import './header';
@@ -16,12 +16,11 @@
   --black: #2a3136;
   --black-book: #31393c;
   --black-author:#403f3f;
-  --font-menus:'Hind Vadodara', sans-serif;
-  --font-title: 'SansSerifBldFLF';
-  --font-book-title: 'Roboto', sans-serif;
-  --url: '/fonts/sansserifbldflf.otf';
-  --font-subtitle: 'Subtitle';
-  --url-subtitle:'/fonts/sansserifflf.otf';
+  --paragraph-color: #606161;
+  --font-menus:'Open Sans', sans-serif;
+  --font-title: 'Open Sans', sans-serif;
+  --font-book-title: 'Open Sans', sans-serif;
+  --font-buttons: 'Oswald', sans-serif;
 }
 
 *{
@@ -29,43 +28,35 @@
   padding:0px;
 }
 
-@font-face{
-  font-family:var(--font-title);
-  src: url(var(--url));
-}
-
-@font-face{
-  font-family:var(--font-subtitle);
-  src: url(var(--url-subtitle));
-}
-
 h1{
   font-family:var(--font-title);
-  font-weight:600;
+  font-weight:700;
   color:var(--black);
   font-size:3.75rem;
-  letter-spacing:2.4px;
+  letter-spacing:2px;
+  text-shadow: -6.1px 5.1px 9px rgba(255, 255, 255, 0.33);
 }
 
 h2{
-  font-family: var(--font-subtitle);
+  font-family: var(--font-title);
   color:var(--grey);
-  font-size:2.2rem;
-  letter-spacing:-0.01rem;
-  line-height:2.8rem;
+  font-size:1.87rem;
+  /*line-height:2.8rem;*/
+  font-weight: 400;
 }
 
 h3{
   font-family: var(--font-title);
   font-size:3rem;
   color: var(--black);
-  letter-spacing:2px;
+  font-weight: 700;
+  letter-spacing:1px;
 }
 
 h4{
-  font-family: var(--font-subtitle);
-  font-size:2.5rem;
-  line-height:3rem;
+  font-family: var(--font-title);
+  font-size:1.5rem;
+  font-weight: 300;
   color: var(--grey);
 }
 
@@ -89,12 +80,34 @@ span{
   color:var(--black-author);
 }
 
+p{
+  font-family:var(--font-menus);
+  color:var(--paragraph-color);
+  font-size:1.2rem;
+}
+
 .toggle-hero{
   overflow:hidden;
 }
 
 .rectangle{
   background-color: var(--yellow);
-  width:103px;
-  height:9px;
+  width:90px;
+  height:6px;
+}
+
+.primary-button{
+  background-color: #282d2f;
+  width:155px;
+  min-height:52px;
+  display:flex;
+  box-sizing:border-box;
+  justify-content:center;
+  align-items:center;
+  box-shadow: -6.1px 5.1px 9px 0 rgba(173, 97, 28, 0.33);
+  &>span{
+    font-size:1.5;
+    font-family:var(--font-buttons);
+    color:var(--white);
+  }
 }

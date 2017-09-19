@@ -16,7 +16,6 @@ class Library extends Component{
 
   //function for rendering a specific image
   renderImage(image) {
-    console.log(image);
     if (image) {
       return (
         <img src = { image }/>
@@ -46,17 +45,26 @@ class Library extends Component{
           </div>
           <div className = 'container'>
             <div className = 'left-column'>
+              <div className = 'square'></div>
               { this.renderImage(element.image)}
             </div>
             <div className = 'right-column'>
-              <h2>{ element.title }</h2>
-              <p>Autor: { element.author }</p>
-              <p>Editorial: { element.editorial }</p>
-              <p>codigo: { element.id }</p>
-              <p>Descripcion: { element.description }</p>
-              { element.genre.map((tag, i) => (
-                <span key = { i }>{ tag }</span>
-              ))}
+              <div className = 'container-column'>
+                <h3>{ element.title }</h3>
+                <div className = 'rectangle'></div>
+                <p className = 'enter'><strong>Autor: </strong>{ element.author }</p>
+                <p className = 'enter'><strong>Editorial: </strong>{ element.editorial }</p>
+                <p className = 'enter'><strong>codigo: </strong>{ element.id }</p>
+                <p className = 'enter'><strong>Descripcion: </strong>{ element.description }</p>
+                <p className = 'enter'><strong>Géneros: </strong>
+                { element.genre.map((tag, i) => (
+                  <span className = 'genre' key = { i }>{ tag }</span>
+                ))}
+                </p>
+                <div className = 'primary-button'>
+                  <span>Leer</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

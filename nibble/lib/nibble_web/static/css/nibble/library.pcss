@@ -15,13 +15,15 @@
         width:296px;
         height:396px;
         margin-top:3rem;
-        background-size:contain;
+        background-size:296px 396px;
         background-position:center;
         background-repeat:no-repeat;
         display:flex;
         box-sizing:border-box;
         align-items:center;
+        justify-content:center;
         flex-direction:column;
+        box-shadow: -6.1px 5.1px 9px 0 rgba(173, 97, 28, 0.33);
         &>.hidden{
           display:none;
         }
@@ -37,6 +39,53 @@
         &>.modal-container{
           &>.container{
             display:flex;
+            box-sizing:border-box;
+            &>.left-column{
+              lost-column:1/2;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              position:relative;
+              box-sizing:border-box;
+              height:100vh;
+              &>.square{
+                width:313px;
+                height:386px;
+                position:absolute;
+                z-index:-1;
+                background-color:var(--yellow);
+                top:0;
+                margin-top:20px;
+                margin-left:-64px;
+              }
+              &>img{
+                width:321px;
+                height:438px;
+                box-shadow: -6.1px 5.1px 9px 0 rgba(173, 97, 28, 0.33);
+              }
+            }
+            &>.right-column{
+              &>.container-column{
+                lost-column:3/4;
+                display:flex;
+                box-sizing:border-box;
+                flex-direction:column;
+                justify-content:center;
+                height:100vh;
+                &>.rectangle{
+                  margin-top:38px;
+                  margin-bottom:46px;
+                }
+                &>.enter{
+                  line-height:1.67;
+                }
+                & .genre{
+                  font-family:var(--font-menus);
+                  color:var(--paragraph-color);
+                  font-size:1.2rem;
+                }
+              }
+            }
           }
         }
       }
