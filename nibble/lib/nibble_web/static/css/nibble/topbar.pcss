@@ -13,8 +13,15 @@
     justify-content:flex-end;
     padding-right:4rem;
     padding-left:4rem;
-    /*lost-column:4/5;*/
     width:100%;
+    &>.column{
+      display: flex;
+      flex-grow: 1;
+      box-sizing: border-box;
+    }
+    &>.column-menu{
+      justify-content: flex-end;
+    }
   }
   &>.navigation {
     background-color: var(--white);

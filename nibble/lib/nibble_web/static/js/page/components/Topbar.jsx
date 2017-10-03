@@ -23,15 +23,20 @@ class Topbar extends Component {
     return (
       <div className = {'topbar ' + (idVr ? 'vr-active' : 'vr-not-active')}>
         <div className = 'container'>
-          <div id = 'menu' className = {slide ? 'on' : 'menu'}
-            onClick={ toggle }>
-            <i className = 'close'>
-              <span>
-                <p></p>
-                <p></p>
-                <p></p>
-              </span>
-            </i>
+          <div className='column'>
+
+          </div>
+          <div className='column column-menu'>
+            <div id = 'menu' className = {slide ? 'on' : 'menu'}
+              onClick={ toggle }>
+              <i className = 'close'>
+                <span>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                </span>
+              </i>
+            </div>
           </div>
         </div>
         <div className = {'navigation ' + (slide ? 'show' : 'hidden')}>
