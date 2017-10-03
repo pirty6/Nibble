@@ -11,6 +11,7 @@ import {
   configureStore,
   history,
 } from './store';
+import { toggle } from './actions/app';
 
 //initialize store
 const store = configureStore();
@@ -22,7 +23,9 @@ import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
 
+
 class App extends Component {
+
   constructor(props) {
     super(props);
 
@@ -48,9 +51,22 @@ class App extends Component {
         && document.body.classList) {
           document.body.classList.remove('toggle-hero');
         }
+
+        if(state.routing.location.pathname != this.state.route){
+          console.log('entro');
+          if(state.slide.slide === true){
+            state.slide.slide = false;
+            console.log('pee');
+            this.setState({route: state.routing.location.pathname});
+          }
+        }
       }
     );
   }
+
+  state = {
+    route: '/app',
+  };
 
   render() {
     return (
