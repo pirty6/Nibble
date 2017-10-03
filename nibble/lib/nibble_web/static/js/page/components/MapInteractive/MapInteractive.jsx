@@ -62,6 +62,14 @@ class MapInteractive extends Component{
     return (
       <div className = 'map'>
         <Header { ...header }/>
+        <div className = 'map-container'>
+          <div className = 'information'>
+            Hello World!
+          </div>
+          <div className = 'map'>
+            <object data ='/images/mapa.svg' type='image/svg+xml'/>
+          </div>
+        </div>
         { place }
       </div>
     );

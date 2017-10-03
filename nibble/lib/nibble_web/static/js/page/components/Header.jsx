@@ -11,8 +11,12 @@ class Header extends Component{
             <h4>{ this.props.subtitle }</h4>
           </div>
         </div>
-        <div className = 'image-container'
-          style = {{ backgroundImage: 'url(' + this.props.image.desktop + ')' }}>
+        <div className = { this.props.image.desktop
+          ? 'image-container'
+          : null }
+          style = { this.props.image.desktop
+            ? { backgroundImage: 'url(' + this.props.image.desktop + ')' }
+            : null }>
         </div>
       </div>
     );
