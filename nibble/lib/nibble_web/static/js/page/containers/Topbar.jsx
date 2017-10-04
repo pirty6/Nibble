@@ -19,6 +19,7 @@ function mapDispatchToProps(dispatch) {
   return {
     toggle: () => (dispatch(toggle())),
     goToPage: (link) => (dispatch(push(`/app/${link}`))),
+    goToHome: () => (dispatch(push(`/app`))),
   };
 }
 
