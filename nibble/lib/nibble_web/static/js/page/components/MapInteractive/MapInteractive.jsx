@@ -6,24 +6,37 @@ class MapInteractive extends Component{
   constructor(props) {
     super(props);
 
-    // this.renderInformation = this.renderInformation.bind(this);
+    this.renderInformation = this.renderInformation.bind(this);
   }
 
-  // state = {
-  //   sector: 1,
-  // };
+  state = {
+    sector: null,
+  };
 
-  // renderInformation(sector) {
-  //   if (sector) {
-  //     return (
-  //       <div className = 'sector-container'>
-  //         hello world!
-  //       </div>
-  //     );
-  //   }
-  //
-  //   return null;
-  // }
+  renderInformation(sector) {
+    if (sector) {
+      if(sector.sector === this.state.sector){
+        return (
+          <div className='site'>
+            <div className = 'left-column'>
+              <img className = 'image' src = { sector.image }/>
+              <img className = 'play' src = '/images/play.svg'
+              onClick = { () => {
+                setId(sector.imageVr); goToPage();
+                }
+              }/>
+            </div>
+            <div className = 'right-column'>
+              <h3>{ sector.title }</h3>
+              <p>{ sector.information }</p>
+            </div>
+          </div>
+        );
+      }
+    }
+
+    return null;
+  }
 
   render() {
     const {
@@ -34,30 +47,31 @@ class MapInteractive extends Component{
       goToPage,
     } = this.props;
 
-    console.log(idVr);
-
     let place = sites.map((element, index) => (
       <div className = 'sector' key = { index }>
         <div className = 'container'>
           { element.sector.map((sec, i) => (
-            <div className = 'site' key = { i }>
-              <div className = 'left-column'>
-                <img className = 'image' src = { sec.image }/>
-                <img className = 'play' src = '/images/play.svg'
-              onClick = { () => {
-                setId(sec.imageVr); goToPage();
-              }
-             }/>
-              </div>
-              <div className = 'right-column'>
-                <h3>{ sec.title }</h3>
-                <p>{ sec.information }</p>
-              </div>
-            </div>
+            this.renderInformation(sec)
+            // <div className = 'site' key = { i }>
+            //   <div className = 'left-column'>
+            //     <img className = 'image' src = { sec.image }/>
+            //     <img className = 'play' src = '/images/play.svg'
+            //   onClick = { () => {
+            //     setId(sec.imageVr); goToPage();
+            //   }
+            //  }/>
+            //   </div>
+            //   <div className = 'right-column'>
+            //     <h3>{ sec.title }</h3>
+            //     <p>{ sec.information }</p>
+            //   </div>
+            // </div>
           ))}
         </div>
       </div>
     ));
+
+    // console.log(this.state.sector);
 
     return (
       <div className = 'map'>
@@ -68,12 +82,15 @@ class MapInteractive extends Component{
           </div>
           <div className = 'map'>
             <img src ='/images/FINAL.png' />
-            <div className='biblioteca' onClick={ console.log('pee') }></div>
-            <div className='bilioteca-2'></div>
-            <div className='infantil'></div>
-            <div className='patio'></div>
-            <div className='aulas'></div>
-            <div className='galerias'></div>
+            <div className='biblioteca absolute' onClick={ () => { this.setState({sector: 1 })} }></div>
+            <div className='biblioteca-bottom absolute' onClick={ () => { this.setState({sector: 1 })} }></div>
+            <div className='infantil absolute' onClick={ () => { this.setState({sector: 2 })} }></div>
+            <div className='intantil-bottom absolute' onClick={ () => { this.setState({sector: 2 })} }></div>
+            <div className='patio absolute' onClick={ () => { this.setState({sector: 3 })} }></div>
+            <div className='aulas absolute' onClick={ () => { this.setState({sector: 4 })} }></div>
+            <div className='galerias absolute' onClick={ () => { this.setState({sector: 5 })} }></div>
+            <div className='aulas-top absolute' onClick={ () => { this.setState({sector: 5 })} }></div>
+            <div className='galerias-top absolute' onClick={ () => { this.setState({sector: 4 })} }></div>
           </div>
         </div>
         { place }
