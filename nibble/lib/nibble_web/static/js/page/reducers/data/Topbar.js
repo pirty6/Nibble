@@ -3,6 +3,8 @@ import {
 } from '../../constants/actionTypes';
 
 const initialState = {
+  logo: '/images/logo.svg',
+  name: '/images/ceceq.svg',
   links:
   [
     {

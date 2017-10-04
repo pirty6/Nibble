@@ -9,6 +9,9 @@ class Topbar extends Component {
       toggle,
       goToPage,
       idVr,
+      logo,
+      name,
+      goToHome,
     } = this.props;
 
     let linksRender = links.map((element, index) => (
@@ -23,15 +26,25 @@ class Topbar extends Component {
     return (
       <div className = {'topbar ' + (idVr ? 'vr-active' : 'vr-not-active')}>
         <div className = 'container'>
-          <div id = 'menu' className = {slide ? 'on' : 'menu'}
-            onClick={ toggle }>
-            <i className = 'close'>
-              <span>
-                <p></p>
-                <p></p>
-                <p></p>
-              </span>
-            </i>
+          <div className='column'>
+            <div className='column-container' onClick = { goToHome }>
+              {/* <object className='logo' data={ logo } type="image/svg+xml"></object>
+              <object className='name' data={ name } type="image/svg+xml"></object> */}
+              <img src={logo} className='logo' type='image/svg+xml' />
+              <img src={name} className='name' type='image/svg+xml' />
+            </div>
+          </div>
+          <div className='column column-menu'>
+            <div id = 'menu' className = {slide ? 'on' : 'menu'}
+              onClick={ toggle }>
+              <i className = 'close'>
+                <span>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                </span>
+              </i>
+            </div>
           </div>
         </div>
         <div className = {'navigation ' + (slide ? 'show' : 'hidden')}>
