@@ -67,7 +67,13 @@ class MapInteractive extends Component{
             Hello World!
           </div>
           <div className = 'map'>
-            <object data ='/images/mapa.svg' type='image/svg+xml'/>
+            <img src ='/images/FINAL.png' />
+            <div className='biblioteca' onClick={ console.log('pee') }></div>
+            <div className='bilioteca-2'></div>
+            <div className='infantil'></div>
+            <div className='patio'></div>
+            <div className='aulas'></div>
+            <div className='galerias'></div>
           </div>
         </div>
         { place }
