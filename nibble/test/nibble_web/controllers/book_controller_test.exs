@@ -4,8 +4,8 @@ defmodule NibbleWeb.BookControllerTest do
   alias Nibble.Library
   alias Nibble.Library.Book
 
-  @create_attrs %{author: "some author", code: 42, description: "some description", editorial: "some editorial", genre: "some genre", title: "some title", urlimg: "some urlimg"}
-  @update_attrs %{author: "some updated author", code: 43, description: "some updated description", editorial: "some updated editorial", genre: "some updated genre", title: "some updated title", urlimg: "some updated urlimg"}
+  @create_attrs %{author: "some author", code: 42, description: "some description", editorial: "some editorial", genre: "some genre", title: "some title", urlimg: "some urlimg", urlpdf: "some urlpdf"}
+  @update_attrs %{author: "some updated author", code: 43, description: "some updated description", editorial: "some updated editorial", genre: "some updated genre", title: "some updated title", urlimg: "some updated urlimg", urlpdf: "some updated urlpdf"}
   @invalid_attrs %{author: nil, code: nil, description: nil, editorial: nil, genre: nil, title: nil, urlimg: nil}
 
   def fixture(:book) do
@@ -38,7 +38,8 @@ defmodule NibbleWeb.BookControllerTest do
         "editorial" => "some editorial",
         "genre" => "some genre",
         "title" => "some title",
-        "urlimg" => "some urlimg"}
+        "urlimg" => "some urlimg"
+        "urlpdf" => "some urlpdf"}
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -63,7 +64,8 @@ defmodule NibbleWeb.BookControllerTest do
         "editorial" => "some updated editorial",
         "genre" => "some updated genre",
         "title" => "some updated title",
-        "urlimg" => "some updated urlimg"}
+        "urlimg" => "some updated urlimg"
+        "urlpdf" => "some udpated urlpdf"}
     end
 
     test "renders errors when data is invalid", %{conn: conn, book: book} do

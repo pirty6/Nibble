@@ -28,13 +28,15 @@ defmodule NibbleWeb.Router do
   scope "/api/library", NibbleWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", BookController, :index
-    # get "/book/new", BookController, :new
-    post "/book", BookController, :create
+    # get "/", BookController, :index
+    # # get "/book/new", BookController, :new
+    # # post "/book", BookController, :create
+    # get "/:id/:urlpdf", BookController, :
     resources "/", BookController do
       resources "/books", BookController, except: [:new, :edit]
     end
   end
+
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do
   #   pipe_through :api

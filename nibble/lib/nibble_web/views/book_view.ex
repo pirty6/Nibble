@@ -18,6 +18,7 @@ defmodule NibbleWeb.BookView do
       description: book.description,
       genre: book.genre,
       editorial: book.editorial,
-      urlimg: book.urlimg}
+      urlimg: book.urlimg,
+      urlpdf: book.urlpdf}
   end
 end
