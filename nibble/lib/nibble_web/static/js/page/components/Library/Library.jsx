@@ -110,7 +110,7 @@ class Library extends Component{
         <Header { ...header }/>
         <div className = 'books-container'>
           <div className = 'container'>
-            { book }
+            { currentPage ? book : null }
             <div className = {`modal ${toggle ? 'show' : 'hidden'}`}>
               { this.renderInformation(this.state.element) }
             </div>
