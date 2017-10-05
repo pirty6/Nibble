@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetch } from '../actions/Page';
+import { fetch } from '../actions/page';
 import Page from '../components/page';
 
 function mapStateToProps(state) {
