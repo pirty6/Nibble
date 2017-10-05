@@ -25,7 +25,7 @@ defmodule NibbleWeb.Router do
     get "/*path", PageController, :app
   end
 
-  scope "/api/libreria", NibbleWeb do
+  scope "/api/page", NibbleWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", BookController, :index

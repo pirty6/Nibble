@@ -10,11 +10,15 @@ import {
 } from '../constants/actionTypes';
 import API from '../utils/api';
 
+let url;
+
 export const fetchEpic = action$ => (
   action$.ofType(PAGE_FETCH)
-  .debounceTime(20)
+  .debounceTime(80)
   .flatMap(action =>
-    API.getPage(action.payload.id)
+    // url = action.payload,
+    // console.log(url),
+    API.getPage(action.payload.url)
     .flatMap(result => (
       action.payload.url
       ? Observable.concat(

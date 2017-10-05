@@ -16,12 +16,17 @@ import { toggle } from './actions/app';
 //initialize store
 const store = configureStore();
 
+type Props = {
+  initial_url: string,
+}
+
 //import containers
 import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
 import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
+import Page from './containers/Page.jsx';
 
 
 class App extends Component {
@@ -68,7 +73,10 @@ class App extends Component {
     route: '/app',
   };
 
+
   render() {
+    // console.log(this.props);
+
     return (
       <Provider store = { store }>
         <Router history = { history }>
@@ -83,6 +91,8 @@ class App extends Component {
                 component = { MapInteractive }/>
               <Route exact path = '/app/vr'
                 component = { VRScene }/>
+              <Route exact path = '/app/page'
+                component = { Page } />
             </div>
           )}>
         </Route>
@@ -93,5 +103,5 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <App/>,
   document.getElementById('react-content'));

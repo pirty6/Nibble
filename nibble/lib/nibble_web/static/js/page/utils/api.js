@@ -10,6 +10,7 @@ class APIClass {
       'Content-Type': 'application/json; charset=utf-8',
     };
     this.baseURL = baseURL;
+    console.log(baseURL);
   }
 
   buildAJAX(url) {

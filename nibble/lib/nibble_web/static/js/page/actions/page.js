@@ -19,7 +19,7 @@ export function fetch(url) {
   };
 }
 
-export function finish(page){
+export function finish(page) {
   return {
     type: PAGE_FETCH_SUCCESS,
     payload: page,
@@ -30,5 +30,5 @@ export function report(message) {
   return {
     type: PAGE_FETCH_FAILED,
     payload: message,
-  }
+  };
 }

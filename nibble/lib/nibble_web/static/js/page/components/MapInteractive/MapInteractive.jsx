@@ -22,6 +22,7 @@ class MapInteractive extends Component{
               <img className = 'image' src = { sector.image }/>
               <img className = 'play' src = '/images/play.svg'
               onClick = { () => {
+                /* FIXME  setId is not defined*/
                 setId(sector.imageVr); goToPage();
                 }
               }/>
@@ -56,6 +57,20 @@ class MapInteractive extends Component{
         <div className = 'container'>
           { element.sector.map((sec, i) => (
             this.renderInformation(sec)
+            // <div className = 'site' key = { i }>
+            //   <div className = 'left-column'>
+            //     <img className = 'image' src = { sec.image }/>
+            //     <img className = 'play' src = '/images/play.svg'
+            //   onClick = { () => {
+            //     setId(sec.imageVr); goToPage();
+            //   }
+            //  }/>
+            //   </div>
+            //   <div className = 'right-column'>
+            //     <h3>{ sec.title }</h3>
+            //     <p>{ sec.information }</p>
+            //   </div>
+            // </div>
           ))}
         </div>
       </div>
