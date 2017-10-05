@@ -22,6 +22,7 @@ import Library from './containers/Library.jsx';
 import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
+import Page from './containers/Page.jsx';
 
 
 class App extends Component {
@@ -53,10 +54,10 @@ class App extends Component {
         }
 
         if(state.routing.location.pathname != this.state.route){
-          console.log('entro');
+            // console.log('entro');
           if(state.slide.slide === true){
             state.slide.slide = false;
-            console.log('pee');
+            // console.log('pee');
             this.setState({route: state.routing.location.pathname});
           }
         }
@@ -68,7 +69,10 @@ class App extends Component {
     route: '/app',
   };
 
+
   render() {
+    // console.log(this.props);
+
     return (
       <Provider store = { store }>
         <Router history = { history }>
@@ -83,6 +87,8 @@ class App extends Component {
                 component = { MapInteractive }/>
               <Route exact path = '/app/vr'
                 component = { VRScene }/>
+              <Route exact path = '/app/page'
+                component = { Page } />
             </div>
           )}>
         </Route>
@@ -93,5 +99,5 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <App/>,
   document.getElementById('react-content'));

@@ -1,14 +1,34 @@
+// @flow
 import { compose, createStore, applyMiddleware } from 'redux';
-import createHistory from 'history/createBrowserHistory';
 import { routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
+// import ReactGA from 'react-ga';
+import {
+  createEpicMiddleware,
+} from 'redux-observable';
+
+import epics from '../epics';
 import reducers from '../reducers';
 
 export const history = createHistory();
+// ReactGA.initialize(ANALYTICS.google.analytics_id, {
+//   debug: __DEVTOOLS__,
+//   titleCase: false,
+// });
+// ReactGA.ga('set', 'language', ANALYTICS.shared.lang);
+//
+// history.listen(() => {
+//   ReactGA.set({ page: window.location.pathname + window.location.search });
+//   ReactGA.pageview(window.location.pathname + window.location.search);
+// });
+
+const epicMiddleware = createEpicMiddleware(epics);
 let middleware = [
+  epicMiddleware,
   routerMiddleware(history),
 ];
 
-if (true) {
+if (__DEVTOOLS__) {
   const createLogger = require('redux-logger').createLogger;
   // const immutableLogger = require('redux-immutable-state-invariant').immutableStateInvariantMiddleware;
 
@@ -17,7 +37,6 @@ if (true) {
     ...middleware,
     logger,
   ];
-
 } else {
   middleware = [...middleware];
 }
@@ -26,13 +45,17 @@ const devToolsExt = typeof window === 'object' && typeof window.devToolsExtensio
   ? window.devToolsExtension()
   : f => f;
 
+const enhancers = compose(
+  applyMiddleware(...middleware),
+  devToolsExt,
+);
+
+const initialState = {};
+
 export function configureStore() {
   return createStore(
     reducers,
-    {},
-    compose(
-      applyMiddleware(...middleware),
-      devToolsExt,
-    )
+    initialState,
+    enhancers,
   );
 }

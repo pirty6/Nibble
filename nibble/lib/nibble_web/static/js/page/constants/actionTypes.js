@@ -3,6 +3,12 @@
 export const TOPBAR_FETCH = 'TOPBAR_FETCH';
 export const CONTENT_SLIDE_TOGGLE = 'CONTENT_SLIDE_TOGGLE';
 
+// PAGE
+export const PAGE_FETCH = 'PAGE_FETCH';
+export const PAGE_FETCH_CANCEL = 'PAGE_FETCH_CANCEL';
+export const PAGE_FETCH_FAILED = 'PAGE_FETCH_FAILED';
+export const PAGE_FETCH_SUCCESS = 'PAGE_FETCH_SUCCESS';
+
 // Library
 
 export const LIBRARY_FETCH = 'LIBRARY_FETCH';

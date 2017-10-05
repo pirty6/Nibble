@@ -3,7 +3,8 @@ defmodule NibbleWeb.BookView do
   alias NibbleWeb.BookView
 
   def render("index.json", %{books: books}) do
-    %{data: render_many(books, BookView, "book.json")}
+    %{type: "library",
+      data: render_many(books, BookView, "book.json")}
   end
 
   def render("show.json", %{book: book}) do

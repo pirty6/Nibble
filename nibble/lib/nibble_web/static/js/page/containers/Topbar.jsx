@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import Topbar from '../components/Topbar.jsx';
 import { toggle } from '../actions/app';
+import { fetch } from '../actions/page';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +19,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     toggle: () => (dispatch(toggle())),
-    goToPage: (link) => (dispatch(push(`/app/${link}`))),
+    goToPage: (link) => (dispatch(fetch(`/app/${link}`))),
     goToHome: () => (dispatch(push(`/app`))),
   };
 }

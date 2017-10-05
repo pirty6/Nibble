@@ -19,8 +19,9 @@ const initialState = {
     },
     {
       title: 'Pagina Oficial',
-      link: 'http://gomezmorin.queretaro.gob.mx/',
-      flag: false,
+      // link: 'http://gomezmorin.queretaro.gob.mx/',
+      link: 'page',
+      flag: true,
     },
   ],
 };
