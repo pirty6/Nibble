@@ -57,9 +57,9 @@ class Library extends Component{
                 <p className = 'enter'><strong>codigo: </strong>{ element.id }</p>
                 <p className = 'enter'><strong>Descripcion: </strong>{ element.description }</p>
                 <p className = 'enter'><strong>Géneros: </strong>
-                { element.genre.map((tag, i) => (
+                {/* { element.genre.map((tag, i) => (
                   <span className = 'genre' key = { i }>{ tag }</span>
-                ))}
+                ))} */}
                 </p>
                 <div className = 'primary-button' onClick ={() => location.href=element.pdf}>
                   <span>Leer</span>
@@ -77,12 +77,16 @@ class Library extends Component{
   render() {
     const {
       header,
-      books,
+      // books,
+      page,
       toggleModal,
       toggle,
     } = this.props;
 
-    let book = books.map((element, index) => (
+    const currentPage = page.state.data;
+    console.log(currentPage);
+
+    let book = currentPage.map((element, index) => (
       <div className = 'book' key = { index }
         onClick = {() => {
         this.showInformation(element);

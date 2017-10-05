@@ -14,7 +14,6 @@ class APIClass {
   }
 
   buildAJAX(url) {
-    console.log(`${this.baseURL}/${url}`);
     return {
       url: `${this.baseURL}/${url}`,
       headers: this.headers,
