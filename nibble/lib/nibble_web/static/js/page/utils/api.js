@@ -20,9 +20,16 @@ class APIClass {
     };
   }
 
+  getUrl(url){
+    console.log(url.payload);
+    const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
+    console.log(page);
+  }
+
   getPage(url){
+    const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({
-      ...this.buildAJAX(`${url}`),
+      ...this.buildAJAX(`${page}`),
       method: 'GET',
     });
   }

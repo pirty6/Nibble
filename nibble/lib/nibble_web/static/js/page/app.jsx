@@ -16,10 +16,6 @@ import { toggle } from './actions/app';
 //initialize store
 const store = configureStore();
 
-type Props = {
-  initial_url: string,
-}
-
 //import containers
 import Topbar from './containers/Topbar.jsx';
 import Library from './containers/Library.jsx';
@@ -58,10 +54,10 @@ class App extends Component {
         }
 
         if(state.routing.location.pathname != this.state.route){
-          console.log('entro');
+            // console.log('entro');
           if(state.slide.slide === true){
             state.slide.slide = false;
-            console.log('pee');
+            // console.log('pee');
             this.setState({route: state.routing.location.pathname});
           }
         }

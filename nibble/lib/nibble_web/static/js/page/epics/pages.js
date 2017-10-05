@@ -10,17 +10,13 @@ import {
 } from '../constants/actionTypes';
 import API from '../utils/api';
 
-let url;
-
 export const fetchEpic = action$ => (
   action$.ofType(PAGE_FETCH)
   .debounceTime(80)
   .flatMap(action =>
-    // url = action.payload,
-    // console.log(url),
-    API.getPage(action.payload.url)
+    API.getPage(action)
     .flatMap(result => (
-      action.payload.url
+      action.payload
       ? Observable.concat(
         Observable.of(push({
           pathname: action.payload.url,
