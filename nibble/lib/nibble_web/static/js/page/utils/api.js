@@ -19,9 +19,9 @@ class APIClass {
     };
   }
 
-  getLibrary(){
+  getPage(url){
     return ajax({
-      ...this.buildAJAX(`library`),
+      ...this.buildAJAX(`${url}`),
       method: 'GET',
     });
   }
