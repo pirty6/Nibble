@@ -5,6 +5,7 @@ import Page from '../components/Page.jsx';
 
 function mapStateToProps(state) {
   return {
+    page: state.page.locationBeforeTransitions,
   };
 }
 

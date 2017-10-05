@@ -15,16 +15,18 @@ export const fetchEpic = action$ => (
   .debounceTime(80)
   .flatMap(action =>
     API.getPage(action)
-    .flatMap(result => (
+    .flatMap(result =>
+    (
       action.payload
       ? Observable.concat(
         Observable.of(push({
-          pathname: action.payload.url,
+          pathname: action.payload,
           state: result.response,
         })),
       )
       : null
-    ))
+    )
+  )
   )
 );
 

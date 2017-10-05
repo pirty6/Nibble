@@ -5,6 +5,7 @@ import TopbarReducer from './data/Topbar';
 import LibraryReducer from './data/Library';
 import MapReducer from './data/Map';
 import HeroReducer from './data/Hero';
+import LocationReducer from './data/Page';
 
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
@@ -21,6 +22,7 @@ reducersJson['modal'] = UIModalReducer;
 reducersJson['site'] = UIIDReducer;
 
 //Data Reducers
+reducersJson['page'] = LocationReducer;
 reducersJson['topbar'] = TopbarReducer;
 reducersJson['library'] = LibraryReducer;
 reducersJson['map'] = MapReducer;

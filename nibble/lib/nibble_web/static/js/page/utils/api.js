@@ -14,16 +14,11 @@ class APIClass {
   }
 
   buildAJAX(url) {
+    console.log(`${this.baseURL}/${url}`);
     return {
       url: `${this.baseURL}/${url}`,
       headers: this.headers,
     };
-  }
-
-  getUrl(url){
-    console.log(url.payload);
-    const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
-    console.log(page);
   }
 
   getPage(url){
