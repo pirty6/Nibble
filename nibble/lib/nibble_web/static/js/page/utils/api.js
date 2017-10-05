@@ -14,10 +14,13 @@ class APIClass {
   }
 
   buildAJAX(url) {
-    return {
-      url: `${this.baseURL}/${url}`,
-      headers: this.headers,
-    };
+    if (url === 'libreria') {
+      return {
+        url: `${this.baseURL}/${url}`,
+        headers: this.headers,
+      };
+    }
+    return null;
   }
 
   getPage(url){
