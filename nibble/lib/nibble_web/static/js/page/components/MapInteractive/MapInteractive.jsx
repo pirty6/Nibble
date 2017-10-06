@@ -5,7 +5,6 @@ import Header from '../Header.jsx';
 class MapInteractive extends Component{
   constructor(props) {
     super(props);
-
     this.renderInformation = this.renderInformation.bind(this);
   }
 
@@ -13,17 +12,17 @@ class MapInteractive extends Component{
     sector: null,
   };
 
-  renderInformation(sector) {
+  renderInformation(sector, i) {
     if (sector) {
       if(sector.sector === this.state.sector){
         return (
-          <div className='site'>
+          <div className='site' key = {i}>
             <div className = 'left-column'>
               <img className = 'image' src = { sector.image }/>
               <img className = 'play' src = '/images/play.svg'
               onClick = { () => {
                 /* FIXME  setId is not defined*/
-                setId(sector.imageVr); goToPage();
+                this.props.setId(sector.imageVr); this.props.goToPage();
                 }
               }/>
             </div>
@@ -56,7 +55,7 @@ class MapInteractive extends Component{
       <div className = 'sector' key = { index }>
         <div className = 'container'>
           { element.sector.map((sec, i) => (
-            this.renderInformation(sec)
+            this.renderInformation(sec, i)
             // <div className = 'site' key = { i }>
             //   <div className = 'left-column'>
             //     <img className = 'image' src = { sec.image }/>
