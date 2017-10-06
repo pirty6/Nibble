@@ -61,7 +61,7 @@ class Library extends Component{
                   <span className = 'genre' key = { i }>{ tag }</span>
                 ))} */}
                 </p>
-                <div className = 'primary-button' onClick ={() => location.href=element.pdf}>
+                <div className = 'primary-button' onClick ={() => location.href=element.urlpdf}>
                   <span>Leer</span>
                 </div>
               </div>
