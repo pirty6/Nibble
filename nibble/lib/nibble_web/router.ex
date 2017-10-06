@@ -40,7 +40,7 @@ defmodule NibbleWeb.Router do
   scope "/api/mapa", NibbleWeb do
     pipe_through :browser
 
-    resources "/places", PlaceController, except: [:new, :edit]
+    resources "/", PlaceController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
