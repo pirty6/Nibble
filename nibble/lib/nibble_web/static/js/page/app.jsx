@@ -39,6 +39,10 @@ class App extends Component {
           root.classList.remove('a-html');
         }
 
+        if (state.routing.location.pathname.includes('/admin')) {
+          this.setState({ showUserTopbar: false});
+        }
+
         if (state.routing.location.pathname != '/app/vr'
         && document.body.classList) {
           document.body.classList.remove('a-body');
@@ -67,6 +71,7 @@ class App extends Component {
 
   state = {
     route: '/app',
+    showUserTopbar: true,
   };
 
 
@@ -78,7 +83,7 @@ class App extends Component {
         <Router history = { history }>
           <Route render = {({ location }) => (
             <div className = 'react-body'>
-              <Topbar />
+              { this.state.showUserTopbar ? <Topbar /> : null }
               <Route exact path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
