@@ -23,6 +23,7 @@ import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
 import Page from './containers/Page.jsx';
+import Login from './containers/Login.jsx';
 
 
 class App extends Component {
@@ -94,6 +95,8 @@ class App extends Component {
                 component = { VRScene }/>
               <Route exact path = '/app/page'
                 component = { Page } />
+                <Route exact path = '/admin'
+                component = { Login } />
             </div>
           )}>
         </Route>
