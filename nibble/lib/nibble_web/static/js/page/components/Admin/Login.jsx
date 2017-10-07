@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 class Login extends Component {
   render() {
+    console.log(document.getElementById("form-1"));
     return (
       <div className='login'>
         <div className='container'>
