@@ -23,6 +23,7 @@ import MapInteractive from './containers/MapInteractive.jsx';
 import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
 import Page from './containers/Page.jsx';
+import Login from './containers/Login.jsx';
 
 
 class App extends Component {
@@ -37,6 +38,10 @@ class App extends Component {
         if (state.routing.location.pathname != '/app/vr'
         && root.classList) {
           root.classList.remove('a-html');
+        }
+
+        if (state.routing.location.pathname.includes('/admin')) {
+          this.setState({ showUserTopbar: false});
         }
 
         if (state.routing.location.pathname != '/app/vr'
@@ -67,6 +72,7 @@ class App extends Component {
 
   state = {
     route: '/app',
+    showUserTopbar: true,
   };
 
 
@@ -78,7 +84,7 @@ class App extends Component {
         <Router history = { history }>
           <Route render = {({ location }) => (
             <div className = 'react-body'>
-              <Topbar />
+              { this.state.showUserTopbar ? <Topbar /> : null }
               <Route exact path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
@@ -89,6 +95,8 @@ class App extends Component {
                 component = { VRScene }/>
               <Route exact path = '/app/page'
                 component = { Page } />
+                <Route exact path = '/admin'
+                component = { Login } />
             </div>
           )}>
         </Route>

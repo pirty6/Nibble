@@ -7,7 +7,7 @@ class Header extends Component{
       <div className = 'header'>
         <div className = 'container'>
           <div className = 'container-text'>
-            <h3>{ this.props.title }</h3>
+            <h2>{ this.props.title }</h2>
             <h4>{ this.props.subtitle }</h4>
           </div>
         </div>
