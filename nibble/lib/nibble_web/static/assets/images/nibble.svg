@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1920px" height="1080px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1920 1080"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:white;stroke-width:16.0004}
+    .fil1 {fill:none}
+    .fil0 {fill:#9ED5C0}
+   ]]>
+  </style>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="998,184 1177,284 1355,385 1355,587 1355,789 1177,889 998,990 819,889 641,789 641,587 641,385 819,284 "/>
+  <polygon class="fil1 str0" points="996,256 1144,339 1291,423 1291,589 1291,756 1144,839 996,922 849,839 701,756 701,589 701,423 849,339 "/>
+  <polygon class="fil1 str0" points="998,507 1086,660 1174,812 998,812 821,812 910,660 "/>
+  <polygon class="fil1 str0" points="998,668 910,515 821,363 998,363 1174,363 1086,515 "/>
+ </g>
+</svg>
