@@ -78,7 +78,7 @@ class App extends Component {
         <Router history = { history }>
           <Route render = {({ location }) => (
             <div className = 'react-body'>
-              <Topbar/>
+              <Topbar />
               <Route exact path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
