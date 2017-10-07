@@ -43,6 +43,11 @@ defmodule NibbleWeb.Router do
     resources "/", PlaceController, except: [:new, :edit]
   end
 
+  scope "/admin", NibbleWeb do
+    pipe_through :browser
+    get "/*path", PageController, :app
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do
   #   pipe_through :api
