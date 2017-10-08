@@ -27,7 +27,3 @@
      <%= submit "Submit", class: "btn btn-primary" %>
    </div>
  <% end %>
-
-<!-- <script>
-CSRF_TOKEN = <%=raw Poison.encode!(Plug.CSRFProtection.get_csrf_token()) %>;
-</script> -->

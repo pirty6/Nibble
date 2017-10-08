@@ -13,7 +13,9 @@
 
   <body>
     <div id='react-content'></div>
-        <%= render @view_module, @view_template, assigns %>
+    <div className='hide-div' style ='display:none'>
+      <%= render @view_module, @view_template, assigns %>
+    </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/PageApp.js") %>"></script>

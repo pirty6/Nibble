@@ -8,12 +8,15 @@ class Login extends Component {
     return (
       <div className='login'>
         <div className='container'>
-          <div className='column'>
-            <div className='image/container'>
-              <img src='/images/nibble.svg' alt='nibble-logo'/>
-              <h1>Bienvenido</h1>
-              <h3>Gestionador de contenido de la Gomez Morin</h3>
-              <span>Desarrollado por Nibble</span>
+          <div className='column-image'>
+            <div className='image-container'>
+              <div className='purple' />
+              <div className='text-container'>
+                <img src='/images/nibble.svg' alt='nibble-logo'/>
+                <h1>Bienvenido</h1>
+                <h3>Gestionador de contenido de la Gomez Morin</h3>
+                <span>Desarrollado por Nibble</span>
+              </div>
             </div>
           </div>
           <div className='column'>
