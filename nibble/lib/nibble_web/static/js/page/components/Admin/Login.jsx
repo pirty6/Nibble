@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 class Login extends Component {
   render() {
-    console.log(document.getElementById("form-1"));
     return (
       <div className='login'>
         <div className='container'>
@@ -18,9 +17,24 @@ class Login extends Component {
           <div className='column'>
             <div className='column-container'>
               <h2>Login</h2>
-              <div className='form'>
-                BLABLABLA
-              </div>
+              <form acceptCharset="UTF-8" action="/admin" method="post">
+                <input name="_csrf_token" type="hidden" value={CSRF_TOKEN} />
+                <input name="_utf8" type="hidden" value="✓" />
+                <div className="form-group">
+                  <label className="control-label" htmlFor="user_name">Name</label>
+                  <input className="form-control" id="user_name" name="user[name]" type="text" />
+                </div>
+                <div className="form-group">
+                  <label className="control-label" htmlFor="user_password">Password</label>
+                  <input className="form-control" id="user_password" name="user[password]" type="text" />
+                </div>
+                <div className="form-group">
+                  <label className="control-label" htmlFor="user_email">Email</label>
+                  <input className="form-control" id="user_email" name="user[email]" type="text" />
+                </div>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit">Submit</button>  </div>
+                </form>
               <span>¿Olvidaste tu contraseña?</span>
             </div>
           </div>

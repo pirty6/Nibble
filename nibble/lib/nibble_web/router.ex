@@ -45,13 +45,14 @@ defmodule NibbleWeb.Router do
 
   scope "/admin", NibbleWeb do
     pipe_through :browser
+    resources "/", UserController
     get "/*path", PageController, :app
   end
 
   scope "/api/users", NibbleWeb do
     pipe_through :browser
 
-    resources "/", UserController
+    # resources "/", UserController
   end
 
   # Other scopes may use custom stacks.
