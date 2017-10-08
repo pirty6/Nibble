@@ -14,6 +14,17 @@ const initialState = {
       desktop: '/images/capa-12.jpg',
     },
   },
+  heroEnglish:{
+    title: 'Manuel Gomez Morin',
+    subtitle: 'Educational and Cultural Center of the State of Querétaro',
+    image: {
+      hd: '/images/capa-13@2x.png',
+      desktop: '/images/capa-13.png',
+    },
+    logos: {
+      desktop: '/images/capa-12.jpg',
+    },
+  },
 };
 
 export default function (state = initialState, action = {}) {

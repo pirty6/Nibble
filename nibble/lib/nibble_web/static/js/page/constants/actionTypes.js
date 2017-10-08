@@ -33,3 +33,6 @@ export const SITE_ID = 'SITE_ID';
 
 // Hero
 export const HERO_FETCH = 'HERO_FETCH';
+
+//language
+export const LANGUAGE = 'LANGUAGE';

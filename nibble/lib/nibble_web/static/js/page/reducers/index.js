@@ -10,6 +10,7 @@ import LocationReducer from './data/Page';
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
 import UIIDReducer from './ui/site.js';
+import UILanguageReducer from './ui/language.js';
 
 const reducersJson = {
   // form: formReducer,
@@ -20,6 +21,7 @@ const reducersJson = {
 reducersJson['slide'] = UISlideReducer;
 reducersJson['modal'] = UIModalReducer;
 reducersJson['site'] = UIIDReducer;
+reducersJson['language'] = UILanguageReducer;
 
 //Data Reducers
 reducersJson['page'] = LocationReducer;
