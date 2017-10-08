@@ -23,7 +23,7 @@ class APIClass {
     return null;
   }
 
-  /* TOFIX map crashes */ 
+  /* TOFIX map crashes */
   getPage(url){
     const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({

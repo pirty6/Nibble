@@ -95,7 +95,7 @@ class App extends Component {
                 component = { VRScene }/>
               <Route exact path = '/app/page'
                 component = { Page } />
-                <Route exact path = '/admin'
+                <Route exact path = '/admin/new'
                 component = { Login } />
             </div>
           )}>
