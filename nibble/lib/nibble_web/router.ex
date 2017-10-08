@@ -37,6 +37,11 @@ defmodule NibbleWeb.Router do
     end
   end
 
+  scope "/api/cms", NibbleWeb do 
+    pipe_through :browser
+    resources "/books", BookController
+  end
+
   scope "/api/mapa", NibbleWeb do
     pipe_through :browser
 
