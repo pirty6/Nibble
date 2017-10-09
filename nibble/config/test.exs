@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :nibble, Nibble.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "smegmaparty",
   database: "nibble_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
