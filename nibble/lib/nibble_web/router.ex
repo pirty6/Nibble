@@ -60,7 +60,6 @@ defmodule NibbleWeb.Router do
 
   scope "/cms/libreria", NibbleWeb do
     pipe_through :browser
-
     resources "/", BookController
   end
 
