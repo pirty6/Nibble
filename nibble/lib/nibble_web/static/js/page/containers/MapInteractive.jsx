@@ -12,6 +12,7 @@ function mapStateToProps(state) {
     idVr: state.site.id,
     headerEnglish: state.map.headerEnglish,
     language: state.language.language,
+    headerGerman: state.map.headerGerman,
   };
 }
 

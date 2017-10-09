@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     page: state.page.locationBeforeTransitions,
     headerEnglish: state.library.headerEnglish,
     language: state.language.language,
+    headerGerman: state.library.headerGerman,
   };
 }
 

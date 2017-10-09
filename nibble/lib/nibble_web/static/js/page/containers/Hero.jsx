@@ -8,6 +8,7 @@ function mapStateToProps(state) {
     hero: state.hero.hero,
     heroEnglish: state.hero.heroEnglish,
     language: state.language.language,
+    heroGerman: state.hero.heroGerman,
   };
 }
 

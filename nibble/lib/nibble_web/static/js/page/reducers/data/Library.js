@@ -20,6 +20,13 @@ const initialState = {
           desktop: '/images/book-1200.jpg',
         },
       },
+      headerGerman: {
+          title: 'Digitalkatalog',
+          subtitle: 'Some really cool text about how cool it is',
+          image: {
+            desktop: '/images/book-1200.jpg',
+          },
+        },
 };
 
 export default function (state = initialState, action = {}) {

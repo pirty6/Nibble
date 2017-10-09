@@ -51,6 +51,7 @@ class MapInteractive extends Component{
       goToPage,
       headerEnglish,
       language,
+      headerGerman,
     } = this.props;
 
     let headerInformation = header;
@@ -59,6 +60,8 @@ class MapInteractive extends Component{
         headerInformation = header;
       } else if (language === 'en') {
         headerInformation = headerEnglish;
+      } else if (language === 'de') {
+        headerInformation = headerGerman;
       }
     }
 

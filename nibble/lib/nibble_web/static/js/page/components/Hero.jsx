@@ -7,6 +7,7 @@ class Hero extends Component {
       hero,
       heroEnglish,
       language,
+      heroGerman,
     } = this.props;
 
     let heroInformation = hero;
@@ -15,6 +16,8 @@ class Hero extends Component {
         heroInformation = hero;
       } else if( language === 'en'){
         heroInformation = heroEnglish;
+      } else if (language === 'de') {
+        heroInformation = heroGerman;
       }
     }
 
