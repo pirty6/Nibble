@@ -9,6 +9,8 @@ class Footer extends Component {
         footerInformation = this.props.footer;
       } else if (this.props.language === 'en') {
         footerInformation = this.props.footerEnglish;
+      } else if (this.props.language === 'de'){
+        footerInformation = this.props.footerGerman;
       }
     }
 
