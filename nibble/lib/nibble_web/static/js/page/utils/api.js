@@ -14,6 +14,7 @@ class APIClass {
   }
 
   buildAJAX(url) {
+    console.log('pee');
       return {
         url: `${this.baseURL}/${url}`,
         headers: this.headers,
@@ -23,6 +24,7 @@ class APIClass {
 
   /* TOFIX map crashes */
   getPage(url){
+    console.log(url);
     const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({
       ...this.buildAJAX(`${page}`),
