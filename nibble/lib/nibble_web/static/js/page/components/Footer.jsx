@@ -4,14 +4,17 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     let footerInformation = this.props.footer;
-    // if (this.props.language) {
-    //   if (this.props.language === 'es'){
-    //     footerInformation = this.props.footer;
-    //   }
-    // }
+    if (this.props.language) {
+      if (this.props.language === 'es') {
+        footerInformation = this.props.footer;
+      } else if (this.props.language === 'en') {
+        footerInformation = this.props.footerEnglish;
+      }
+    }
 
     const {
       footer,
+      footerEnglish,
       language,
       idVr,
       goToPage,

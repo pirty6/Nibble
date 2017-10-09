@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     footer: state.footer.footer,
     language: state.language.language,
     idVr: state.site.id,
+    footerEnglish: state.footer.footerEnglish,
   };
 }
 

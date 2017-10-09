@@ -37,7 +37,7 @@ const initialState = {
     bottomLinks:
     [
         {
-          title:'2017.Derechos Reservados',
+          title:'2017. Derechos Reservados',
           link:null,
         },
         {
@@ -54,6 +54,76 @@ const initialState = {
         },
         {
           title: 'Desarolladores',
+          link: 'desarrolladores',
+        },
+    ],
+    icons:
+    [
+        {
+          icon: '/images/002-social.svg',
+          link: 'https://www.facebook.com/CECEQro',
+        },
+        {
+          icon: '/images/004-twitter-logo-silhouette.svg',
+          link: 'https://twitter.com/CECEQGomezMorin',
+        },
+        {
+          icon: '/images/001-video.svg',
+          link: 'https://www.youtube.com/channel/UCV-XD4fizSpGEIU5U9lyDAA?feature=watch',
+        },
+    ],
+  },
+  footerEnglish: {
+    contact:
+    {
+      title:'Contact',
+      address: 'Contituyentes Av. S/N Villas del Sur 76000 Santiago de Querétaro, Qro',
+      telephone: '01 442 251 9600',
+    },
+    upperLinks:
+    [
+      {
+        title: 'Digital Catalog',
+        link: 'libreria',
+        flag: true,
+      },
+      {
+        title: 'Interactive Map',
+        link: 'mapa',
+        flag: true,
+      },
+      {
+        title: 'Official Page',
+        link: 'http://gomezmorin.queretaro.gob.mx/',
+        flag: false,
+      },
+      {
+        title: 'Spanish',
+        link: null,
+        flag: null,
+      },
+    ],
+    text: '“This work, program or action is public, is not sponsored or promoted by any political party and its resources come from the income contributed by all taxpayers. It is prohibited to use this work, program or action for political, electoral, profit and other purposes other than those established. Whoever makes improper use of the resources of this work, program or action must be denounced and punished according to the applicable law and before the competent authority”.',
+    bottomLinks:
+    [
+        {
+          title:'2017. All rights reserved',
+          link:null,
+        },
+        {
+          title: 'Terms and conditions',
+          link: 'terminos',
+        },
+        {
+          title: 'Privacy',
+          link: 'privacidad',
+        },
+        {
+          title: 'Sitemap',
+          link: 'mapa-sitio',
+        },
+        {
+          title: 'Developers',
           link: 'desarrolladores',
         },
     ],
