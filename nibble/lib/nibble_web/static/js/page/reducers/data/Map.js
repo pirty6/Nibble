@@ -13,6 +13,13 @@ const initialState = {
       desktop: null,
     },
   },
+  headerEnglish: {
+    title: 'Interactive Map',
+    subtitle: 'Some really cool text about how cool it is',
+    image: {
+      desktop: null,
+    },
+  },
   sites:
   [
     {

@@ -10,6 +10,8 @@ function mapStateToProps(state) {
     header: state.map.header,
     sites: state.map.sites,
     idVr: state.site.id,
+    headerEnglish: state.map.headerEnglish,
+    language: state.language.language,
   };
 }
 

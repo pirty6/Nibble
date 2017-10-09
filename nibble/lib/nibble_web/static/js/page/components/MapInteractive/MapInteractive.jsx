@@ -49,7 +49,18 @@ class MapInteractive extends Component{
       idVr,
       setId,
       goToPage,
+      headerEnglish,
+      language,
     } = this.props;
+
+    let headerInformation = header;
+    if (language) {
+      if (language === 'es') {
+        headerInformation = header;
+      } else if (language === 'en') {
+        headerInformation = headerEnglish;
+      }
+    }
 
     let place = sites.map((element, index) => (
       <div className = 'sector' key = { index }>
@@ -79,7 +90,7 @@ class MapInteractive extends Component{
 
     return (
       <div className = 'map'>
-        <Header { ...header }/>
+        <Header { ...headerInformation }/>
         <div className = 'map-container'>
           <div className = 'information'>
             Hello World!
