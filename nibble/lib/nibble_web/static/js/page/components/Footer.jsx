@@ -24,7 +24,7 @@ class Footer extends Component {
 
     const upLinks = footerInformation.upperLinks.map((element, index) => (
       <div className='upLink' key = { index }
-        onClick={(element.link ? null : () => changeLanguage('en'))}>
+        onClick={(element.link ? null : () => changeLanguage(element.language))}>
         <h6>{ element.title }</h6>
       </div>
     ));
