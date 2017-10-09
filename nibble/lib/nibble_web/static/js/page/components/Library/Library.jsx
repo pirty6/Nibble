@@ -77,11 +77,21 @@ class Library extends Component{
   render() {
     const {
       header,
-      // books,
       page,
       toggleModal,
       toggle,
+      headerEnglish,
+      language,
     } = this.props;
+
+    let headerInformation = header;
+    if (language) {
+      if (language === 'es') {
+        headerInformation = header;
+      } else if (language === 'en') {
+        headerInformation = headerEnglish;
+      }
+    }
 
     const currentPage = page.state.data;
     console.log(currentPage);
@@ -107,7 +117,7 @@ class Library extends Component{
 
     return (
       <div className = 'library'>
-        <Header { ...header }/>
+        <Header { ...headerInformation }/>
         <div className = 'books-container'>
           <div className = 'container'>
             { currentPage ? book : null }

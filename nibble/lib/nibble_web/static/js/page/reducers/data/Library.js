@@ -13,60 +13,13 @@ const initialState = {
         desktop: '/images/book-1200.jpg',
       },
     },
-  books:
-  [
-    {
-      title: 'Making Things Happen',
-      author: 'Elizabeth Murphy',
-      editorial: 'Sector',
-      id: '1',
-      pdf: '/pdf/Ejemplo.pdf',
-      image: '/images/image8.jpg',
-      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
-      genre: [
-        'comedia',
-        'terror',
-      ],
-    },
-    {
-      title: 'Welcome to Night Vale',
-      author: 'Joseph Fink & Jeffrey Crannor',
-      editorial: 'International',
-      id: '2',
-      pdf: '/pdf/Ejemplo.pdf',
-      image: '/images/image11.jpg',
-      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
-      genre: [
-        'novela',
-      ],
-    },
-    {
-      title: 'Paper Towns',
-      author: 'John Green',
-      editorial: 'Self-Publish',
-      id: '3',
-      pdf: '/pdf/Ejemplo.pdf',
-      image: '',
-      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
-      genre: [
-        'comedy',
-        'terror',
-        'romance',
-      ],
-    },
-    {
-      title: 'The Cat in the Hat',
-      author: 'Dr. Seuss',
-      editorial: 'Sector',
-      id: '4',
-      pdf: '/pdf/Ejemplo.pdf',
-      image: '/images/image6.jpg',
-      description: 'This book is like super cool, its about aliens and its my favourite book in the world',
-      genre: [
-        'comedy',
-      ],
-    },
-  ],
+    headerEnglish: {
+        title: 'Digital Catalog',
+        subtitle: 'Some really cool text about how cool it is',
+        image: {
+          desktop: '/images/book-1200.jpg',
+        },
+      },
 };
 
 export default function (state = initialState, action = {}) {
