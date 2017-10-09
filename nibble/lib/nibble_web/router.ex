@@ -15,7 +15,8 @@ defmodule NibbleWeb.Router do
 
   scope "/", NibbleWeb do
     pipe_through :browser # Use the default browser stack
-
+    # resources "/bookscms", BookController
+    # get "/indexcms", BookController, :indexcms
     # get "/", PlaceController, :index
   end
 
@@ -46,6 +47,9 @@ defmodule NibbleWeb.Router do
     pipe_through :browser
     resources "/", UserController
     get "/*path", PageController, :app
+    resources "/books", BookController
+    get "/allbooks", BookController, :indexcms
+
   end
 
   scope "/api/users", NibbleWeb do
