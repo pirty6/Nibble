@@ -24,6 +24,7 @@ import VRScene from './containers/VRScene.jsx';
 import Hero from './containers/Hero.jsx';
 import Page from './containers/Page.jsx';
 import Login from './containers/Login.jsx';
+import Footer from './containers/Footer.jsx';
 
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
 
         if (state.routing.location.pathname.includes('/admin')) {
           this.setState({ showUserTopbar: false});
+          this.setState({ showFooter: false });
         }
 
         if (state.routing.location.pathname != '/app/vr'
@@ -73,6 +75,7 @@ class App extends Component {
   state = {
     route: '/app',
     showUserTopbar: true,
+    showFooter: true,
   };
 
 
@@ -97,6 +100,7 @@ class App extends Component {
                 component = { Page } />
                 <Route exact path = '/admin/new'
                 component = { Login } />
+                { this.state.showFooter ? <Footer /> : null }
             </div>
           )}>
         </Route>

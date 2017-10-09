@@ -36,3 +36,6 @@ export const HERO_FETCH = 'HERO_FETCH';
 
 //language
 export const LANGUAGE = 'LANGUAGE';
+
+//footer
+export const FOOTER_FETCH = 'FOOTER_FETCH';

@@ -39,7 +39,6 @@ defmodule NibbleWeb.Router do
 
   scope "/api/mapa", NibbleWeb do
     pipe_through :browser
-
     resources "/", PlaceController, except: [:new, :edit]
   end
 

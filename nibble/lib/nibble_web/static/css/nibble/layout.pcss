@@ -8,6 +8,7 @@
 @import './vr';
 @import './hero';
 @import './admin/login';
+@import './footer';
 
 :root{
   --width-drawer: 360px;
@@ -24,6 +25,8 @@
   --font-book-title: 'Roboto', sans-serif;
   --font-buttons: 'Oswald', sans-serif;
   --login-color:#807182;
+  --footer-bg-color: #f2f2f2;
+  --footer-color:#95989a;
 }
 
 *{
@@ -119,14 +122,4 @@ p{
     font-family:var(--font-buttons);
     color:var(--white);
   }
-}
-
-.text{
-  &>#form-1:first-of-type{
-    display: inline;
-  }
-}
-
-#form-1{
-  display: none;
 }
