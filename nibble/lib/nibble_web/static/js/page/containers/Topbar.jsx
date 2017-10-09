@@ -13,6 +13,8 @@ function mapStateToProps(state) {
     idVr: state.site.id,
     logo: state.topbar.logo,
     name: state.topbar.name,
+    linksEnglish: state.topbar.linksEnglish,
+    language: state.language.language,
   };
 }
 

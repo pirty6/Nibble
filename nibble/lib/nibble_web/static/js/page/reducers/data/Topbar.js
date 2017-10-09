@@ -8,7 +8,7 @@ const initialState = {
   links:
   [
     {
-      title: 'Libreria Digital',
+      title: 'Catalogo Digital',
       link: 'libreria',
       flag: true,
     },
@@ -19,6 +19,24 @@ const initialState = {
     },
     {
       title: 'Pagina Oficial',
+      link: 'http://gomezmorin.queretaro.gob.mx/',
+      flag: false,
+    },
+  ],
+  linksEnglish:
+  [
+    {
+      title: 'Digital Catalog',
+      link: 'libreria',
+      flag: true,
+    },
+    {
+      title: 'Interactive Map',
+      link: 'mapa',
+      flag: true,
+    },
+    {
+      title: 'Official Page',
       link: 'http://gomezmorin.queretaro.gob.mx/',
       flag: false,
     },

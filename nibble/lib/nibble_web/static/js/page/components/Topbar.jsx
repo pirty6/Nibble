@@ -12,9 +12,20 @@ class Topbar extends Component {
       logo,
       name,
       goToHome,
+      linksEnglish,
+      language,
     } = this.props;
 
-    let linksRender = links.map((element, index) => (
+    let linksInformation = links;
+    if (language) {
+      if (language === 'es') {
+        linksInformation = links;
+      } else if( language === 'en') {
+        linksInformation = linksEnglish;
+      }
+    }
+
+    let linksRender = linksInformation.map((element, index) => (
       <div className = 'nav' key = { index } onClick = {
         () => {(element.flag ? goToPage(element.link)
       : window.location = element.link); }}
