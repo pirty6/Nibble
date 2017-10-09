@@ -41,6 +41,24 @@ const initialState = {
       flag: false,
     },
   ],
+  linksGerman:
+  [
+    {
+      title: 'Digitalkatalog',
+      link: 'libreria',
+      flag: true,
+    },
+    {
+      title: 'Interactive Karte',
+      link: 'mapa',
+      flag: true,
+    },
+    {
+      title: 'Offizielle Seite',
+      link: 'http://gomezmorin.queretaro.gob.mx/',
+      flag: false,
+    },
+  ],
 };
 
 export default function (state = initialState, action = {}) {

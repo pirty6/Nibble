@@ -15,6 +15,7 @@ function mapStateToProps(state) {
     name: state.topbar.name,
     linksEnglish: state.topbar.linksEnglish,
     language: state.language.language,
+    linksGerman: state.topbar.linksGerman,
   };
 }
 

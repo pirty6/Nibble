@@ -14,6 +14,7 @@ class Topbar extends Component {
       goToHome,
       linksEnglish,
       language,
+      linksGerman,
     } = this.props;
 
     let linksInformation = links;
@@ -22,6 +23,8 @@ class Topbar extends Component {
         linksInformation = links;
       } else if( language === 'en') {
         linksInformation = linksEnglish;
+      } else if (language === 'de') {
+        linksInformation = linksGerman;
       }
     }
 
