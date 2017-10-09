@@ -38,7 +38,7 @@ class Footer extends Component {
     ));
 
     const social = footerInformation.icons.map((element, index) => (
-      <div className='icon' key = { index }>
+      <div className='icon' key = { index } onClick={ () => {window.location = element.link}}>
         <img src = { element.icon } />
       </div>
     ));
