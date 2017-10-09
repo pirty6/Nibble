@@ -26,13 +26,15 @@ class Footer extends Component {
 
     const upLinks = footerInformation.upperLinks.map((element, index) => (
       <div className='upLink' key = { index }
-        onClick={(element.link ? null : () => changeLanguage(element.language))}>
+        onClick={(element.link ? (element.flag ?
+          () => {goToPage(element.link)} : () => { window.location = element.link} )
+          : () => changeLanguage(element.language))}>
         <h6>{ element.title }</h6>
       </div>
     ));
 
     const botLinks = footerInformation.bottomLinks.map((element, index) => (
-      <div className='botLink' key = { index }>
+      <div className='botLink' key = { index } onClick = { element.link ? () => {goTo(element.link)} :  null }>
         <p>{ element.title }</p>
       </div>
     ));
