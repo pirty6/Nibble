@@ -6,6 +6,8 @@ import Hero from '../components/Hero.jsx';
 function mapStateToProps(state) {
   return {
     hero: state.hero.hero,
+    heroEnglish: state.hero.heroEnglish,
+    language: state.language.language,
   };
 }
 

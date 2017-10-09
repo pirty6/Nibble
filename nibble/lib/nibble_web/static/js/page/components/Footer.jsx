@@ -3,25 +3,36 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
+    let footerInformation = this.props.footer;
+    // if (this.props.language) {
+    //   if (this.props.language === 'es'){
+    //     footerInformation = this.props.footer;
+    //   }
+    // }
+
     const {
       footer,
       language,
       idVr,
+      goToPage,
+      goTo,
+      changeLanguage,
     } = this.props;
 
-    const upLinks = footer.upperLinks.map((element, index) => (
-      <div className='upLink' key = { index }>
+    const upLinks = footerInformation.upperLinks.map((element, index) => (
+      <div className='upLink' key = { index }
+        onClick={(element.link ? null : () => changeLanguage('en'))}>
         <h6>{ element.title }</h6>
       </div>
     ));
 
-    const botLinks = footer.bottomLinks.map((element, index) => (
+    const botLinks = footerInformation.bottomLinks.map((element, index) => (
       <div className='botLink' key = { index }>
         <p>{ element.title }</p>
       </div>
     ));
 
-    const social = footer.icons.map((element, index) => (
+    const social = footerInformation.icons.map((element, index) => (
       <div className='icon' key = { index }>
         <img src = { element.icon } />
       </div>
@@ -31,12 +42,12 @@ class Footer extends Component {
       <div className={'footer ' + (idVr ? 'vr-active' : 'vr-not-active')}>
         <div className='container'>
           <div className='left-column'>
-            <h6>{ footer.contact.title }</h6>
+            <h6>{ footerInformation.contact.title }</h6>
             <div className='column'>
-              <p>{ footer.contact.address}</p>
+              <p>{ footerInformation.contact.address}</p>
             </div>
             <div className='column tel-column'>
-              <p>{ footer.contact.telephone }</p>
+              <p>{ footerInformation.contact.telephone }</p>
             </div>
           </div>
           <div className='right-column'>
@@ -44,7 +55,7 @@ class Footer extends Component {
                 { upLinks }
             </div>
             <div className='bottom'>
-              <p>{ footer.text }</p>
+              <p>{ footerInformation.text }</p>
             </div>
           </div>
           <div className='links'>
