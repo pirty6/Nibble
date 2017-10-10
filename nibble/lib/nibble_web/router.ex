@@ -65,6 +65,11 @@ defmodule NibbleWeb.Router do
     resources "/", BookController
   end
 
+  scope "/cms/sectores", NibbleWeb do
+    pipe_through :browser
+    resources "/", PlaceController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do
   #   pipe_through :api

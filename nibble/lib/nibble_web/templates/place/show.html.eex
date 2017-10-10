@@ -1,0 +1,33 @@
+<h2>Show Place</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @place.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @place.description %>
+  </li>
+
+  <li>
+    <strong>Url360:</strong>
+    <%= @place.url360 %>
+  </li>
+
+  <li>
+    <strong>Urlthumbimg:</strong>
+    <%= @place.urlthumbimg %>
+  </li>
+
+  <li>
+    <strong>Sector:</strong>
+    <%= @place.sector %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: place_path(@conn, :edit, @place) %></span>
+<span><%= link "Back", to: place_path(@conn, :index) %></span>
