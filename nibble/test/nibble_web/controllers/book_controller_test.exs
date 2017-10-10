@@ -65,7 +65,7 @@ defmodule NibbleWeb.BookControllerTest do
         "genre" => "some updated genre",
         "title" => "some updated title",
         "urlimg" => "some updated urlimg",
-        "urlpdf" => "some udpated urlpdf"}
+        "urlpdf" => "some updated urlpdf"}
     end
 
     test "renders errors when data is invalid", %{conn: conn, book: book} do
