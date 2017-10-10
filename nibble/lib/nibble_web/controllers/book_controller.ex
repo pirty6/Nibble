@@ -48,6 +48,19 @@ defmodule NibbleWeb.BookController do
     end
   end
 
+  def update(conn, %{"id" => id, "book" => book_params}) do
+    book = Library.get_book!(id)
+
+    case Library.update_book(book, book_params) do
+      {:ok, book} ->
+        conn
+        |> put_flash(:info, "Book updated successfully.")
+        |> redirect(to: book_path(conn, :show, book))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "edit.html", book: book, changeset: changeset)
+    end
+  end
+
 
 ############################################## json functions ##############################################
 

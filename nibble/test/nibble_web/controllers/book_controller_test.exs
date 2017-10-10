@@ -6,7 +6,7 @@ defmodule NibbleWeb.BookControllerTest do
 
   @create_attrs %{author: "some author", code: 42, description: "some description", editorial: "some editorial", genre: "some genre", title: "some title", urlimg: "some urlimg", urlpdf: "some urlpdf"}
   @update_attrs %{author: "some updated author", code: 43, description: "some updated description", editorial: "some updated editorial", genre: "some updated genre", title: "some updated title", urlimg: "some updated urlimg", urlpdf: "some updated urlpdf"}
-  @invalid_attrs %{author: nil, code: nil, description: nil, editorial: nil, genre: nil, title: nil, urlimg: nil}
+  @invalid_attrs %{author: nil, code: nil, description: nil, editorial: nil, genre: nil, title: nil, urlimg: nil, urlpdf: nil}
 
   def fixture(:book) do
     {:ok, book} = Library.create_book(@create_attrs)
@@ -20,7 +20,7 @@ defmodule NibbleWeb.BookControllerTest do
   describe "index" do
     test "lists all books", %{conn: conn} do
       conn = get conn, book_path(conn, :index)
-      assert json_response(conn, 200)["data"] == []
+      assert html_response(conn, 200)["data"] == []
     end
   end
 
