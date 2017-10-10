@@ -15,14 +15,10 @@ defmodule NibbleWeb.Router do
 
   scope "/", NibbleWeb do
     pipe_through :browser # Use the default browser stack
-<<<<<<< HEAD
-    resources "/books", BookController
     # get "/", PlaceController, :index
-=======
     # resources "/bookscms", BookController
     # get "/indexcms", BookController, :indexcms
     get "/", PageController, :index
->>>>>>> CreatingTests
   end
 
   scope "/app", NibbleWeb do
