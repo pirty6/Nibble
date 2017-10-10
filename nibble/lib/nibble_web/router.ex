@@ -2,7 +2,7 @@ defmodule NibbleWeb.Router do
   use NibbleWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -17,7 +17,7 @@ defmodule NibbleWeb.Router do
     pipe_through :browser # Use the default browser stack
     # resources "/bookscms", BookController
     # get "/indexcms", BookController, :indexcms
-    # get "/", PlaceController, :index
+    get "/", PageController, :index
   end
 
   scope "/app", NibbleWeb do
