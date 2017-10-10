@@ -6,9 +6,9 @@ defmodule Nibble.LibraryTest do
   describe "books" do
     alias Nibble.Library.Book
 
-    @valid_attrs %{author: "some author", code: 42, description: "some description", editorial: "some editorial", genre: "some genre", title: "some title", urlimg: "some urlimg"}
-    @update_attrs %{author: "some updated author", code: 43, description: "some updated description", editorial: "some updated editorial", genre: "some updated genre", title: "some updated title", urlimg: "some updated urlimg"}
-    @invalid_attrs %{author: nil, code: nil, description: nil, editorial: nil, genre: nil, title: nil, urlimg: nil}
+    @valid_attrs %{author: "some author", code: 42, description: "some description", editorial: "some editorial", genre: "some genre", title: "some title", urlimg: "some urlimg", urlpdf: "some urlpdf"}
+    @update_attrs %{author: "some updated author", code: 43, description: "some updated description", editorial: "some updated editorial", genre: "some updated genre", title: "some updated title", urlimg: "some updated urlimg", urlpdf: "some updated urlpdf"}
+    @invalid_attrs %{author: nil, code: nil, description: nil, editorial: nil, genre: nil, title: nil, urlimg: nil, urlpdf: nil}
 
     def book_fixture(attrs \\ %{}) do
       {:ok, book} =
@@ -38,6 +38,7 @@ defmodule Nibble.LibraryTest do
       assert book.genre == "some genre"
       assert book.title == "some title"
       assert book.urlimg == "some urlimg"
+      assert book.urlpdf == "some urlpdf"
     end
 
     test "create_book/1 with invalid data returns error changeset" do
@@ -55,6 +56,7 @@ defmodule Nibble.LibraryTest do
       assert book.genre == "some updated genre"
       assert book.title == "some updated title"
       assert book.urlimg == "some updated urlimg"
+      assert book.urlpdf == "some updated urlpdf"
     end
 
     test "update_book/2 with invalid data returns error changeset" do
