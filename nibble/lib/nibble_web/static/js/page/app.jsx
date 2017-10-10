@@ -25,6 +25,9 @@ import Hero from './containers/Hero.jsx';
 import Page from './containers/Page.jsx';
 import Login from './containers/Login.jsx';
 import Footer from './containers/Footer.jsx';
+import Cms from './containers/Cms.jsx';
+import CMSTopbar from './containers/CMSTopbar.jsx';
+import CMSSidebar from './containers/CMSSidebar.jsx';
 
 
 class App extends Component {
@@ -41,9 +44,15 @@ class App extends Component {
           root.classList.remove('a-html');
         }
 
-        if (state.routing.location.pathname.includes('/admin')) {
+        if (state.routing.location.pathname.includes('/admin') || state.routing.location.pathname.includes('/cms')) {
           this.setState({ showUserTopbar: false});
           this.setState({ showFooter: false });
+        }
+
+        if(state.routing.location.pathname.includes('/cms')) {
+          this.setState({ showAdminTopbar: true });
+        } else {
+          this.setState({ showAdminTopbar: false });
         }
 
         if (state.routing.location.pathname != '/app/vr'
@@ -76,6 +85,7 @@ class App extends Component {
     route: '/app',
     showUserTopbar: true,
     showFooter: true,
+    showAdminTopbar: false,
   };
 
 
@@ -88,6 +98,8 @@ class App extends Component {
           <Route render = {({ location }) => (
             <div className = 'react-body'>
               { this.state.showUserTopbar ? <Topbar /> : null }
+              { this.state.showAdminTopbar ? <CMSTopbar /> : null }
+              { this.state.showAdminTopbar ? <CMSSidebar /> : null }
               <Route exact path = '/app'
                 component = { Hero }/>
               <Route exact path = '/app/libreria'
@@ -100,6 +112,8 @@ class App extends Component {
                 component = { Page } />
                 <Route exact path = '/admin/new'
                 component = { Login } />
+                <Route path = '/cms'
+                component = { Cms } />
                 { this.state.showFooter ? <Footer /> : null }
             </div>
           )}>

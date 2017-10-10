@@ -1,0 +1,26 @@
+.cms-sidebar{
+  position:absolute;
+  background-color: var(--cms-topbar);
+  width: var(--cms-sidebar-width);
+  height: calc(100vh - var(--cms-topbar-height));
+  &>.container{
+    &>.link{
+      cursor: pointer;
+      height: 68px;
+      display:flex;
+      box-sizing:border-box;
+      justify-content: center;
+      align-items: baseline;
+      padding-top: 10px;
+      &>img{
+        width:34px;
+        margin-right: 20px;
+      }
+      &>span{
+        font-size: 1.125rem;
+        color:var(--cms-color);
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}

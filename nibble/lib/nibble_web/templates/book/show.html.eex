@@ -1,39 +1,39 @@
 <h2>Show Book</h2>
 
-<ul>
+<ul id='showBooks'>
 
   <li>
-    <strong>Title:</strong>
+    <strong class='title'>Title:</strong>
     <%= @book.title %>
   </li>
 
   <li>
-    <strong>Author:</strong>
+    <strong class='title'>Author:</strong>
     <%= @book.author %>
   </li>
 
   <li>
-    <strong>Code:</strong>
+    <strong class='title'>Code:</strong>
     <%= @book.code %>
   </li>
 
   <li>
-    <strong>Description:</strong>
+    <strong class='title'>Description:</strong>
     <%= @book.description %>
   </li>
 
   <li>
-    <strong>Genre:</strong>
+    <strong class='title'>Genre:</strong>
     <%= @book.genre %>
   </li>
 
   <li>
-    <strong>Editorial:</strong>
+    <strong class='title'>Editorial:</strong>
     <%= @book.editorial %>
   </li>
 
   <li>
-    <strong>Urlimg:</strong>
+    <strong class='title'>Urlimg:</strong>
     <%= @book.urlimg %>
   </li>
 
