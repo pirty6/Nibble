@@ -5,7 +5,7 @@ import Cms from '../components/Admin/Cms.jsx';
 
 function mapStateToProps(state) {
   return {
-
+    location: state.page.locationBeforeTransitions,
   };
 }
 

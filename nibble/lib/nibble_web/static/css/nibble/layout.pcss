@@ -35,6 +35,7 @@
   --cms-topbar-height:100px;
   --cms-sidebar-width:212px;
   --cms-color:#b7b7b7;
+  --nibble-color:#9ed5c0;
 }
 
 *{
@@ -143,6 +144,10 @@ th{
 
 th, td{
   padding-right: 90px;
+  vertical-align: middle;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  border-bottom: solid 1px #b7b7b7;
 }
 
 td{
@@ -151,6 +156,22 @@ td{
   color:#878787;
 }
 
-tr{
-  border-bottom: solid 5px #b7b7b7;
+table{
+  border-collapse: collapse;
+}
+
+.button{
+  width: 143px;
+  height: 39px;
+  background-image: linear-gradient(264deg, #068d9d, #81d6c0);
+  font-size: 1.1rem;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-title);
+  &>a{
+    color: var(--white);
+    text-decoration: none;
+  }
 }
