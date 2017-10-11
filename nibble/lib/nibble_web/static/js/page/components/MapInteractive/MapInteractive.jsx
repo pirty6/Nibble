@@ -14,23 +14,26 @@ class MapInteractive extends Component{
 
   renderInformation(sector, i) {
     if (sector) {
-      if(sector.sector === this.state.sector){
+      console.log(sector.name);
+      console.log(this.state.sector);
+      if (parseInt(sector.sector) === this.state.sector) {
+        console.log('entro');
         return (
           <div className='site' key = {i}>
             <div className = 'left-column'>
-              <img className = 'image' src = { sector.image }/>
+              <img className = 'image' src = { sector.urlthumbimg }/>
               <img className = 'play' src = '/images/play.svg'
               onClick = { () => {
                 /* FIXME  setId is not defined*/
-                this.props.setId(sector.imageVr); this.props.goToPage();
+                this.props.setId(sector.url360); this.props.goToPage();
                 }
               }/>
             </div>
             <div className = 'right-column'>
               <div className='container'>
-                <h3>{ sector.title } —</h3>
+                <h3>{ sector.name } —</h3>
                 <div className='paragraph'>
-                  <p>{ sector.information }</p>
+                  <p>{ sector.description }</p>
                 </div>
               </div>
             </div>
@@ -66,28 +69,12 @@ class MapInteractive extends Component{
       }
     }
 
-    console.log(page);
+    const currentPage = page.state.data;
 
-    let place = sites.map((element, index) => (
+    let place = currentPage.map((element, index) => (
       <div className = 'sector' key = { index }>
         <div className = 'container'>
-          { element.sector.map((sec, i) => (
-            this.renderInformation(sec, i)
-            // <div className = 'site' key = { i }>
-            //   <div className = 'left-column'>
-            //     <img className = 'image' src = { sec.image }/>
-            //     <img className = 'play' src = '/images/play.svg'
-            //   onClick = { () => {
-            //     setId(sec.imageVr); goToPage();
-            //   }
-            //  }/>
-            //   </div>
-            //   <div className = 'right-column'>
-            //     <h3>{ sec.title }</h3>
-            //     <p>{ sec.information }</p>
-            //   </div>
-            // </div>
-          ))}
+          {this.renderInformation(element, index)}
         </div>
       </div>
     ));
