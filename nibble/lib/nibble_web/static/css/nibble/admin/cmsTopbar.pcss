@@ -3,21 +3,25 @@
   height:var(--cms-topbar-height);
   position: fixed;
   width:100%;
+  z-index: 10;
   &>.container{
     padding-right: 4rem;
     padding-left: 4rem;
     width:1330px;
     display: flex;
+    align-items: center;
     box-sizing: border-box;
+    height:100%;
     &>.column{
       lost-column:1/2;
       display:flex;
       align-items: center;
+      height:100%;
       &>.logo{
-        height:75px;
+        height:30px;
       }
       &>.logout{
-        height:29px;
+        height:24px;
         cursor: pointer;
       }
     }

@@ -32,7 +32,7 @@
   --footer-color:#95989a;
   --login-linear: linear-gradient(to top, #867284, #9f5d7b);
   --cms-topbar: #fcfcfc;
-  --cms-topbar-height:100px;
+  --cms-topbar-height:48px;
   --cms-sidebar-width:212px;
   --cms-color:#b7b7b7;
   --nibble-color:#9ed5c0;
@@ -137,7 +137,7 @@ th{
   text-align: left;
   font-size:1.15rem;
   font-family: var(--font-title);
-  color: #878787;
+  color: #0c0033;
   font-weight: 700;
 }
 
@@ -147,13 +147,14 @@ th, td{
   vertical-align: middle;
   padding-top: 21px;
   padding-bottom: 21px;
-  border-bottom: solid 1px #b7b7b7;
+  border-bottom: solid 1px #A7A3B5;
 }
 
 td{
   font-size: 1.1rem;
   font-family: var(--font-title);
-  color:#878787;
+  color:#0c0033;
+  opacity: 0.5;
 }
 
 table{
@@ -161,18 +162,49 @@ table{
   width: 100%;
 }
 
-.button{
-  width: 143px;
-  height: 39px;
-  background-image: linear-gradient(264deg, #068d9d, #81d6c0);
-  font-size: 1.1rem;
-  display: flex;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+a{
   font-family: var(--font-title);
-  &>a{
-    color: var(--white);
-    text-decoration: none;
+  color: var(--white);
+  text-decoration: none;
+}
+
+button{
+  padding-right:25px;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  background-color: #9E5D7B;
+  color:#fff;
+}
+
+.cancel-button{
+  padding-right:25px;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  background-color: #4d5a70;
+  color:#fff;
+  font-family: var(--font-title);
+  margin-right: 18px;
+}
+
+ul{
+  font-family: var(--font-title);
+  color: #0c0033;
+  opacity: 0.5;
+  font-size: 1rem;
+  list-style-type: none;
+  &>li{
+    margin-bottom: 20px;
   }
 }
