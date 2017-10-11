@@ -90,4 +90,12 @@ defmodule NibbleWeb.BookControllerTest do
     book = fixture(:book)
     {:ok, book: book}
   end
+
+  describe "index json" do
+    test "lists all books", %{conn: conn} do
+      conn = get conn, book_path(conn, :indexjson)
+      assert json_response(conn, 200)["data"] == []
+    end
+  end
+  
 end
