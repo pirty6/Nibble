@@ -38,6 +38,10 @@ defmodule NibbleWeb.Router do
     #  end
     # resources "/books", BookController, except: [:new, :edit, :delete, :create, :index, :show]
     get "/", BookController, :indexjson
+    # get "/createjson", BookController, :createjson
+    # get "/showjson", BookController, :showjson
+    # get "/updatejson", BookController, :updatejson
+    # get "/deletejson", BookController, :deletejson
   end
 
   scope "/api/mapa", NibbleWeb do

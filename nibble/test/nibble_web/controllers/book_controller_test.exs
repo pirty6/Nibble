@@ -86,8 +86,77 @@ defmodule NibbleWeb.BookControllerTest do
     end
   end
 
-  defp create_book(_) do
-    book = fixture(:book)
-    {:ok, book: book}
-  end
-end
+#   describe "index json" do
+#     test "lists all books", %{conn: conn} do
+#       conn = get conn, book_path(conn, :indexjson)
+#       assert json_response(conn, 200)["data"] == []
+#     end
+#   end
+#
+#   describe "create book json" do
+#     test "renders book json when data is valid", %{conn: conn} do
+#       conn = post conn, book_path(conn, :createjson), book: @create_attrs
+#       assert %{"id" => id} = json_response(conn, 201)["data"]
+#
+#       conn = get conn, book_path(conn, :show, id)
+#       assert json_response(conn, 200)["data"] == %{
+#         "id" => id,
+#         "author" => "some author",
+#         "code" => "some code",
+#         "description" => "some description",
+#         "editorial" => "some editorial",
+#         "genre" => "some genre",
+#         "title" => "some title",
+#         "urlimg" => "some urlimg",
+#         "urlpdf" => "some urlpdf"}
+#     end
+#
+#     test "renders json errors when data is invalid", %{conn: conn} do
+#       conn = post conn, book_path(conn, :createjson), book: @invalid_attrs
+#       assert json_response(conn, 422)["errors"] != %{}
+#     end
+#   end
+#
+#   describe "update book json" do
+#     setup [:create_book]
+#
+#     test "renders book json when data is valid", %{conn: conn, book: %Book{id: id} = book} do
+#       conn = put conn, book_path(conn, :updatejson, book), book: @update_attrs
+#       assert %{"id" => ^id} = json_response(conn, 200)["data"]
+#
+#       conn = get conn, book_path(conn, :showjson, id)
+#       assert json_response(conn, 200)["data"] == %{
+#         "id" => id,
+#         "author" => "some updated author",
+#         "code" => "some updated code",
+#         "description" => "some updated description",
+#         "editorial" => "some updated editorial",
+#         "genre" => "some updated genre",
+#         "title" => "some updated title",
+#         "urlimg" => "some updated urlimg",
+#         "urlpdf" => "some updated urlpdf"}
+#     end
+#
+#     test "renders json errors when data is invalid", %{conn: conn, book: book} do
+#       conn = put conn, book_path(conn, :updatejson, book), book: @invalid_attrs
+#       assert json_response(conn, 422)["errors"] != %{}
+#     end
+#   end
+#
+#   describe "delete book json" do
+#     setup [:create_book]
+#
+#     test "deletes chosen book", %{conn: conn, book: book} do
+#       conn = delete conn, book_path(conn, :deletejson, book)
+#       assert response(conn, 204)
+#       assert_error_sent 404, fn ->
+#         get conn, book_path(conn, :showjson, book)
+#       end
+#     end
+#   end
+#
+#   defp create_book(_) do
+#     book = fixture(:book)
+#     {:ok, book: book}
+#   end
+# end
