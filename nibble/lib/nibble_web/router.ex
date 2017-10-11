@@ -42,7 +42,7 @@ defmodule NibbleWeb.Router do
 
   scope "/api/mapa", NibbleWeb do
     pipe_through :browser
-    resources "/", PlaceController, except: [:new, :edit]
+    get "/", PlaceController, :indexjson
   end
 
   scope "/admin", NibbleWeb do
@@ -60,14 +60,11 @@ defmodule NibbleWeb.Router do
     # resources "/", UserController
   end
 
-  scope "/cms/libreria", NibbleWeb do
+  scope "/cms", NibbleWeb do
     pipe_through :browser
-    resources "/", BookController
-  end
-
-  scope "/cms/sectores", NibbleWeb do
-    pipe_through :browser
-    resources "/", PlaceController
+    resources "/libreria", BookController
+    resources "/usuarios", UserController
+    resources "/sectores", PlaceController
   end
 
   # Other scopes may use custom stacks.
