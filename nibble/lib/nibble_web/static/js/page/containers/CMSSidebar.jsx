@@ -41,7 +41,7 @@ function mapStateToProps(state) {
         },
         {
           title: 'Mapa',
-          link: '/mapa',
+          link: '/sectores',
           icon: '/images/005-map.svg',
           iconActive: '/images/005-mapWhite.svg',
         },

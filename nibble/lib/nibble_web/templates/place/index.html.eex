@@ -1,6 +1,6 @@
 <h2>Listing Places</h2>
 
-<table class="table">
+<table id="showBooks" class="table">
   <thead>
     <tr>
       <th>Name</th>

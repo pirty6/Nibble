@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Cms extends Component{
   render() {
     let add = null;
-    const form = document.getElementById('showBooks').outerHTML;
+    let form = document.getElementById('showBooks').outerHTML;
     let title = null;
 
     if (this.props.location) {
@@ -17,13 +17,15 @@ class Cms extends Component{
     if (document.getElementById('add')) {
       add = document.getElementById('add').outerHTML;
     }
+
     return (
       <div className='cms-library'>
         <div className='container'>
           <div className='title-container'>
             <h2>{ title }</h2>
             {(document.getElementById('add')
-            ? <div className='button-admin' dangerouslySetInnerHTML={{ __html: add }} />
+            ? <div className='button-admin'
+               dangerouslySetInnerHTML={{ __html: add }} />
             : null )}
           </div>
           <div

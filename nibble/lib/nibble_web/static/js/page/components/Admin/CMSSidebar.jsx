@@ -7,7 +7,7 @@ class CMSSidebar extends Component{
         <div className='link' key={index}
           style={this.props.location.pathname.includes(element.link)
           ? {backgroundImage: 'linear-gradient(to left, #a05c7b, #867284)'}
-          : null } onClick={ () => {this.props.goToPage(element.link)}}>
+          : null } onClick={ () => { window.location = `/cms${element.link}`}}>
           <img src={this.props.location.pathname.includes(element.link)
             ? element.iconActive : element.icon } alt={element.title + ' icon'}/>
           <span
