@@ -9,6 +9,9 @@
 @import './hero';
 @import './admin/login';
 @import './footer';
+@import './admin/cmsTopbar';
+@import './admin/cmsSidebar';
+@import './admin/cmsBookShow';
 
 :root{
   --width-drawer: 360px;
@@ -28,6 +31,10 @@
   --footer-bg-color: #f2f2f2;
   --footer-color:#95989a;
   --login-linear: linear-gradient(to top, #867284, #9f5d7b);
+  --cms-topbar: #fcfcfc;
+  --cms-topbar-height:100px;
+  --cms-sidebar-width:212px;
+  --cms-color:#b7b7b7;
 }
 
 *{
@@ -123,4 +130,27 @@ p{
     font-family:var(--font-buttons);
     color:var(--white);
   }
+}
+
+th{
+  text-align: left;
+  font-size:1.15rem;
+  font-family: var(--font-title);
+  color: #878787;
+  font-weight: 700;
+}
+
+
+th, td{
+  padding-right: 90px;
+}
+
+td{
+  font-size: 1.1rem;
+  font-family: var(--font-title);
+  color:#878787;
+}
+
+tr{
+  border-bottom: solid 5px #b7b7b7;
 }
