@@ -3,10 +3,10 @@
 <table id="showBooks" class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Url360</th>
-      <th>Urlthumbimg</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <!-- <th>Imagen 360</th>
+      <th>Urlthumbimg</th> -->
       <th>Sector</th>
 
       <th></th>
@@ -17,18 +17,39 @@
     <tr>
       <td><%= place.name %></td>
       <td><%= place.description %></td>
-      <td><%= place.url360 %></td>
-      <td><%= place.urlthumbimg %></td>
+      <!-- <td><%= place.url360 %></td>
+      <td><%= place.urlthumbimg %></td> -->
       <td><%= place.sector %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: place_path(@conn, :show, place), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: place_path(@conn, :edit, place), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: place_path(@conn, :delete, place), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: place_path(@conn, :show, place), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: place_path(@conn, :edit, place), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: place_path(@conn, :delete, place), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
+          </div>
+          <% end %>
+        </div>
+
+
+
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Place", to: place_path(@conn, :new) %></span>
+<div class="button" id="add">
+  <%= link to: place_path(@conn, :new) do %>
+    Agregar Sección
+  <% end %>
+</div>
