@@ -45,14 +45,14 @@ defmodule NibbleWeb.Router do
     get "/", PlaceController, :indexjson
   end
 
-  scope "/admin", NibbleWeb do
-    pipe_through :browser
-    resources "/", UserController
-    get "/*path", PageController, :app
-      # resources "/books", BookController
-    # get "/allbooks", BookController, :indexcms
-
-  end
+  # scope "/admin", NibbleWeb do
+  #   pipe_through :browser
+  #   # resources "/", UserController
+  #   get "/*path", PageController, :app
+  #     # resources "/books", BookController
+  #   # get "/allbooks", BookController, :indexcms
+  #
+  # end
 
   scope "/api/users", NibbleWeb do
     pipe_through :browser
@@ -62,6 +62,7 @@ defmodule NibbleWeb.Router do
 
   scope "/cms", NibbleWeb do
     pipe_through :browser
+    # get "/*path", PageController, :apps
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
