@@ -45,4 +45,8 @@
 </ul>
 
 <span><%= link "Edit", to: book_path(@conn, :edit, @book) %></span>
-<span><%= link "Back", to: book_path(@conn, :index) %></span>
+<div id="back" class='cancel-button'>
+<%= link to: book_path(@conn, :index) do %>
+  Regresar
+</div>
+<% end %>

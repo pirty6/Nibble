@@ -23,7 +23,12 @@
      <%= error_tag f, :email %>
    </div>
 
-   <div class="form-group">
+   <div class="form-submit">
+     <div class='cancel-button'>
+     <%= link to: user_path(@conn, :index) do %>
+       Cancelar
+     </div>
+     <% end %>
      <%= submit "Submit", class: "btn btn-primary" %>
    </div>
  <% end %>

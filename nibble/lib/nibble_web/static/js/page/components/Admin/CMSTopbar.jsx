@@ -7,7 +7,7 @@ class CMSTopbar extends Component{
       <div className='cms-topbar'>
         <div className='container'>
           <div className='column'>
-            <img className='logo' src='/images/nibble.svg' alt='nibble-logo' />
+            {/* <img className='logo' src='/images/nibble.svg' alt='nibble-logo' /> */}
           </div>
           <div className='column column-logout'>
             <img className='logout' src='/images/logout.svg' alt='logout' />
