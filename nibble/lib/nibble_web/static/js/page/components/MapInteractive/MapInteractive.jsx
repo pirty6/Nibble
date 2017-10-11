@@ -52,6 +52,7 @@ class MapInteractive extends Component{
       headerEnglish,
       language,
       headerGerman,
+      page,
     } = this.props;
 
     let headerInformation = header;
@@ -64,6 +65,8 @@ class MapInteractive extends Component{
         headerInformation = headerGerman;
       }
     }
+
+    console.log(page);
 
     let place = sites.map((element, index) => (
       <div className = 'sector' key = { index }>

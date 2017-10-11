@@ -68,6 +68,10 @@ class App extends Component {
         && document.body.classList) {
           document.body.classList.remove('toggle-hero');
         }
+
+        if (state.routing.location.pathname.includes('api') || state.routing.location.pathname === '/app'){
+          this.setState({ showFooter: false });
+        }
       }
     );
   }

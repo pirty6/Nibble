@@ -97,7 +97,7 @@ class Library extends Component{
     }
 
     const currentPage = page.state.data;
-    // console.log(currentPage);
+    // console.log(page);
 
     let book = currentPage.map((element, index) => (
       <div className = 'book' key = { index }

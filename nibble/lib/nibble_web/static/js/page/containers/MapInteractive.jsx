@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     headerEnglish: state.map.headerEnglish,
     language: state.language.language,
     headerGerman: state.map.headerGerman,
+    page: state.page.locationBeforeTransitions,
   };
 }
 
