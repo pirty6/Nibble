@@ -68,18 +68,10 @@ class App extends Component {
         && document.body.classList) {
           document.body.classList.remove('toggle-hero');
         }
-
-        if(state.routing.location.pathname != this.state.route){
-            // console.log('entro');
-          if(state.slide.slide === true){
-            state.slide.slide = false;
-            // console.log('pee');
-            this.setState({route: state.routing.location.pathname});
-          }
-        }
       }
     );
   }
+
 
   state = {
     route: '/app',

@@ -46,7 +46,7 @@ class Library extends Component{
           <div className = 'container'>
             <div className = 'left-column'>
               <div className = 'square'></div>
-              { this.renderImage(element.image)}
+              { this.renderImage(element.urlimg)}
             </div>
             <div className = 'right-column'>
               <div className = 'container-column'>
@@ -97,7 +97,7 @@ class Library extends Component{
     }
 
     const currentPage = page.state.data;
-    console.log(currentPage);
+    // console.log(currentPage);
 
     let book = currentPage.map((element, index) => (
       <div className = 'book' key = { index }
@@ -106,13 +106,13 @@ class Library extends Component{
         toggleModal();
       }}
 
-        style = { element.image
-          ? { backgroundImage: 'url(' + element.image + ')' }
+        style = { element.urlimg != 'null'
+          ? { backgroundImage: 'url(' + element.urlimg + ')' }
         : { backgroundColor: '#7AC9DD' } }>
-        <h5 className = { 'title ' + (element.image ? 'hidden' : 'show')}>
+        <h5 className = { 'title ' + (element.urlimg != 'null' ? 'hidden' : 'show')}>
           { element.title }
         </h5>
-        <span className = { 'author ' + (element.image ? 'hidden' : 'show')}>
+        <span className = { 'author ' + (element.urlimg != 'null' ? 'hidden' : 'show')}>
           { element.author }
         </span>
       </div>

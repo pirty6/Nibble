@@ -30,7 +30,7 @@ class Topbar extends Component {
 
     let linksRender = linksInformation.map((element, index) => (
       <div className = 'nav' key = { index } onClick = {
-        () => {(element.flag ? goToPage(element.link)
+        () => {(element.flag ? (goToPage(element.link), toggle())
       : window.location = element.link); }}
       >
         <h6>{ element.title }</h6>
