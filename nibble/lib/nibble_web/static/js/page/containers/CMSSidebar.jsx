@@ -6,37 +6,44 @@ import CMSSidebar from '../components/Admin/CMSSidebar.jsx';
 
 function mapStateToProps(state) {
   return {
+    location: state.page.locationBeforeTransitions,
     links:
     [
         {
           title: 'Dashboard',
-          link: '/',
+          link: '/dashboard',
           icon: '/images/002-dashboard.svg',
+          iconActive: '/images/002-dashboardWhite.svg',
         },
         {
           title: 'Reportes',
-          link: '/',
+          link: '/reportes',
           icon: '/images/001-graph.svg',
+          iconActive: '/images/001-graphWhite.svg',
         },
         {
           title: 'Bitacora',
-          link: '/',
+          link: '/bitacora',
           icon: '/images/003-newspaper.svg',
+          iconActive: '/images/003-newspaperWhite.svg',
         },
         {
           title: 'Usuarios',
-          link: '/',
+          link: '/usuarios',
           icon: '/images/004-user.svg',
+          iconActive: '/images/004-userWhite.svg',
         },
         {
           title: 'Libros',
           link: '/libreria',
           icon: '/images/006-open-book.svg',
+          iconActive: '/images/006-open-bookWhite.svg',
         },
         {
           title: 'Mapa',
-          link: '/',
+          link: '/mapa',
           icon: '/images/005-map.svg',
+          iconActive: '/images/005-mapWhite.svg',
         },
     ],
   };
@@ -44,7 +51,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    goToPage: (link) => (dispatch(push(`/cms${link}`))),
   };
 }
 
