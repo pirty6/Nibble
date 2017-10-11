@@ -62,7 +62,7 @@ defmodule NibbleWeb.Router do
 
   scope "/cms", NibbleWeb do
     pipe_through :browser
-    get "/*path", PageController, :apps
+    # get "/*path", PageController, :apps
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
