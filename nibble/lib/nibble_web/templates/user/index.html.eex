@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Password</th>
+      <!-- <th>Password</th> -->
       <th>Email</th>
 
       <th></th>
@@ -14,13 +14,25 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.name %></td>
-      <td><%= user.password %></td>
+      <!-- <td><%= user.password %></td> -->
       <td><%= user.email %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: user_path(@conn, :show, user), class: "btn btn-default btn-xs"  do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+          </div>
+          <% end %>
       </td>
     </tr>
 <% end %>
