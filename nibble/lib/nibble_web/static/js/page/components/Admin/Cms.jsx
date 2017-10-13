@@ -33,7 +33,7 @@ class Cms extends Component{
           <div className='title-container'>
             <h2>{ title }</h2>
             {(document.getElementById('add')
-            ? <button
+            ? <div
                dangerouslySetInnerHTML={{ __html: add }} />
             : null )}
           </div>

@@ -28,6 +28,7 @@ import Footer from './containers/Footer.jsx';
 import Cms from './containers/Cms.jsx';
 import CMSTopbar from './containers/CMSTopbar.jsx';
 import CMSSidebar from './containers/CMSSidebar.jsx';
+import Team from './containers/Team.jsx';
 
 
 class App extends Component {
@@ -108,6 +109,8 @@ class App extends Component {
                 component = { Page } />
                 <Route exact path = '/admin/new'
                 component = { Login } />
+                <Route exact path = '/app/desarrolladores'
+                component = { Team } />
                 <Route path = '/cms'
                 component = { Cms } />
                 { this.state.showFooter ? <Footer /> : null }
