@@ -8,17 +8,17 @@ class Team extends Component {
       title,
     } = this.props;
 
-    // console.log(team);
-
     let teamRender=team.map((element, index) => (
       <div className='teammate' style={{ backgroundImage: `url(${element.image})`}}
         key={ index }>
         <h6>{ element.name}</h6>
+        <div className='icons'>
         { element.links.map((el, i) => {
-          <div className='icon'>
-            <img src={ el.icon} />
-          </div>
+          return (
+            <img src={ el.icon} key={i} alt="icon"/>
+          )
         })}
+        </div>
       </div>
     ));
 

@@ -39,3 +39,5 @@ export const LANGUAGE = 'LANGUAGE';
 
 //footer
 export const FOOTER_FETCH = 'FOOTER_FETCH';
+
+export const TEAM_FETCH = 'TEAM_FETCH';
