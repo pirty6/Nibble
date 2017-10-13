@@ -48,6 +48,8 @@ class App extends Component {
         if (state.routing.location.pathname.includes('/admin') || state.routing.location.pathname.includes('/cms')) {
           this.setState({ showUserTopbar: false});
           this.setState({ showFooter: false });
+        } else {
+          this.setState({ showFooter: true });
         }
 
         if(state.routing.location.pathname.includes('/cms')) {
@@ -72,6 +74,8 @@ class App extends Component {
 
         if (state.routing.location.pathname.includes('api') || state.routing.location.pathname === '/app'){
           this.setState({ showFooter: false });
+        } else {
+          this.setState({ showFooter: true });
         }
       }
     );
