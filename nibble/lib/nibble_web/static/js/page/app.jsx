@@ -44,17 +44,12 @@ class App extends Component {
         && root.classList) {
           root.classList.remove('a-html');
         }
-
-        if (state.routing.location.pathname.includes('/admin') || state.routing.location.pathname.includes('/cms')) {
+        if(state.routing.location.pathname.includes('/cms/')) {
+          this.setState({ showAdminTopbar: true });
           this.setState({ showUserTopbar: false});
           this.setState({ showFooter: false });
         } else {
           this.setState({ showFooter: true });
-        }
-
-        if(state.routing.location.pathname.includes('/cms')) {
-          this.setState({ showAdminTopbar: true });
-        } else {
           this.setState({ showAdminTopbar: false });
         }
 
@@ -74,8 +69,6 @@ class App extends Component {
 
         if (state.routing.location.pathname.includes('api') || state.routing.location.pathname === '/app'){
           this.setState({ showFooter: false });
-        } else {
-          this.setState({ showFooter: true });
         }
       }
     );
