@@ -36,8 +36,8 @@
   </div>
 
   <div class="form-submit">
-    <div class='cancel-button'>
     <%= link to: place_path(@conn, :index) do %>
+    <div class='cancel-button'>
       Cancelar
     </div>
     <% end %>

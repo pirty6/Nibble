@@ -20,8 +20,10 @@
 </ul>
 
 <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
-<div id="back" class='cancel-button'>
-<%= link to: user_path(@conn, :index) do %>
-  Regresar
+<div id="back">
+  <%= link to: user_path(@conn, :index) do %>
+  <div class='cancel-button'>
+    Regresar
+  </div>
+  <% end %>
 </div>
-<% end %>

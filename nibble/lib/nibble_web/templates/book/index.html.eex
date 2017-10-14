@@ -45,8 +45,10 @@
   </tbody>
 </table>
 
-<div class="button" id="add">
-  <%= link to: book_path(@conn, :new) do %>
+<div id="add">
+<%= link to: book_path(@conn, :new) do %>
+  <button class="button">
     Agregar Libro
+  </button>
   <% end %>
 </div>

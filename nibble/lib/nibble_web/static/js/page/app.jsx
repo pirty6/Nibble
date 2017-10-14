@@ -28,6 +28,7 @@ import Footer from './containers/Footer.jsx';
 import Cms from './containers/Cms.jsx';
 import CMSTopbar from './containers/CMSTopbar.jsx';
 import CMSSidebar from './containers/CMSSidebar.jsx';
+import Team from './containers/Team.jsx';
 
 
 class App extends Component {
@@ -47,6 +48,8 @@ class App extends Component {
         if (state.routing.location.pathname.includes('/admin') || state.routing.location.pathname.includes('/cms')) {
           this.setState({ showUserTopbar: false});
           this.setState({ showFooter: false });
+        } else {
+          this.setState({ showFooter: true });
         }
 
         if(state.routing.location.pathname.includes('/cms')) {
@@ -71,6 +74,8 @@ class App extends Component {
 
         if (state.routing.location.pathname.includes('api') || state.routing.location.pathname === '/app'){
           this.setState({ showFooter: false });
+        } else {
+          this.setState({ showFooter: true });
         }
       }
     );
@@ -108,6 +113,8 @@ class App extends Component {
                 component = { Page } />
                 <Route exact path = '/admin/new'
                 component = { Login } />
+                <Route exact path = '/app/desarrolladores'
+                component = { Team } />
                 <Route path = '/cms'
                 component = { Cms } />
                 { this.state.showFooter ? <Footer /> : null }
