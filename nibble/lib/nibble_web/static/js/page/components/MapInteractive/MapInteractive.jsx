@@ -10,12 +10,11 @@ class MapInteractive extends Component{
 
   state = {
     sector: null,
+    floor: 1,
   };
 
   renderInformation(sector, i) {
     if (sector) {
-      console.log(sector.name);
-      console.log(this.state.sector);
       if (parseInt(sector.sector) === this.state.sector) {
         console.log('entro');
         return (
@@ -24,7 +23,6 @@ class MapInteractive extends Component{
               <img className = 'image' src = { sector.urlthumbimg }/>
               <img className = 'play' src = '/images/play.svg'
               onClick = { () => {
-                /* FIXME  setId is not defined*/
                 this.props.setId(sector.url360); this.props.goToPage();
                 }
               }/>
@@ -59,13 +57,21 @@ class MapInteractive extends Component{
     } = this.props;
 
     let headerInformation = header;
+    let mapImageBot = '/images/piso1_esp.png';
+    let mapImageTop = '/images/piso2_esp.png';
     if (language) {
       if (language === 'es') {
         headerInformation = header;
+        mapImageBot = '/images/piso1_esp.png';
+        mapImageTop = '/images/piso2_esp.png';
       } else if (language === 'en') {
         headerInformation = headerEnglish;
+        mapImageTop = '/images/piso2_ing.png';
+        mapImageBot = '/images/piso1_ing.png';
       } else if (language === 'de') {
         headerInformation = headerGerman;
+        mapImageBot = '/images/piso1_ale.png';
+        mapImageTop = '/images/piso2_ale.png';
       }
     }
 
@@ -89,7 +95,7 @@ class MapInteractive extends Component{
             Hello World!
           </div>
           <div className = 'map'>
-            <img src ='/images/FINAL.png' />
+            <img src = { this.state.floor === 1 ? mapImageBot : mapImageTop } />
             <div className='biblioteca absolute' onClick={ () => { this.setState({sector: 1 })} }></div>
             <div className='biblioteca-bottom absolute' onClick={ () => { this.setState({sector: 1 })} }></div>
             <div className='infantil absolute' onClick={ () => { this.setState({sector: 2 })} }></div>
