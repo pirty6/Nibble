@@ -46,7 +46,6 @@ class MapInteractive extends Component{
   render() {
     const {
       header,
-      sites,
       idVr,
       setId,
       goToPage,
@@ -54,21 +53,43 @@ class MapInteractive extends Component{
       language,
       headerGerman,
       page,
+      button,
+      buttonGerman,
+      buttonEnglish,
+      buttonFirst,
+      buttonEnglishFirst,
+      buttonGermanFirst,
     } = this.props;
 
     let headerInformation = header;
     let mapImageBot = '/images/piso1_esp.png';
     let mapImageTop = '/images/piso2_esp.png';
+    let buttonRender = button;
     if (language) {
       if (language === 'es') {
         headerInformation = header;
+        if (this.state.floor === 1) {
+          buttonRender = button;
+        } else {
+          buttonRender = buttonFirst;
+        }
         mapImageBot = '/images/piso1_esp.png';
         mapImageTop = '/images/piso2_esp.png';
       } else if (language === 'en') {
+        if (this.state.floor === 1) {
+          buttonRender = buttonEnglish;
+        } else {
+          buttonRender = buttonEnglishFirst;
+        }
         headerInformation = headerEnglish;
         mapImageTop = '/images/piso2_ing.png';
         mapImageBot = '/images/piso1_ing.png';
       } else if (language === 'de') {
+        if (this.state.floor === 1) {
+          buttonRender = buttonGerman;
+        } else {
+          buttonRender = buttonGermanFirst;
+        }
         headerInformation = headerGerman;
         mapImageBot = '/images/piso1_ale.png';
         mapImageTop = '/images/piso2_ale.png';
@@ -92,7 +113,15 @@ class MapInteractive extends Component{
         <Header { ...headerInformation }/>
         <div className = 'map-container'>
           <div className = 'information'>
-            Hello World!
+            <div className='container'>
+              <h2></h2>
+              <div className='primary-button'
+                onClick={ () => { this.state.floor === 1 ?
+                   this.setState({ floor: 2 })
+                   : this.setState({ floor: 1 })}}>
+                <span>{ buttonRender }</span>
+              </div>
+            </div>
           </div>
           <div className = 'map'>
             <img src = { this.state.floor === 1 ? mapImageBot : mapImageTop } />
@@ -100,7 +129,10 @@ class MapInteractive extends Component{
             <div className='biblioteca-bottom absolute' onClick={ () => { this.setState({sector: 1 })} }></div>
             <div className='infantil absolute' onClick={ () => { this.setState({sector: 2 })} }></div>
             <div className='intantil-bottom absolute' onClick={ () => { this.setState({sector: 2 })} }></div>
-            <div className='patio absolute' onClick={ () => { this.setState({sector: 3 })} }></div>
+            {
+              this.state.floor === 1 ? <div className='patio absolute' onClick={ () => { this.setState({sector: 3 })} }></div>
+              : null
+            }
             <div className='aulas absolute' onClick={ () => { this.setState({sector: 4 })} }></div>
             <div className='galerias absolute' onClick={ () => { this.setState({sector: 5 })} }></div>
             <div className='aulas-top absolute' onClick={ () => { this.setState({sector: 5 })} }></div>

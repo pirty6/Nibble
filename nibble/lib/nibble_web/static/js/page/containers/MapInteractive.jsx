@@ -8,12 +8,17 @@ import { push } from 'react-router-redux';
 function mapStateToProps(state) {
   return {
     header: state.map.header,
-    sites: state.map.sites,
     idVr: state.site.id,
     headerEnglish: state.map.headerEnglish,
     language: state.language.language,
     headerGerman: state.map.headerGerman,
     page: state.page.locationBeforeTransitions,
+    button: state.map.button,
+    buttonEnglish: state.map.buttonEnglish,
+    buttonGerman: state.map.buttonGerman,
+    buttonFirst: state.map.buttonFirst,
+    buttonGermanFirst: state.map.buttonGermanFirst,
+    buttonEnglishFirst: state.map.buttonEnglishFirst,
   };
 }
 
