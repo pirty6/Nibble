@@ -105,6 +105,7 @@ class MapInteractive extends Component{
             <div className='galerias absolute' onClick={ () => { this.setState({sector: 5 })} }></div>
             <div className='aulas-top absolute' onClick={ () => { this.setState({sector: 5 })} }></div>
             <div className='galerias-top absolute' onClick={ () => { this.setState({sector: 4 })} }></div>
+            <div className='pendulo absolute' onClick={ () => { this.setState({sector: 6 })}}></div>
           </div>
         </div>
         { place }
