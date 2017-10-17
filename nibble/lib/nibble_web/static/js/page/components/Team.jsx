@@ -11,6 +11,7 @@ class Team extends Component {
     let teamRender=team.map((element, index) => (
       <div className='teammate' style={{ backgroundImage: `url(${element.image})`}}
         key={ index }>
+        <div className='cover' />
         <h6>{ element.name}</h6>
         <div className='icons'>
         { element.links.map((el, i) => {

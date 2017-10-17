@@ -8,6 +8,7 @@ import HeroReducer from './data/Hero';
 import LocationReducer from './data/Page';
 import FooterReducer from './data/Footer';
 import TeamReducer from './data/Team';
+import TermsReducer from './data/Terms';
 
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
@@ -27,6 +28,7 @@ reducersJson['language'] = UILanguageReducer;
 
 //Data Reducers
 reducersJson['page'] = LocationReducer;
+reducersJson['terms'] = TermsReducer;
 reducersJson['topbar'] = TopbarReducer;
 reducersJson['library'] = LibraryReducer;
 reducersJson['map'] = MapReducer;

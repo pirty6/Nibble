@@ -41,3 +41,7 @@ export const LANGUAGE = 'LANGUAGE';
 export const FOOTER_FETCH = 'FOOTER_FETCH';
 
 export const TEAM_FETCH = 'TEAM_FETCH';
+
+export const PRIVACY_FETCH = 'PRIVACY_FETCH';
+
+export const TERMS_FETCH = 'TERMS_FETCH';
