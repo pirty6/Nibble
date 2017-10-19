@@ -9,6 +9,7 @@ import LocationReducer from './data/Page';
 import FooterReducer from './data/Footer';
 import TeamReducer from './data/Team';
 import TermsReducer from './data/Terms';
+import PrivacyReducer from './data/Privacy';
 
 import UISlideReducer from './ui/slide';
 import UIModalReducer from './ui/modal';
@@ -21,6 +22,7 @@ const reducersJson = {
 };
 
 //UI Reducers
+reducersJson['privacy'] = PrivacyReducer;
 reducersJson['slide'] = UISlideReducer;
 reducersJson['modal'] = UIModalReducer;
 reducersJson['site'] = UIIDReducer;
