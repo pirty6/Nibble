@@ -6,9 +6,9 @@ import SiteMap from '../components/SiteMap.jsx';
 function mapStateToProps(state) {
   return {
     language: state.language.language,
-    img: '/images/Site Map_ESP.png',
-    imgEn: '/images/Site Map_ING.png',
-    imgGe: '/images/Site Map_ALE.png',
+    img: '/images/SiteMap_ESP.png',
+    imgEn: '/images/SiteMap_ING.png',
+    imgGe: '/images/SiteMap_ALE.png',
   }
 }
 

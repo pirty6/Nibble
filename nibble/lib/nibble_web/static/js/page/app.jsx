@@ -31,6 +31,7 @@ import CMSSidebar from './containers/CMSSidebar.jsx';
 import Team from './containers/Team.jsx';
 import Terms from './containers/Terms.jsx';
 import Privacy from './containers/Privacy.jsx';
+import SiteMap from './containers/SiteMap.jsx';
 
 
 class App extends Component {
@@ -116,6 +117,8 @@ class App extends Component {
                 component = { Terms } />
                 <Route exact path = '/app/privacidad'
                 component = { Privacy } />
+                <Route exact path = '/app/mapa-sitio'
+                component = { SiteMap } />
                 { this.state.showFooter ? <Footer /> : null }
             </div>
           )}>
