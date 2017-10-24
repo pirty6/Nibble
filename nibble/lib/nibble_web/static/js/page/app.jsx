@@ -61,7 +61,15 @@ class App extends Component {
           document.body.classList.remove('a-body');
         }
 
-        if (state.routing.location.pathname == '/app') {
+        if (state.slide.slide === true){
+          document.body.classList.add('overflow');
+        }
+
+        if (state.slide.slide === false && document.body.classList) {
+          document.body.classList.remove('overflow');
+        }
+
+        if (state.routing.location.pathname === '/app') {
           document.body.classList.add('toggle-hero');
         }
 
