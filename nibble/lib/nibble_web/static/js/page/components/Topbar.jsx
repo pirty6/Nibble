@@ -2,6 +2,25 @@
 import React, { Component } from 'react';
 
 class Topbar extends Component {
+  state = {
+    showScrollBar: window.innerWidth <= 1024,
+  };
+
+  componentDidMount() {
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && this.props.slide === false) {
+        this.setState({ showScrollBar: false });
+      } else if (st <= 3 && this.props.slide === false && window.innerWidth > 1024) {
+        this.setState({ showScrollBar: false });
+      } else {
+        this.setState({ showScrollBar: true });
+      }
+      lastScrollTop = st;
+    }, false);
+  }
+
   render() {
     const {
       links,
@@ -16,6 +35,7 @@ class Topbar extends Component {
       language,
       linksGerman,
     } = this.props;
+
 
     let linksInformation = links;
     if (language) {
@@ -37,8 +57,17 @@ class Topbar extends Component {
       </div>
     ));
 
-    return (
-      <div className = {'topbar ' + (idVr ? 'vr-active' : 'vr-not-active')}>
+    let navRender = linksInformation.map((element, index) => (
+      <div className='nav' key={ index } onClick={
+        () => {(element.flag ? (goToPage(element.link))
+        : window.location = element.link);
+      }}>
+        <h6>{ element.title }</h6>
+      </div>
+    ));
+
+    const navBarScroll = (
+      <div className={`nav-bar-scroll ${this.state.showScrollBar ? 'show' : 'hidden'}`}>
         <div className = 'container'>
           <div className='column'>
             <div className='column-container' onClick = { goToHome }>
@@ -66,6 +95,31 @@ class Topbar extends Component {
             { linksRender }
           </div>
         </div>
+      </div>
+    );
+
+    const navBarHeader = (
+      <div className='nav-bar-header'>
+        <div className='container'>
+          <div className='column'>
+            <div className='column-container' onClick = { goToHome }>
+              <img src={logo} className='logo' type='image/svg+xml' />
+              <img src={name} className='name' type='image/svg+xml' />
+            </div>
+          </div>
+          <div className='column column-nav'>
+            <div className='nav-container'>
+              { navRender }
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
+      <div className = {'topbar ' + (idVr ? 'vr-active' : 'vr-not-active')}>
+        { navBarHeader }
+        { navBarScroll }
       </div>
     );
   }

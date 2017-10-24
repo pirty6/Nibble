@@ -1,15 +1,104 @@
 .topbar{
-  height:48px;
-  display:flex;
-  justify-content:center;
-  width:100%;
-  box-sizing:border-box;
-  position:absolute;
-  top:0;
-  z-index:10;
-  padding-right: 4rem;
-  padding-left: 4rem;
-  &>.container{
+  & .nav{
+    cursor: pointer;
+  }
+  & .logo{
+    width:24px;
+  }
+  & .name{
+    height:24px;
+  }
+  & .column-container{
+    cursor: pointer;
+  }
+  &>.nav-bar-scroll{
+    width:100vw;
+    background-color: #fff;
+    height:64px;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    z-index: 100;
+    &>.container{
+      width:1330px;
+      display: flex;
+      box-sizing: border-box;
+      padding-right: 4rem;
+      padding-left: 4rem;
+      &>.column{
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+      }
+      &>.column-menu{
+        justify-content: flex-end;
+      }
+    }
+    &>.navigation{
+      background-color: var(--white);
+      transition: all .6s ease-in-out;
+      height:100vh;
+      width:var(--width-drawer);
+      top:0;
+      position:fixed;
+      z-index:-1;
+      display: flex;
+      box-sizing: border-box;
+      justify-content:center;
+      align-items:center;
+      box-shadow: -6px 3px 6px var(--shadow);
+      z-index:-1;
+      & .nav{
+        margin-bottom:1rem;
+      }
+    }
+    &>.hidden {
+      right: calc(-var(--width-drawer)-6px);
+    }
+    &>.show {
+      right: 0px;
+    }
+  }
+  &>.hidden{
+    top:-100%;
+    -webkit-transition:top 2s;
+    transition: top 2s;
+  }
+  &>.show{
+    top: 0;
+    -webkit-transition: top 1.5s;
+    transition: top 1.5s;
+  }
+  &>.nav-bar-header{
+    background-color: #fff;
+    height:64px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    &>.container{
+      width: 1330px;
+      display: flex;
+      box-sizing: border-box;
+      padding-right: 4rem;
+      padding-left: 4rem;
+      &>.column-nav{
+        justify-content: flex-end;
+      }
+      &>.column{
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        &>.nav-container{
+          display: flex;
+          lost-column:3/4;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  /*&>.container{
     z-index:100;
     display:flex;
     justify-content:flex-end;
@@ -65,7 +154,7 @@
   }
   &>.show {
     right: 0px;
-  }
+  }*/
 }
 
 .vr-active{
