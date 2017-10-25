@@ -12,6 +12,7 @@ function mapStateToProps(state) {
     headerEnglish: state.library.headerEnglish,
     language: state.language.language,
     headerGerman: state.library.headerGerman,
+    genres: state.library.genres,
   };
 }
 

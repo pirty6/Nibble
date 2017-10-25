@@ -26,7 +26,17 @@ const initialState = {
           image: {
             desktop: '/images/book-1200.jpg',
           },
-        },
+      },
+      genres: [
+        { name: 'Comedia'},
+        { name: 'Terror' },
+        { name: 'Drama' },
+        { name: 'Ficción'},
+        { name: 'Policial'},
+        { name: 'Romántica'},
+        { name: 'Aventura'},
+        { name: 'Otros'},
+      ],
 };
 
 export default function (state = initialState, action = {}) {
