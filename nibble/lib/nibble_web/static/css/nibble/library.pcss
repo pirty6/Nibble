@@ -1,11 +1,33 @@
 .library{
-  padding-bottom:3rem;
+  &>.search-bar{
+    position:relative;
+    & h6{
+      cursor:pointer;
+    }
+    &>.advance-search{
+      position:absolute;
+      top:0;
+      transition: all .6s ease-in-out;
+      z-index:1;
+      width:250px;
+      background-color: white;
+      &>span{
+        cursor:pointer;
+      }
+    }
+    &>.hidden{
+      left: -250px;
+    }
+    &>.show{
+      left:0px;
+    }
+  }
   &>.books-container{
     padding-top:64px;
-
     display:flex;
     box-sizing: border-box;
     justify-content:center;
+    padding-bottom:3rem;
     &>.container{
       width:1024px;
       display:flex;

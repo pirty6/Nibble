@@ -11,12 +11,14 @@ class Library extends Component{
     this.updateInputValue = this.updateInputValue.bind(this);
     this.optionChecked = this.optionChecked.bind(this);
     this.renderBooks = this.renderBooks.bind(this);
+    this.showAdvanceSearch = this.showAdvanceSearch.bind(this);
   }
 
   state = {
     element: null,
     inputValue: '',
     selectedOption: 'title',
+    showAdvance: false,
   };
 
   //function for rendering a specific image
@@ -106,6 +108,11 @@ class Library extends Component{
     return null;
   }
 
+  showAdvanceSearch(){
+    this.setState({showAdvance: !this.state.showAdvance});
+  }
+
+
   render() {
     const {
       header,
@@ -149,21 +156,24 @@ class Library extends Component{
       }
     });
 
-    console.log(this.state.genres);
+    console.log(this.state.showAdvance);
 
+    let height;
+    this.container ? height = this.container.clientHeight : null;
+    this.bar ? height = height + this.bar.clientHeight : null;
     return (
       <div className = 'library'>
         <Header { ...headerInformation }/>
-        <div className='search-bar'>
+        <div className='search-bar' ref = {(bar) => {this.bar = bar}}>
           <div className='container'>
             <div className='search'>
               <input type="text" value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)}/>
-              <h6>Busqueda Avanzada</h6>
+              <h6 onClick = {() => this.showAdvanceSearch() }>Busqueda Avanzada</h6>
             </div>
           </div>
-          <div className='advance-search'>
+          <div className={'advance-search ' + (this.state.showAdvance ? 'show' : 'hidden')} style = {height ? {height: height} : null }>
+            <span onClick = { () => this.showAdvanceSearch() }>X</span>
             <div className='container'>
-              <span>X</span>
               <div className='options-container'>
                 <div className='option'>
                   <input type="radio" onChange={() => this.optionChecked('title')} checked={this.state.selectedOption === 'title' ? true : false} /><p>Título</p>
@@ -188,7 +198,7 @@ class Library extends Component{
             </div>
           </div>
         </div>
-        <div className = 'books-container'>
+        <div className = 'books-container' ref = {(container) => {this.container = container;}}>
           <div className = 'container'>
             { currentPage ? book : null }
             <div className = {`modal ${toggle ? 'show' : 'hidden'}`}>
