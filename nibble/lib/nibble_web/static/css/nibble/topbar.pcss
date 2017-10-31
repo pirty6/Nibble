@@ -30,6 +30,10 @@
       @media(--tablet-screens), (--mobile-screens){
         width:100%;
       }
+      @media(--mobile-screens){
+        padding-left:0.75rem;
+        padding-right: 1.5rem;
+      }
       &>.column{
         display: flex;
         flex-grow: 1;
@@ -54,9 +58,9 @@
       box-shadow: -6px 3px 6px var(--shadow);
       z-index:-1;
       @media(--tablet-screens), (--mobile-screens){
-        width:100vw
-        ;
+        width:100vw;
         box-shadow: none;
+        text-align: center;
       }
       & .nav{
         margin-bottom:1rem;

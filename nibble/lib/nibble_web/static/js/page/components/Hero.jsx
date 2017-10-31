@@ -1,7 +1,19 @@
 'use strict';
 import React, { Component } from 'react';
+import inViewport from 'in-viewport';
 
 class Hero extends Component {
+
+  componentDidMount() {
+    this.watcher = inViewport(this.title, this.title.classList.add('title'));
+    this.watcherSubtitle = inViewport(this.subtitle, this.subtitle.classList.add('subtitle'));
+  }
+
+  componentWillUnmount(){
+    this.watcher.dispose();
+    this.watcherSubtitle.dispose();
+  }
+
   render() {
     const{
       hero,
@@ -21,6 +33,8 @@ class Hero extends Component {
       }
     }
 
+    console.log(heroInformation.logos.mobile);
+
     return (
       <div className = 'hero'>
         <div className = 'container'>
@@ -33,9 +47,13 @@ class Hero extends Component {
             </picture>
           </div>
           <div className = 'right-column'>
-            <h1>{ heroInformation.title }</h1>
-            <h3 className = 'subtitle'>{ heroInformation.subtitle }</h3>
-            <img src = { heroInformation.logos.desktop }/>
+            <h1 ref={(title) => { this.title = title; }}>{ heroInformation.title }</h1>
+            <h3 ref={(subtitle) => { this.subtitle = subtitle; }} className = 'subtitle'>{ heroInformation.subtitle }</h3>
+            <picture>
+              <source media = '(min-width:400px)' srcSet={ heroInformation.logos.desktop}/>
+              <source media = '(max-width:400px)' srcSet={ heroInformation.logos.mobile }/>
+              <img src = { heroInformation.image.desktop }/>
+            </picture>
           </div>
         </div>
       </div>
