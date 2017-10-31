@@ -102,6 +102,10 @@ an-array@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/an-array/-/an-array-1.0.0.tgz#c125a5bb8257778e35f4b4f6aa9c7d0fa9e42665"
 
+animejs@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-1.1.1.tgz#be910a58735b467a52ccd858ea60f02f877bd92e"
+
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -3958,6 +3962,12 @@ react-addons-css-transition-group@^15.5.2:
   resolved "https://registry.yarnpkg.com/react-addons-css-transition-group/-/react-addons-css-transition-group-15.6.0.tgz#69887cf6e4874d25cd66e22a699e29f0d648aba0"
   dependencies:
     react-transition-group "^1.2.0"
+
+react-anime@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/react-anime/-/react-anime-0.3.4.tgz#e11c9d0b79b09bbfdc98b5f4a04b6004530ef683"
+  dependencies:
+    animejs "1.1.1"
 
 react-datetime@^2.8.10:
   version "2.9.0"
