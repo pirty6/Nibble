@@ -13,6 +13,16 @@ defmodule NibbleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
+  end
+
+  pipeline :ensure_authed_access do
+    plug Guardian.Plug.EnsureAuthenticated,handler: GuardianAuth.HttpErrorHandler
+  end
+
   scope "/", NibbleWeb do
     pipe_through :browser # Use the default browser stack
     # get "/", PlaceController, :index
@@ -61,12 +71,21 @@ defmodule NibbleWeb.Router do
   end
 
   scope "/cms", NibbleWeb do
-    pipe_through :browser
+    pipe_through [:browser,:browser_auth]
+    get "/", SessionController, :new
+    resources "/", SessionController, only: [:new, :create,:delete  ]
+    resources "/usuarios", UserController, only: [:new,:create]
+  end
+
+  scope "/cms", NibbleWeb do
+    pipe_through [:browser,:browser_auth,:ensure_authed_access]
     # get "/*path", PageController, :apps
     resources "/libreria", BookController
-    resources "/usuarios", UserController
+    resources "/usuarios", UserController, only: [:show, :index, :update,:edit,:delete]
     resources "/sectores", PlaceController
   end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do

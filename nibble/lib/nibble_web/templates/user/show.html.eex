@@ -7,10 +7,10 @@
     <%= @user.name %>
   </li>
 
-  <li>
+  <!-- <li>
     <strong>Password:</strong>
     <%= @user.password %>
-  </li>
+  </li> -->
 
   <li>
     <strong>Email:</strong>
