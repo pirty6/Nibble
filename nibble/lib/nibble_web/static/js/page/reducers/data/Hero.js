@@ -12,6 +12,7 @@ const initialState = {
     },
     logos: {
       desktop: '/images/capa-12.jpg',
+      mobile: '/images/capa-12M.jpg',
     },
   },
   heroGerman: {
@@ -23,6 +24,7 @@ const initialState = {
     },
     logos: {
       desktop: '/images/capa-12.jpg',
+      mobile: '/images/capa-12M.jpg',
     },
   },
   heroEnglish:{
@@ -34,6 +36,7 @@ const initialState = {
     },
     logos: {
       desktop: '/images/capa-12.jpg',
+      mobile: '/images/capa-12M.jpg',
     },
   },
 };
