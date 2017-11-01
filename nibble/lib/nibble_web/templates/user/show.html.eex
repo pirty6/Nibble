@@ -3,16 +3,6 @@
 <ul id="showBooks">
 
   <li>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </li>
-
-  <!-- <li>
-    <strong>Password:</strong>
-    <%= @user.password %>
-  </li> -->
-
-  <li>
     <strong>Email:</strong>
     <%= @user.email %>
   </li>
@@ -21,9 +11,8 @@
 
 <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
 <div id="back">
-  <%= link to: user_path(@conn, :index) do %>
+  <%= link "Back", to: user_path(@conn, :index) %>
   <div class='cancel-button'>
     Regresar
   </div>
-  <% end %>
 </div>

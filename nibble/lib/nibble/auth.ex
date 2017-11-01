@@ -1,5 +1,5 @@
 defmodule Nibble.Auth do
-  # import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
+  import Comeonin.Pbkdf2, only: [checkpw: 2, dummy_checkpw: 0]
   alias Nibble.Accounts.User
 
   def login(conn, user) do
@@ -10,14 +10,14 @@ defmodule Nibble.Auth do
   def login_by_email_and_pass(conn, email, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
     user = repo.get_by(User, email: email)
-    # cond do
-    #   user && checkpw(given_pass, user.password_hash) ->
-    #     {:ok, login(conn, user)}
-    #   user ->
-    #     {:error, :unauthorized, conn}
-    #   true ->
-    #     dummy_checkpw()
-    #     {:error, :not_found, conn}
-    # end
+    cond do
+      user && checkpw(given_pass, user.password_hash) ->
+        {:ok, login(conn, user)}
+      user ->
+        {:error, :unauthorized, conn}
+      true ->
+        dummy_checkpw()
+        {:error, :not_found, conn}
+    end
   end
 end

@@ -44,6 +44,7 @@ defmodule Nibble.Mixfile do
       {:ex_doc, "~> 0.16", only: :dev, runtime: false},
       {:comeonin, "~> 4.0"},
       # {:bcrypt_elixir, "~> 1.0"},
+      {:pbkdf2_elixir, "~>0.12"},
       {:guardian, "~> 0.14"}
     ]
   end

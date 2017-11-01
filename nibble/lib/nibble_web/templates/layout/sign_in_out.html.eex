@@ -1,0 +1,12 @@
+<%= if Guardian.Plug.authenticated?(@conn) do %>
+  <li>
+	<%= link "Sign out", to: session_path(@conn, :delete, Guardian.Plug.current_resource(@conn)),  method: :delete, class: "label label-danger" %><br>
+    </li>
+    <li>
+	<%= link Guardian.Plug.current_resource(@conn).email, to: user_path(@conn,:show, Guardian.Plug.current_resource(@conn)), class: "label label-primary pull-right" %>
+    </li>
+<% else %>
+    <li>
+	<%= link "Sign in", to: session_path(@conn, :new), class: "label label-info" %>
+    </li>
+<% end %>

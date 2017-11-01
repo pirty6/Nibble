@@ -19,17 +19,13 @@ defmodule NibbleWeb.Router do
     plug Guardian.Plug.LoadResource
   end
 
-  pipeline :ensure_authed_access do
-    plug Guardian.Plug.EnsureAuthenticated,handler: GuardianAuth.HttpErrorHandler
-  end
-
-  scope "/", NibbleWeb do
-    pipe_through :browser # Use the default browser stack
-    # get "/", PlaceController, :index
-    # resources "/bookscms", BookController
-    # get "/indexcms", BookController, :indexcms
-    get "/", PageController, :index
-  end
+  # scope "/", NibbleWeb do
+  #   pipe_through :browser # Use the default browser stack
+  #   # get "/", PlaceController, :index
+  #   # resources "/bookscms", BookController
+  #   # get "/indexcms", BookController, :indexcms
+  #   get "/", PageController, :index
+  # end
 
   scope "/app", NibbleWeb do
     pipe_through :browser # Use the default browser stack
@@ -64,31 +60,41 @@ defmodule NibbleWeb.Router do
   #
   # end
 
-  scope "/api/users", NibbleWeb do
-    pipe_through :browser
+  # scope "/api/users", NibbleWeb do
+  #   pipe_through :browser
+  # end
 
-    # resources "/", UserController
+
+  pipeline :ensure_authed_access do
+    plug Guardian.Plug.EnsureAuthenticated,handler: Nibble.HttpErrorHandler
   end
 
   scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth]
-    get "/", SessionController, :new
-    resources "/", SessionController, only: [:new, :create,:delete  ]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/usuarios", UserController, only: [:new,:create]
   end
 
   scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth,:ensure_authed_access]
-    # get "/*path", PageController, :apps
+    get "/", UserController, :show
     resources "/libreria", BookController
     resources "/usuarios", UserController, only: [:show, :index, :update,:edit,:delete]
     resources "/sectores", PlaceController
   end
 
+  scope "/", NibbleWeb do
+    pipe_through [:browser,:browser_auth]
+    resources "/sessions", SessionController, only: [:new, :create,:delete  ]
+    resources "/users", UserController, only: [:new,:create]
+
+  end
 
 
-  # Other scopes may use custom stacks.
-  # scope "/api", NibbleWeb do
-  #   pipe_through :api
-  # end
+  scope "/", NibbleWeb do
+    pipe_through [:browser,:browser_auth,:ensure_authed_access]
+    get "/", PageController, :index
+    resources "/users", UserController, only: [:show, :index, :update,:edit,:delete]
+  end
+
 end

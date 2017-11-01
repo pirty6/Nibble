@@ -26,6 +26,7 @@ defmodule Nibble.Accounts.User do
     |> put_password_hash()
   end
 
+	@doc false
   def registration_changeset(%User{} = user, params) do
   user
   |> changeset(params)
@@ -38,7 +39,7 @@ defmodule Nibble.Accounts.User do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
         put_change(changeset, :password_hash,
-                   Comeonin.Bcrypt.hashpwsalt(pass))
+                   Comeonin.Pbkdf2.hashpwsalt(pass))
         _ ->
           changeset
     end
