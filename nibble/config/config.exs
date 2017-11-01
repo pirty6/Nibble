@@ -29,3 +29,7 @@ import_config "#{Mix.env}.exs"
 config :mime, :types, %{
   "application/json" => ["json"]
 }
+
+config :nibble, Nibble.Guardian,
+       issuer: "nibble",
+       secret_key: "fAw+aLtzp8ZHZ5xnuxl6vzwlcO5GrFMDvf+VHeBrUuLb3KuekxB4PZNeZlP5bms6"

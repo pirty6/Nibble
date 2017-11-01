@@ -4,6 +4,30 @@ defmodule NibbleWeb.UserController do
   alias Nibble.Accounts
   alias Nibble.Accounts.User
 
+  def sign_in(conn, %{"password" => "password"}) do
+    user = %{id: "1"}
+
+    conn
+    |> Nibble.Guardian.Plug.sign_in(user)
+    |> send_resp(204, "")
+  end
+
+  def sign_in(conn, _params) do
+    send_resp(conn, 401, Poison.encode!(%{error: "Incorrect password"}))
+  end
+
+  def sign_out(conn, _params) do
+    conn
+    |> Nibble.Guardian.Plug.sign_out()
+    |> send_resp(204, "")
+  end
+
+  def show(conn, params) do
+    user = Nibble.Guardian.Plug.current_resource(conn)
+
+    send_resp(conn, 200, Poison.encode!(%{user: user}))
+  end
+
   def index(conn, _params) do
     users = Accounts.list_users()
     render(conn, "index.html", users: users)
