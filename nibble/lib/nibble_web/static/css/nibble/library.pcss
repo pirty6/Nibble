@@ -28,11 +28,26 @@
     box-sizing: border-box;
     justify-content:center;
     padding-bottom:3rem;
+    @media(--mobile-screens){
+      padding-top: 1rem;
+    }
     &>.container{
       width:1024px;
       display:flex;
       flex-wrap:wrap;
       justify-content:space-between;
+      @media(--tablet-screens), (--mobile-screens){
+        width:100%;
+      }
+      @media(--tablet-screens){
+        padding-right:3rem;
+        padding-left: 3rem;
+      }
+      @media(--mobile-screens){
+        padding-left: 1rem;
+        padding-right: 1rem;
+        justify-content: center;
+      }
       &>.book{
         width:296px;
         height:396px;

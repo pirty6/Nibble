@@ -10,6 +10,9 @@
     background-size:cover;
     background-repeat: no-repeat;
     overflow:hidden;
+    @media(--mobile-screens){
+      height: 40vw;
+    }
   }
   &>.container{
     width:1330px;
@@ -18,11 +21,20 @@
     display: flex;
     align-items: center;
     box-sizing:border-box;
+    @media(--tablet-screens), (--mobile-screens){
+      width:100%;
+    }
+    @media(--mobile-screens){
+      padding-left: 1rem;
+    }
     &>.container-text{
-      lost-column:2/3;
+      lost-column:3/4;
       &>h4{
         margin-top:5px;
         lost-column:3/6;
+        @media(--mobile-screens){
+          lost-column:6/6;
+        }
       }
     }
   }

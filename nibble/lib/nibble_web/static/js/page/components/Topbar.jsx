@@ -12,7 +12,7 @@ class Topbar extends Component {
       const st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop && this.props.slide === false) {
         this.setState({ showScrollBar: false });
-      } else if (st <= 3 && this.props.slide === false && window.innerWidth > 1024) {
+      } else if (st <= 3 && this.props.slide === false && (window.innerWidth > 1024)) {
         this.setState({ showScrollBar: false });
       } else {
         this.setState({ showScrollBar: true });
@@ -22,6 +22,7 @@ class Topbar extends Component {
   }
 
   render() {
+    console.log(window.innerWidth>1024);
     const {
       links,
       slide,
