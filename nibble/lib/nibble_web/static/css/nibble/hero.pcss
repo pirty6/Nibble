@@ -20,8 +20,9 @@
       @media(--tablet-screens), (--mobile-screens){
         display: none;
       }
-      &>.image{
-        transition: transform 0.5s 0.5s, opacity 0.5s 0.5s;
+      & img{
+        opacity: 0;
+        animation: fade 0.8s 0.8s forwards;
       }
       /*&>img{
         top:0;

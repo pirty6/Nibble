@@ -33,13 +33,10 @@ class Hero extends Component {
       }
     }
 
-    console.log(heroInformation.logos.mobile);
-
     return (
       <div className = 'hero'>
         <div className = 'container'>
           <div className = 'left-column'>
-            {/* TODO ASSETS */}
             <picture className = 'image'>
               <source media = '(max-width:1366px)' srcSet={heroInformation.image.desktop}/>
               <source media = '(min-width:1366px)' srcSet={heroInformation.image.hd}/>
