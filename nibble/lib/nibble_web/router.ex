@@ -9,6 +9,16 @@ defmodule NibbleWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
+  end
+
+  pipeline :ensure_authed_access do
+    plug Guardian.Plug.EnsureAuthenticated,handler: Nibble.HttpErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -60,9 +70,16 @@ defmodule NibbleWeb.Router do
     # resources "/", UserController
   end
 
+  scope "/", NibbleWeb do
+    pipe_through [:browser,:browser_auth]
+    resources "/sessions", SessionController, only: [:new, :create,:delete  ]
+    resources "/cms/usuarios", UserController, only: [:new,:create]
+  end
+
   scope "/cms", NibbleWeb do
-    pipe_through :browser
+    pipe_through [:browser,:browser_auth,:ensure_authed_access]
     # get "/*path", PageController, :apps
+    get "/", UserController, :index
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
