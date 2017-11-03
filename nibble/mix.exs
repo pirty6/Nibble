@@ -41,7 +41,10 @@ defmodule Nibble.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:ex_doc, "~> 0.16", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.16", only: :dev, runtime: false},
+      {:comeonin, "~> 4.0"},
+      {:pbkdf2_elixir, "~>0.12"},
+      {:guardian, "~> 0.14"}
     ]
   end
 

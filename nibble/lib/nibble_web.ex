@@ -40,6 +40,7 @@ defmodule NibbleWeb do
       import NibbleWeb.Router.Helpers
       import NibbleWeb.ErrorHelpers
       import NibbleWeb.Gettext
+      import Nibble.Session
     end
   end
 

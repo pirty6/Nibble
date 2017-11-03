@@ -1,10 +1,8 @@
 <h2>Listing Users</h2>
 
-<table id="showBooks" class="table">
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <!-- <th>Password</th> -->
       <th>Email</th>
 
       <th></th>
@@ -13,37 +11,15 @@
   <tbody>
 <%= for user <- @users do %>
     <tr>
-      <td><%= user.name %></td>
-      <!-- <td><%= user.password %></td> -->
       <td><%= user.email %></td>
-
       <td class="text-right">
-        <div class="container">
-          <div class="icon-container">
-            <%= link to: user_path(@conn, :show, user), class: "btn btn-default btn-xs"  do %>
-            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
-          </div>
-          <% end %>
-          <div class="icon-container">
-            <%= link to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" do %>
-            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
-          </div>
-          <% end %>
-          <div class="icon-container">
-            <%= link to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
-            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
-          </div>
-          <% end %>
+        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<div id="add">
-  <%= link to: user_path(@conn, :new) do %>
-  <button class="button">
-    Agregar Sección
-  </button>
-  <% end %>
-</div>
+<span><%= link "New User", to: user_path(@conn, :new) %></span>
