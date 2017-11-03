@@ -83,7 +83,7 @@ defmodule NibbleWeb.UserController do
   end
 
   def delete(conn, %{"id" => id}) do
-    user = Repo.get(User, id)
+    user = Accounts.get_user!(id)
     cond do
       user == Guardian.Plug.current_resource(conn) ->
         case Repo.delete(user) do
