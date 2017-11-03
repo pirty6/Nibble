@@ -79,11 +79,13 @@ defmodule NibbleWeb.Router do
   scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth,:ensure_authed_access]
     # get "/*path", PageController, :apps
-    get "/", UserController, :index
+    resources "/", LogController, only: [:index]
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
   end
+
+  scope "/"
 
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do
