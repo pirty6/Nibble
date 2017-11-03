@@ -47,6 +47,10 @@ class App extends Component {
         && root.classList) {
           root.classList.remove('a-html');
         }
+        if (state.routing.location.pathname.includes('/sessions/')){
+          this.setState({showAdminTopbar: false});
+          this.setState({showUserTopbar: false});
+        }
         if(state.routing.location.pathname.includes('/cms/')) {
           this.setState({ showAdminTopbar: true });
           this.setState({ showUserTopbar: false});
@@ -115,7 +119,7 @@ class App extends Component {
                 component = { VRScene }/>
               <Route exact path = '/app/page'
                 component = { Page } />
-                <Route exact path = '/admin/new'
+                <Route exact path = '/sessions/new'
                 component = { Login } />
                 <Route exact path = '/app/desarrolladores'
                 component = { Team } />

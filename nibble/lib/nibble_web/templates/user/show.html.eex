@@ -1,16 +1,16 @@
 <h2>Show User</h2>
 
 <ul id="showBooks">
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
 
   <li>
     <strong>Password:</strong>
     <%= @user.password %>
   </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </li>
 
 </ul>
 
