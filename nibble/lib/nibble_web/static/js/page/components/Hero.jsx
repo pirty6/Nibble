@@ -10,8 +10,8 @@ class Hero extends Component {
   }
 
   componentWillUnmount(){
-    this.watcher.dispose();
-    this.watcherSubtitle.dispose();
+    // this.watcher.dispose();
+    // this.watcherSubtitle.dispose();
   }
 
   render() {
