@@ -8,9 +8,10 @@ class Header extends Component{
         <div className = 'container'>
           <div className = 'container-text'>
             <h2>{ this.props.title }</h2>
-            <h4>{ this.props.subtitle }</h4>
+            <h6>{ this.props.subtitle }</h6>
           </div>
         </div>
+        {/* TOFIX:  */}
         <div className = { this.props.image.desktop
           ? 'image-container'
           : null }

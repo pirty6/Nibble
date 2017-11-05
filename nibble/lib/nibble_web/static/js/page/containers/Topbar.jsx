@@ -5,6 +5,7 @@ import { push } from 'react-router-redux';
 import Topbar from '../components/Topbar.jsx';
 import { toggle } from '../actions/app';
 import { fetch } from '../actions/page';
+import { setLanguage } from '../actions/app';
 
 function mapStateToProps(state) {
   return {
@@ -24,6 +25,7 @@ function mapDispatchToProps(dispatch) {
     toggle: () => (dispatch(toggle())),
     goToPage: (link) => (dispatch(fetch(`/app/${link}`))),
     goToHome: () => (dispatch(push(`/app`))),
+    changeLanguage: (language) => (dispatch(setLanguage(language))),
   };
 }
 

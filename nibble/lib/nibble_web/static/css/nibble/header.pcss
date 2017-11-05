@@ -15,7 +15,7 @@
     }
   }
   &>.container{
-    width:1330px;
+    min-width: 100%;
     padding-left: 4rem;
     height:40vh;
     display: flex;
@@ -27,11 +27,15 @@
     @media(--mobile-screens){
       padding-left: 1rem;
     }
+    @media(--hd-screens){
+      max-width:1330px;
+    }
     &>.container-text{
       lost-column:3/4;
-      &>h4{
-        margin-top:5px;
+      &>h6{
+        margin-top:15px;
         lost-column:3/6;
+        font-weight: 400;
         @media(--mobile-screens){
           lost-column:6/6;
         }

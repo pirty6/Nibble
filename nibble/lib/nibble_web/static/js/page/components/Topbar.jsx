@@ -36,6 +36,7 @@ class Topbar extends Component {
       linksEnglish,
       language,
       linksGerman,
+      changeLanguage,
     } = this.props;
 
 
@@ -112,7 +113,7 @@ class Topbar extends Component {
           <div className='column column-nav'>
             <div className='nav-container'>
               { navRender }
-              <LanguageMenu language={language}/>
+              <LanguageMenu language={language} changeLanguage={changeLanguage}/>
             </div>
           </div>
         </div>
