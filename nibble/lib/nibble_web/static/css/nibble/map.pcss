@@ -3,16 +3,28 @@
     display:flex;
     width:100%;
     justify-content: space-between;
+    align-items: center;
+    &>.information{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      &>.container{
+        lost-column:3/4;
+        &>h3{
+          margin-bottom: 1.5rem;
+        }
+        &>p{
+          margin-bottom: 2.5rem;
+          lost-column:6/7;
+        }
+      }
+    }
     &>.map{
       margin-right:2rem;
-      width:auto;
+      lost-column:12/15;
       position: relative;
       overflow:hidden;
       height:auto;
-      /*&>img{
-        width:700px;
-        height: 500px;
-      }*/
       &>.absolute{
         position:absolute;
         cursor:pointer;

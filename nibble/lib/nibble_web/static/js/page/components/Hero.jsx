@@ -45,7 +45,7 @@ class Hero extends Component {
           </div>
           <div className = 'right-column'>
             <h1 ref={(title) => { this.title = title; }}>{ heroInformation.title }</h1>
-            <h3 ref={(subtitle) => { this.subtitle = subtitle; }} className = 'subtitle'>{ heroInformation.subtitle }</h3>
+            <h6 ref={(subtitle) => { this.subtitle = subtitle; }} className = 'subtitle'>{ heroInformation.subtitle }</h6>
             <picture>
               <source media = '(min-width:400px)' srcSet={ heroInformation.logos.desktop}/>
               <source media = '(max-width:400px)' srcSet={ heroInformation.logos.mobile }/>

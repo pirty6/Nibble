@@ -1,5 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
+import LanguageMenu from './LanguageMenu.jsx';
 
 class Topbar extends Component {
   state = {
@@ -63,7 +64,7 @@ class Topbar extends Component {
         () => {(element.flag ? (goToPage(element.link))
         : window.location = element.link);
       }}>
-        <h6>{ element.title }</h6>
+        <span>{ element.title }</span>
       </div>
     ));
 
@@ -111,6 +112,7 @@ class Topbar extends Component {
           <div className='column column-nav'>
             <div className='nav-container'>
               { navRender }
+              <LanguageMenu language={language}/>
             </div>
           </div>
         </div>

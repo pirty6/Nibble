@@ -114,12 +114,13 @@ class MapInteractive extends Component{
         <div className = 'map-container'>
           <div className = 'information'>
             <div className='container'>
-              <h2></h2>
+              <h3>Descubre las instalaciones que la Gómez Morín te ofrece.</h3>
+              <p>El Centro Cultural Gomez Morin tiene muchas instalaciones .Da click en el area que quieres conocer sus instalaciones.</p>
               <div className='primary-button'
                 onClick={ () => { this.state.floor === 1 ?
                    this.setState({ floor: 2 })
                    : this.setState({ floor: 1 })}}>
-                <span>{ buttonRender }</span>
+                { buttonRender }
               </div>
             </div>
           </div>
