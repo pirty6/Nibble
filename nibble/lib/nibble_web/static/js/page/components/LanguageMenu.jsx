@@ -35,7 +35,7 @@ class LanguageMenu extends Component {
 
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.state.show) {
-      this.toggle();
+      this.setState({ show: false });
     }
   }
 
@@ -55,12 +55,12 @@ class LanguageMenu extends Component {
       }
 
     return (
-      <div className='language-menu'>
+      <div className='language-menu' ref={this.setWrapperRef}>
         <div className='container' onClick = { () => this.toggle() }>
           <span>{language}</span>
           <img src='/images/down-arrow.svg'/>
         </div>
-        <div className={'languages ' + (this.state.show ? 'show' : 'hidden') } ref={this.setWrapperRef}>
+        <div className={'languages ' + (this.state.show ? 'show' : 'hidden') } >
           <div className='language' onClick={() => {this.props.changeLanguage(fL); this.toggle()}}>
             <span>{ fL }</span>
           </div>
