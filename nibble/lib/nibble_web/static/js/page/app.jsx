@@ -50,14 +50,17 @@ class App extends Component {
         if (state.routing.location.pathname.includes('/sessions/')){
           this.setState({showAdminTopbar: false});
           this.setState({showUserTopbar: false});
+          this.setState({ showFooter: false });
         }
         if(state.routing.location.pathname.includes('/cms/')) {
           this.setState({ showAdminTopbar: true });
           this.setState({ showUserTopbar: false});
           this.setState({ showFooter: false });
-        } else {
+        }
+        if(state.routing.location.pathname.includes('/app') && state.routing.location.pathname != '/app/vr') {
           this.setState({ showFooter: true });
           this.setState({ showAdminTopbar: false });
+
         }
 
         if (state.routing.location.pathname != '/app/vr'
@@ -99,7 +102,6 @@ class App extends Component {
 
 
   render() {
-    // console.log(this.props);
 
     return (
       <Provider store = { store }>

@@ -33,7 +33,7 @@
   --login-color:#807182;
   --footer-bg-color: #f2f2f2;
   --footer-color:#95989a;
-  --login-linear: linear-gradient(to top, #867284, #9f5d7b);
+  --login-linear: linear-gradient(to top, #29335C, #39A0ED);
   --cms-topbar: #fcfcfc;
   --cms-topbar-height:48px;
   --cms-sidebar-width:212px;
@@ -46,6 +46,7 @@
   --font-paragraph: 'Open-Sans', sans-serif;
   --color-paragraph: #666;
   --principal-color: #39A0ED;
+  --cms-background-color:#F6F6F6;
 }
 
 *{
@@ -73,15 +74,6 @@ h2{
   font-weight: 400;
 }
 
-/*h3{
-  font-family: var(--font-title);
-  color:var(--grey);
-  font-size:1.3rem;
-  letter-spacing: 0.6px;
-  line-height:2rem;
-  font-weight: 700;
-}*/
-
 h3{
   font-family: var(--font);
   font-weight: 300;
@@ -98,13 +90,6 @@ h4{
   letter-spacing: 0.5px;
   color: var(--grey);
 }
-
-/*h5{
-  font-family:var(--font-book-title);
-  font-size: 1.8rem;
-  color:var(--black-book);
-  font-weight:500;
-}*/
 
 h5{
   font-family: var(--font-title);
@@ -151,6 +136,7 @@ p{
 }
 
 .primary-button{
+  background-color: transparent;
   border: 2px solid var(--principal-color);
   padding: 0 26px;
   font-family: var(--font);
@@ -209,7 +195,7 @@ a{
   text-decoration: none;
 }
 
-button{
+/*button{
   padding-right:25px;
   padding-left: 25px;
   padding-top: 15px;
@@ -221,7 +207,7 @@ button{
   line-height: 1.5;
   background-color: #9E5D7B;
   color:#fff;
-}
+}*/
 
 .cancel-button{
   padding-right:25px;
@@ -248,4 +234,39 @@ ul{
   &>li{
     margin-bottom: 20px;
   }
+}
+
+form{
+  width:100%;
+  &>.form-group{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    &>label{
+      font-family: var(--font-title);
+      font-family: 1.25rem;
+      color: #0c0033;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+    &>input, textarea{
+      opacity: 0.5;
+      border-radius: 3px;
+      border: solid 1px #0c0033;
+      height: 40px;
+      margin-bottom: 32px;
+      font-size: 1rem;
+      padding-left: 3px;
+      background-color: transparent;
+    }
+  }
+  &>.form-submit{
+    display:flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
+
+input[type=text]{
+  background-color: transparent;
 }

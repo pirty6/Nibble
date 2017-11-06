@@ -23,7 +23,6 @@ class Topbar extends Component {
   }
 
   render() {
-    console.log(window.innerWidth>1024);
     const {
       links,
       slide,

@@ -50,11 +50,11 @@ class Library extends Component{
   renderBooks(element, index) {
     if (element) {
       return (
-        <div className='book-container'>
-          <div className='book' key={ index } onClick={ () => {
-            this.showInformation(element);
-            this.props.toggleModal();
-            }}
+        <div className='book-container' key={ index } onClick={ () => {
+          this.showInformation(element);
+          this.props.toggleModal();
+        }}>
+          <div className='book'
             style={ element.urlimg != 'null' ? {backgroundImage: `url(${element.urlimg})`}
             : { backgroundColor: '#7AC9DD' } }>
             <h5 className={'title ' + (element.urlimg != 'null' ? 'hidden' : 'show')}>
@@ -119,7 +119,7 @@ class Library extends Component{
   }
 
 
-  render() {    
+  render() {
     const {
       header,
       page,
@@ -161,8 +161,6 @@ class Library extends Component{
         return (this.renderBooks(element, index));
       }
     });
-
-    console.log(this.state.showAdvance);
 
     let height;
     this.container ? height = this.container.clientHeight : null;

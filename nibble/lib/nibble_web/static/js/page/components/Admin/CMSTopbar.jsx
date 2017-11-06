@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 
 class CMSTopbar extends Component{
   render() {
+    let log = null;
+    if (document.getElementById('logout')) {
+      log = document.getElementById('logout');
+      // console.log(document.getElementById('logout');
+    }
     return (
       <div className='cms-topbar'>
         <div className='container'>
@@ -10,7 +15,10 @@ class CMSTopbar extends Component{
             {/* <img className='logo' src='/images/nibble.svg' alt='nibble-logo' /> */}
           </div>
           <div className='column column-logout'>
-            <img className='logout' src='/images/logout.svg' alt='logout' />
+            {/* {(document.getElementById('logout')
+            ? <div
+               dangerouslySetInnerHTML={{ __html: log }} />
+            : null )} */}
           </div>
         </div>
       </div>

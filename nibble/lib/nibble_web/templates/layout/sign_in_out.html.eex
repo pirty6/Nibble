@@ -1,7 +1,7 @@
 <%= if logged_in?(@conn) do %>
-<div style = 'display: none'>
+<div >
   <li>
-	<%= link "Sign out", to: session_path(@conn, :delete, current_user(@conn)),  method: :delete, class: "label label-danger" %><br>
+	<%= link "Sign out", id: 'logout', to: session_path(@conn, :delete, current_user(@conn)),  method: :delete, class: "label label-danger" %><br>
     </li>
     <li>
 	<%= link current_user(@conn).email, to: user_path(@conn,:show, current_user(@conn)), class: "label label-primary pull-right" %>
