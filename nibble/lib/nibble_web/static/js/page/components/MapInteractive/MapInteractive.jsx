@@ -18,20 +18,19 @@ class MapInteractive extends Component{
       if (parseInt(sector.sector) === this.state.sector) {
         console.log('entro');
         return (
-          <div className='site' key = {i}>
-            <div className = 'left-column'>
-              <img className = 'image' src = { sector.urlthumbimg }/>
-              <img className = 'play' src = '/images/play.svg'
-              onClick = { () => {
-                this.props.setId(sector.url360); this.props.goToPage();
-                }
-              }/>
+          <div className='site' key = {i} style={(i % 2 === 1 ? { flexDirection: 'row-reverse'} : null )}>
+            <div className = 'left-column' style={{ backgroundImage: `url(${ sector.urlthumbimg })`}}>
             </div>
             <div className = 'right-column'>
               <div className='container'>
-                <h3>{ sector.name } —</h3>
+                <h3>{ sector.name }</h3>
                 <div className='paragraph'>
                   <p>{ sector.description }</p>
+                </div>
+                <div className='primary-button' onClick = { () => {
+                  this.props.setId(sector.url360); this.props.goToPage();
+                }}>
+                  Ver Vista 360
                 </div>
               </div>
             </div>
