@@ -50,18 +50,24 @@ class Library extends Component{
   renderBooks(element, index) {
     if (element) {
       return (
-        <div className='book' key={ index } onClick={ () => {
-          this.showInformation(element);
-          this.props.toggleModal();
-        }}
-        style={ element.urlimg != 'null' ? {backgroundImage: `url(${element.urlimg})`}
-        : { backgroundColor: '#7AC9DD' } }>
-        <h5 className={'title ' + (element.urlimg != 'null' ? 'hidden' : 'show')}>
-          { element.title }
-        </h5>
-        <span className={'author ' + (element.urlimg !='null' ? 'hidden' : 'show')}>
-          { element.author}
-        </span>
+        <div className='book-container'>
+          <div className='book' key={ index } onClick={ () => {
+            this.showInformation(element);
+            this.props.toggleModal();
+            }}
+            style={ element.urlimg != 'null' ? {backgroundImage: `url(${element.urlimg})`}
+            : { backgroundColor: '#7AC9DD' } }>
+            <h5 className={'title ' + (element.urlimg != 'null' ? 'hidden' : 'show')}>
+              { element.title }
+            </h5>
+            <span className={'author ' + (element.urlimg !='null' ? 'hidden' : 'show')}>
+              { element.author}
+            </span>
+          </div>
+          <div className='information'>
+            <h5>{ element.title }</h5>
+            <span>{ element.author }</span>
+          </div>
         </div>
       );
     }
@@ -113,7 +119,7 @@ class Library extends Component{
   }
 
 
-  render() {
+  render() {    
     const {
       header,
       page,

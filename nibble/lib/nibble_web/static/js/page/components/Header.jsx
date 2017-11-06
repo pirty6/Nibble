@@ -12,13 +12,13 @@ class Header extends Component{
           </div>
         </div>
         {/* TOFIX:  */}
-        <div className = { this.props.image.desktop
+        {/* <div className = { this.props.image.desktop
           ? 'image-container'
           : null }
           style = { this.props.image.desktop
             ? { backgroundImage: 'url(' + this.props.image.desktop + ')' }
             : null }>
-        </div>
+        </div> */}
       </div>
     );
   }

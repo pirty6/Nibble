@@ -56,7 +56,7 @@ class Topbar extends Component {
         () => {(element.flag ? (goToPage(element.link), toggle())
       : window.location = element.link); }}
       >
-        <h6>{ element.title }</h6>
+        <span>{ element.title }</span>
       </div>
     ));
 
