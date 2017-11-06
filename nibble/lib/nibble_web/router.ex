@@ -72,14 +72,14 @@ defmodule NibbleWeb.Router do
 
   scope "/", NibbleWeb do
     pipe_through [:browser,:browser_auth]
-    resources "/sessions", SessionController, only: [:new, :create,:delete  ]
+    resources "/sessions", SessionController, only: [:new, :create,:delete]
     resources "/cms/usuarios", UserController, only: [:new,:create]
   end
 
   scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth,:ensure_authed_access]
     # get "/*path", PageController, :apps
-    get "/", UserController, :index
+    # get "/", UserController, :index
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController

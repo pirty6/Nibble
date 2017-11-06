@@ -23,7 +23,7 @@ defmodule NibbleWeb.UserController do
         conn
         |> Nibble.Auth.login(user)
         |> put_flash(:info, "Your account was created successfully")
-        |> redirect(to: "/")
+        |> redirect(to: "new.html")
 
       {:error, changeset} ->
         conn
