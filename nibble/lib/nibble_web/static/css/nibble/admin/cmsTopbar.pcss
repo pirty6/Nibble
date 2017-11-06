@@ -1,26 +1,31 @@
 .cms-topbar{
   background-color: var(--cms-topbar);
   height:var(--cms-topbar-height);
-  position: fixed;
+  position: absolute;
+  top:0;
   width:100%;
-  z-index: 10;
   &>.container{
-    padding-right: 4rem;
     padding-left: 4rem;
-    width:1330px;
+    max-width:1330px;
+    width:100%;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     height:100%;
     &>.column{
-      lost-column:1/2;
+      flex-grow: 1;
       display:flex;
       align-items: center;
       height:100%;
       &>.logo{
         height:30px;
       }
-      &>.logout{
+      & a{
+        color:var(--cms-color);
+        margin-right: 24px;
+        font-weight: 600;
+      }
+      & img{
         height:24px;
         cursor: pointer;
       }

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,700');
 @import './settings';
 @import './topbar';
 @import './header';
@@ -19,28 +19,17 @@
 :root{
   --width-drawer: 360px;
   --white: #fff;
-  --grey: #a0a2a8;
   --yellow: #ffbc00;
   --shadow: rgba(173, 97, 28, 0.08);
-  --black: #2a3136;
-  --black-book: #31393c;
-  --black-author:#403f3f;
-  --paragraph-color: #666666;
-  --font-menus:'Roboto', sans-serif;
-  --font-title: 'Roboto', sans-serif;
-  --font-book-title: 'Roboto', sans-serif;
-  --font-buttons: 'Oswald', sans-serif;
-  --login-color:#807182;
+
   --footer-bg-color: #f2f2f2;
   --footer-color:#95989a;
   --login-linear: linear-gradient(to top, #29335C, #39A0ED);
-  --cms-topbar: #fcfcfc;
-  --cms-topbar-height:48px;
+  --cms-topbar: #E0E0E0;
+  --cms-topbar-height:54px;
   --cms-sidebar-width:212px;
-  --cms-color:#b7b7b7;
-  --nibble-color:#9ed5c0;
-
-
+  --cms-color:#334752;
+  --cms-text-color:#9DA7B0;
   --font:'Raleway', sans-serif;
   --h3-color: #292929;
   --font-paragraph: 'Open-Sans', sans-serif;
@@ -118,7 +107,7 @@ span{
   font-weight: 600;
 }
 
-p{
+a, p{
   font-family: var(--font-paragraph);
   line-height: 1.5rem;
   color:var(--color-paragraph);
@@ -190,24 +179,8 @@ table{
 }
 
 a{
-  font-family: var(--font-title);
-  color: var(--white);
   text-decoration: none;
 }
-
-/*button{
-  padding-right:25px;
-  padding-left: 25px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-radius: 3px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.5;
-  background-color: #9E5D7B;
-  color:#fff;
-}*/
 
 .cancel-button{
   padding-right:25px;
@@ -265,8 +238,4 @@ form{
     flex-grow: 1;
     justify-content: flex-end;
   }
-}
-
-input[type=text]{
-  background-color: transparent;
 }

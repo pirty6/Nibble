@@ -1,10 +1,12 @@
 <%= if logged_in?(@conn) do %>
-<div >
+<div style="display:none">
   <li>
-	<%= link "Sign out", id: 'logout', to: session_path(@conn, :delete, current_user(@conn)),  method: :delete, class: "label label-danger" %><br>
+	<%= link id: 'logout', to: session_path(@conn, :delete, current_user(@conn)),  method: :delete, class: "label label-danger" do %>
+    <img src="/images/logout.svg" />
+  <% end %>
     </li>
     <li>
-	<%= link current_user(@conn).email, to: user_path(@conn,:show, current_user(@conn)), class: "label label-primary pull-right" %>
+	<%= link current_user(@conn).email, id: 'user', to: user_path(@conn,:show, current_user(@conn)), class: "label label-primary pull-right" %>
     </li>
   </div>
 <% else %>
