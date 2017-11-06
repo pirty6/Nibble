@@ -41,6 +41,6 @@
       Cancelar
     </div>
     <% end %>
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Submit", class: "submit-button" %>
   </div>
 <% end %>

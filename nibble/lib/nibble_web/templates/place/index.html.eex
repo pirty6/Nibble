@@ -51,7 +51,7 @@
 
 <div id="add">
   <%= link to: place_path(@conn, :new) do %>
-  <button class="button">
+  <button class="primary-button">
     Agregar Sección
   </button>
   <% end %>

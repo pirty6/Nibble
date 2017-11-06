@@ -23,8 +23,13 @@
       }
     }
     &>.text{
+      border-radius: 5px;
       padding: 24px;
       background-color: var(--white);
+      box-shadow: 5px 10px 5px rgba(51, 71, 82, 0.08);
+      & .cancel-button{
+        margin-right: 24px;
+      }
       & .icon-container{
         margin-right: 16px;
         display: flex;
@@ -50,9 +55,6 @@
       align-items: center;
       justify-content: flex-end;
       padding-top: 20px;
-      &>.cancel-button{
-        padding:0;
-      }
     }
   }
 }

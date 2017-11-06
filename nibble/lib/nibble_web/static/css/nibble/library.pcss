@@ -1,8 +1,23 @@
 .library{
   &>.search-bar{
     position:relative;
-    & h6{
-      cursor:pointer;
+    &>.container{
+      background-color: yellow;
+      display: flex;
+      justify-content: center;
+      &>.search{
+        lost-column:7/8;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        &>input{
+          width:250px;
+        }
+        &>span{
+          cursor:pointer;
+          font-size: 0.8rem;
+        }
+      }
     }
     &>.advance-search{
       position:absolute;
@@ -11,6 +26,19 @@
       z-index:1;
       width:250px;
       background-color: white;
+      &>.container{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &>.sticky{
+          position:fixed;
+        }
+        &>.options-container{
+          &>.option{
+            display: flex;
+          }
+        }
+      }
       &>span{
         cursor:pointer;
       }
@@ -23,7 +51,6 @@
     }
   }
   &>.books-container{
-    padding-top:64px;
     display:flex;
     box-sizing: border-box;
     justify-content:center;
@@ -31,7 +58,13 @@
     @media(--mobile-screens){
       padding-top: 1rem;
     }
+    &>.advance-show{
+      width:calc(100% - 250px);
+      margin-left:250px;
+      transition: all 0.6s;
+    }
     &>.container{
+      transition: all 0.6s;
       max-width:1050px;
       width: 100%;
       display:flex;
@@ -139,7 +172,7 @@
                   line-height:1.67;
                 }
                 & .genre{
-                  font-family:var(--font-menus);
+                  font-family:var(--font-title);
                   color:var(--paragraph-color);
                   font-size:1.2rem;
                 }
