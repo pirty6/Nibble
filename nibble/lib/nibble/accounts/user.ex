@@ -1,13 +1,15 @@
 defmodule Nibble.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Nibble.Accounts.User
+  alias Nibble.Accounts.{User,UserType}
 
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "users" do
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
+    field :access_key, :string, virtual: true
+    belongs_to :user_type, UserType
     timestamps()
   end
 
@@ -17,10 +19,11 @@ defmodule Nibble.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs \\ %{}) do
     user
-    |> cast(attrs, @required_fields, @optional_fields)
+    |> cast(attrs, [:email, :password])
+    |> validate_required([:email, :password])
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
-    |> validate_length(:password, min: 3)
+    |> validate_length(:password, min: 5)
     |> put_password_hash()
   end
 

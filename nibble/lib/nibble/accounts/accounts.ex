@@ -101,4 +101,224 @@ defmodule Nibble.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+
+  @doc """
+  Returns the list of user_types.
+
+  ## Examples
+
+      iex> list_user_types()
+      [%UserType{}, ...]
+
+  """
+  def list_user_types do
+    Repo.all(UserType)
+  end
+
+  @doc """
+  Gets a single user_type.
+
+  Raises `Ecto.NoResultsError` if the User type does not exist.
+
+  ## Examples
+
+      iex> get_user_type!(123)
+      %UserType{}
+
+      iex> get_user_type!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_user_type!(id), do: Repo.get!(UserType, id)
+
+  @doc """
+  Creates a user_type.
+
+  ## Examples
+
+      iex> create_user_type(%{field: value})
+      {:ok, %UserType{}}
+
+      iex> create_user_type(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_user_type(attrs \\ %{}) do
+    %UserType{}
+    |> UserType.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a user_type.
+
+  ## Examples
+
+      iex> update_user_type(user_type, %{field: new_value})
+      {:ok, %UserType{}}
+
+      iex> update_user_type(user_type, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_user_type(%UserType{} = user_type, attrs) do
+    user_type
+    |> UserType.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a UserType.
+
+  ## Examples
+
+      iex> delete_user_type(user_type)
+      {:ok, %UserType{}}
+
+      iex> delete_user_type(user_type)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_user_type(%UserType{} = user_type) do
+    Repo.delete(user_type)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking user_type changes.
+
+  ## Examples
+
+      iex> change_user_type(user_type)
+      %Ecto.Changeset{source: %UserType{}}
+
+  """
+  def change_user_type(%UserType{} = user_type) do
+    UserType.changeset(user_type, %{})
+  end
+
+  alias Nibble.Accounts.AccessKey
+
+  @doc """
+  Returns the list of access_keys.
+
+  ## Examples
+
+      iex> list_access_keys()
+      [%AccessKey{}, ...]
+
+  """
+  def list_access_keys do
+    Repo.all(AccessKey)
+    |> Repo.preload(:user_type)
+  end
+
+  @doc """
+  Gets a single access_key.
+
+  Raises `Ecto.NoResultsError` if the Access key does not exist.
+
+  ## Examples
+
+      iex> get_access_key!(123)
+      %AccessKey{}
+
+      iex> get_access_key!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_access_key!(id), do: Repo.get!(AccessKey, id) |> Repo.preload(:user_type)
+
+
+  @doc """
+  Checks access Key.
+
+  """
+
+  def check_access_key!(access_key) do
+    Repo.get_by(AccessKey, access_key: access_key)
+  end
+
+  @doc """
+  Creates a access_key.
+
+  ## Examples
+
+      iex> create_access_key(%{field: value})
+      {:ok, %AccessKey{}}
+
+      iex> create_access_key(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_access_key(attrs \\ %{}, user_type_id) do
+    %AccessKey{}
+    |> AccessKey.changeset(attrs)
+    |> Ecto.Changeset.put_change(:user_type_id, user_type_id)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a access_key.
+
+  ## Examples
+
+      iex> update_access_key(access_key, %{field: new_value})
+      {:ok, %AccessKey{}}
+
+      iex> update_access_key(access_key, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_access_key(%AccessKey{} = access_key, attrs) do
+    access_key
+    |> AccessKey.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a AccessKey.
+
+  ## Examples
+
+      iex> delete_access_key(access_key)
+      {:ok, %AccessKey{}}
+
+      iex> delete_access_key(access_key)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_access_key(%AccessKey{} = access_key) do
+    Repo.delete(access_key)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking access_key changes.
+
+  ## Examples
+
+      iex> change_access_key(access_key)
+      %Ecto.Changeset{source: %AccessKey{}}
+
+  """
+  def change_access_key(%AccessKey{} = access_key) do
+    AccessKey.changeset(access_key, %{})
+  end
+
+  def valid_user_actions do
+    [ "can_add_users",
+      "can_delete_users",
+      "can_modify_users",
+      "can_add_sections",
+      "can_delete_sections",
+      "can_modify_sections",
+      "can_add_books",
+      "can_delete_books",
+      "can_change_books"
+
+    ]
+    end
+
+
+
 end

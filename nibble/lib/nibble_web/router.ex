@@ -83,6 +83,8 @@ defmodule NibbleWeb.Router do
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
+    resources "/user_types", UserTypeController
+    resources "/access_keys", AccessKeyController
   end
 
   # Other scopes may use custom stacks.

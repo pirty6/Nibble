@@ -9,7 +9,7 @@ defmodule Nibble.Repo.Migrations.CreateUsers do
       add :id, :uuid, primary_key: true
       add :email, :string
       add :password_hash, :string
-
+      add :user_type_id, references(:user_types, on_delete: :nothing)
       timestamps()
     end
 
