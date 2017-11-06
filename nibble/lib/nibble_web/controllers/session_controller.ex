@@ -2,7 +2,7 @@ defmodule NibbleWeb.SessionController do
   use NibbleWeb, :controller
 
   def new(conn, _) do
-    if Nibble.Session.logged_in?(conn), do: redirect(conn,to: "/"), else: render(conn,"new.html")
+    if Nibble.Session.logged_in?(conn), do: redirect(conn,to: "/sessions/new"), else: render(conn,"new.html")
   end
 
   def create(conn, %{"session" => %{"email" => user,
@@ -25,6 +25,6 @@ defmodule NibbleWeb.SessionController do
   def delete(conn, _) do conn
     |> Guardian.Plug.sign_out
     |> put_flash(:info, "Your session is end ")
-    |> redirect(to: "/")
+    |> redirect(to: "/sessions/new")
   end
 end
