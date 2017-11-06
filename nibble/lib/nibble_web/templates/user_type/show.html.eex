@@ -1,4 +1,4 @@
-<h2>Show User type</h2>
+h2>Show User type</h2>
 
 <ul>
 
@@ -7,13 +7,12 @@
     <%= @user_type.type %>
   </li>
 
-  <li>
-    <li><strong>Actions:</strong>
-      <ul>
-      <%= for action <- @user_type.actions do %>
-        <li><%= "#{action}"  %></li>
-      <%= end %>
-      </ul>
+  <li><strong>Actions:</strong>
+    <ul>
+    <%= for action <- @user_type.actions do %>
+      <li><%= "#{action}"  %></li>
+    <%= end %>
+    </ul>
   </li>
 
 </ul>

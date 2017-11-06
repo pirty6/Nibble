@@ -32,7 +32,7 @@ defmodule Nibble.Accounts.User do
   user
   |> changeset(params)
   |> cast(params, ~w(password), [])
-  |> validate_length(:password, min: 3)
+  |> validate_length(:password, min: 5)
   |> put_password_hash()
   end
 

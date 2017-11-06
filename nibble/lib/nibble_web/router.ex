@@ -70,7 +70,7 @@ defmodule NibbleWeb.Router do
     # resources "/", UserController
   end
 
-  scope "/", NibbleWeb do
+  scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth]
     resources "/sessions", SessionController, only: [:new, :create,:delete]
     resources "/cms/usuarios", UserController, only: [:new,:create]
@@ -83,6 +83,13 @@ defmodule NibbleWeb.Router do
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
+    # resources "/user_types", UserTypeController
+    # resources "/access_keys", AccessKeyController
+  end
+
+  scope "/", NibbleWeb do
+    pipe_through :browser
+    resources "/usuarios", UserController
     resources "/user_types", UserTypeController
     resources "/access_keys", AccessKeyController
   end
