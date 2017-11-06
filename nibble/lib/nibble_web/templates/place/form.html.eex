@@ -31,7 +31,7 @@
 
   <div class="form-group">
     <%= label f, :sector, class: "control-label" %>
-    <%= text_input f, :sector, class: "form-control" %>
+    <%= select f, :sector, ["Biblioteca": 1, "Infantil": 2, "Patio": 3, "Aulas": 4, "Galería": 5, "Péndulo": 6, "Auditório": 7, "Centro de Cómputo": 8], class: "control-label" %>
     <%= error_tag f, :sector %>
   </div>
 

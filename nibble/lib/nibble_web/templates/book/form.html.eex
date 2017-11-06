@@ -1,7 +1,7 @@
 <%= form_for @changeset, @action, [id: "showBooks"], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>Oops ¡algo salió mal! Por favor checa los siguientes errores</p>
     </div>
   <% end %>
 
@@ -31,7 +31,7 @@
 
   <div class="form-group">
     <%= label f, :genre, class: "control-label" %>
-    <%= text_input f, :genre, class: "form-control" %>
+    <%= select f, :genre, ["Comedia": "Comedia", "Terror": "Terror", "Drama": "Drama", "Ficción": "Ficción", "Policial": "Policial", "Romántica": "Romántica", "Aventura": "Aventura", "Otros": "Otros"], class: "control-label" %>
     <%= error_tag f, :genre %>
   </div>
 

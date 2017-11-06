@@ -267,13 +267,22 @@ form{
       color: #0c0033;
       letter-spacing: 0.4px;
       margin-bottom: 8px;
+      margin-top: 24px;
     }
     &>input, textarea{
       opacity: 0.5;
       border-radius: 3px;
       border: solid 1px #0c0033;
       height: 40px;
-      margin-bottom: 32px;
+      font-size: 1rem;
+      padding-left: 3px;
+      background-color: transparent;
+    }
+    &>select{
+      opacity: 0.5;
+      border-radius: 3px;
+      border: solid 1px #0c0033;
+      height: 40px;
       font-size: 1rem;
       padding-left: 3px;
       background-color: transparent;
@@ -283,6 +292,7 @@ form{
     }
   }
   &>.form-submit{
+    margin-top: 24px;
     display:flex;
     flex-grow: 1;
     justify-content: flex-end;
@@ -297,4 +307,18 @@ input{
   font-size: 1rem;
   padding-left: 3px;
   background-color: transparent;
+}
+
+.center{
+  text-align: center;
+}
+
+.help-block{
+  color:var(--error);
+}
+
+.alert-danger{
+  &>p{
+    color:var(--error);
+  }
 }

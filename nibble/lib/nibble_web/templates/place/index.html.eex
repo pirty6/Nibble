@@ -19,7 +19,7 @@
       <td><%= place.description %></td>
       <!-- <td><%= place.url360 %></td>
       <td><%= place.urlthumbimg %></td> -->
-      <td><%= place.sector %></td>
+      <td class='center'><%= place.sector %></td>
 
       <td class="text-right">
         <div class="container">
