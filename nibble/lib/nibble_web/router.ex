@@ -74,7 +74,7 @@ defmodule NibbleWeb.Router do
   scope "/cms", NibbleWeb do
     pipe_through [:browser,:browser_auth]
     resources "/sessions", SessionController, only: [:new, :create,:delete]
-    resources "/cms/usuarios", UserController, only: [:new,:create]
+    resources "/usuarios", UserController, only: [:new,:create]
   end
 
   scope "/cms", NibbleWeb do
