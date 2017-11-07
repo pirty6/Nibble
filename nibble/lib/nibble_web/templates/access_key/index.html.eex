@@ -5,7 +5,7 @@
     <tr>
       <th>Access key</th>
       <th>Good for</th>
-      
+
       <th></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
 
       <td class="text-right">
         <span><%= link "Show", to: access_key_path(@conn, :show, access_key), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: access_key_path(@conn, :edit, access_key), class: "btn btn-default btn-xs" %></span>
+        
         <span><%= link "Delete", to: access_key_path(@conn, :delete, access_key), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>

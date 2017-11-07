@@ -29,6 +29,7 @@ defmodule NibbleWeb.Router do
     # resources "/bookscms", BookController
     # get "/indexcms", BookController, :indexcms
     get "/", PageController, :index
+    get "/sessions/new", SessionController, :new
   end
 
   scope "/app", NibbleWeb do
@@ -83,16 +84,16 @@ defmodule NibbleWeb.Router do
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController
-    # resources "/user_types", UserTypeController
-    # resources "/access_keys", AccessKeyController
+    resources "/roles", UserTypeController
+    resources "/llaves", AccessKeyController
   end
 
-  scope "/", NibbleWeb do
-    pipe_through :browser
-    resources "/usuarios", UserController
-    resources "/user_types", UserTypeController
-    resources "/access_keys", AccessKeyController
-  end
+  # scope "/", NibbleWeb do
+  #   pipe_through :browser
+  #   resources "/usuarios", UserController
+  #   resources "/user_types", UserTypeController
+  #   resources "/access_keys", AccessKeyController
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", NibbleWeb do

@@ -43,52 +43,26 @@ defmodule NibbleWeb.UserController do
 
   def show(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
-    changeset = User.changeset(user)
-    cond do
-      user == Guardian.Plug.current_resource(conn) ->
-        conn
-        |> render("show.html", user: user, changeset: changeset)
-      true ->
-        conn
-        |> put_flash(:info, "No access rights ")
-        |> redirect(to: page_path(conn, :index))
-    end
+    render(conn, "show.html", user: user)
   end
 
   def edit(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
-    changeset = User.changeset(user)
-    cond do
-      user == Guardian.Plug.current_resource(conn) ->
-        render conn, "edit.html", user: user,changeset: changeset
-      true ->
-        conn
-        |> put_flash(:info, "No access to edit ")
-        |> redirect(to: user_path(conn, :index))
-    end
+    changeset = Accounts.change_user(user)
+    render(conn, "edit.html", user: user, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Accounts.get_user!(id)
-    changeset = User.registration_changeset(user, user_params)
-    cond do
-      user == Guardian.Plug.current_resource(conn) ->
-        case Repo.update(changeset) do
-          {:ok, _user} ->
-            conn
-            |> put_flash(:info, "User updated")
-            |> redirect(to: page_path(conn, :index,user: user))
-          {:error, changeset} ->
-            conn
-            |> render("show.html", user: user, changeset: changeset)
-        end
 
-      true ->
-        conn
-        |> put_flash(:info, "No access")
-        |> redirect(to: page_path(conn, :index))
-    end
-
+    case Accounts.update_user(user, user_params) do
+      {:ok, user} ->
+      conn
+        |> put_flash(:info, "User updated successfully.")
+        |> redirect(to: user_path(conn, :show, user))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "edit.html", user: user, changeset: changeset)
+     end
   end
 
   def delete(conn, %{"id" => id}) do
