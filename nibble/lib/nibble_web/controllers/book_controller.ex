@@ -5,6 +5,11 @@ defmodule NibbleWeb.BookController do
   alias Nibble.Library.Book
 
   action_fallback NibbleWeb.FallbackController
+  plug :check_user_right when action in [:update, :edit, :delete, :create]
+
+  def check_user_right(conn, _params) do
+    IO.inspect conn, label: "------------------------- USUARIO Y SUS DATOS -------------------------"
+  end
 
   ############################################## cms functions ##############################################
 

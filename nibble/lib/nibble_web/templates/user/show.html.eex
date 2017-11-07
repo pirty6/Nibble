@@ -2,19 +2,23 @@
 
 <ul id="showBooks">
   <li>
+    <strong>Nombre:</strong>
+    <%= @user.name %>
+  </li>
+
+  <li>
     <strong>Email:</strong>
     <%= @user.email %>
   </li>
 
   <li>
-    <strong>Password:</strong>
-    <%= @user.password %>
+    <strong>UserType:</strong>
+    <%= @user.user_type.type %>
   </li>
-
 
 </ul>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
+<span><%= link "Edit", to: user_path(@conn, :index) %></span>
 <div id="back">
   <%= link to: user_path(@conn, :index) do %>
   <div class='primary-button'>

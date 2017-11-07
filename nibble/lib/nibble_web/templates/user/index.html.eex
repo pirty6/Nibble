@@ -3,17 +3,20 @@
 <table id="showBooks" class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <!-- <th>Password</th> -->
+      <th>Nombre</th>
+
       <th>Email</th>
 
+      <th>Rol</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for user <- @users do %>
     <tr>
+      <td><%= user.name %></td>
       <td><%= user.email %></td>
+      <td><%= user.user_type.type %></td>
       <td class="text-right">
         <div class="container">
           <div class="icon-container">

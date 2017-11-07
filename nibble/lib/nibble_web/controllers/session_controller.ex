@@ -7,7 +7,6 @@ defmodule NibbleWeb.SessionController do
 
   def create(conn, %{"session" => %{"email" => user,
     "password" => pass}}) do
-    IO.inspect user, label: "============THIS IS EMAIL================"
     case Nibble.Auth.login_by_email_and_pass(conn, user, pass, repo: Nibble.Repo) do
       {:ok, conn} ->
         user = Guardian.Plug.current_resource(conn)
@@ -18,7 +17,7 @@ defmodule NibbleWeb.SessionController do
       {:error, _reason, conn} ->
         conn
         |> put_flash(:error, "Wrong username/password")
-        |> render("new.html")
+        |> redirect(to: "/sessions/new")
     end
   end
 
