@@ -1,4 +1,4 @@
-'use strict';
+
 import 'aframe';
 import { Entity, Scene } from 'aframe-react';
 import React, { Component } from 'react';
@@ -13,7 +13,7 @@ class VRScene extends Component {
     if (id) {
       return (
         <Scene>
-          <Entity primitive = 'a-sky' src = { id }/>
+          <Entity primitive='a-sky' src={id} />
         </Scene>
       );
     }
@@ -29,12 +29,16 @@ class VRScene extends Component {
     } = this.props;
 
     return (
-      <div className = 'vr'>
-        <div className = 'close'
-          onClick = { () => {
+      <div className='vr'>
+        <div
+          className='close'
+          onClick={() => {
             goToPage(); setId(null);
-          }} >
-          X
+          }}
+        >
+          <span>
+            X
+          </span>
         </div>
         { this.renderVr(idVr) }
       </div>
