@@ -174,32 +174,31 @@ class Library extends Component {
 
     let height;
     this.container ? height = this.container.clientHeight : null;
-    this.bar ? height += this.bar.clientHeight : null;
+    this.bar ? height += this.bar.clientHeight - this.search.clientHeight : null;
     return (
       <div className='library'>
         <Header {...headerInformation} />
         <div className='search-bar' ref={(bar) => { this.bar = bar; }}>
-          <div className='container'>
+          <div className='container' ref={(search) => { this.search = search; }}>
             <div className='search'>
-              <input type='text' value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} />
+              <input type='text' placeholder='Busqueda' value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} />
               <span onClick={() => this.showAdvanceSearch()}>Busqueda Avanzada</span>
             </div>
           </div>
           <div className={`advance-search ${this.state.showAdvance ? 'show' : 'hidden'}`} style={height ? { height } : null}>
-            <span onClick={() => this.showAdvanceSearch()}>X</span>
             <div className='container'>
               <div className='options-container' ref={(sticky) => { this.sticky = sticky; }}>
                 <div className='option'>
-                  <input type='radio' onChange={() => this.optionChecked('title')} checked={this.state.selectedOption === 'title'} /><p>Título</p>
+                  <input type='radio' id='title' onChange={() => this.optionChecked('title')} checked={this.state.selectedOption === 'title'} /><div className='check' /><label htmlFor='title'>Título</label>
                 </div>
                 <div className='option'>
-                  <input type='radio' onChange={() => this.optionChecked('author')} checked={this.state.selectedOption === 'author'} /><p>Autor</p>
+                  <input type='radio' id='author' onChange={() => this.optionChecked('author')} checked={this.state.selectedOption === 'author'} /><div className='check' /><label htmlFor='author'>Autor</label>
                 </div>
                 <div className='option'>
-                  <input type='radio' onChange={() => this.optionChecked('editorial')} checked={this.state.selectedOption === 'editorial'} /><p>Editorial</p>
+                  <input type='radio' id='editorial' onChange={() => this.optionChecked('editorial')} checked={this.state.selectedOption === 'editorial'} /><div className='check' /><label htmlFor='editorial'>Editorial</label>
                 </div>
                 <div className='option'>
-                  <input type='radio' onChange={() => this.optionChecked('genre')} checked={this.state.selectedOption === 'genre'} /><p>Género</p>
+                  <input type='radio' id='genre' onChange={() => this.optionChecked('genre')} checked={this.state.selectedOption === 'genre'} /><div className='check' /><label htmlFor='genre'>Género</label>
                   { this.state.selectedOption === 'genre' ?
                     (<div className='genre-options' onChange={evt => this.updateInputValue(evt)}>
                       <select>
