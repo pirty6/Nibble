@@ -1,6 +1,6 @@
 <h2>Listing User types</h2>
 
-<table class="table">
+<table class="table role-table" id='showBooks'>
   <thead>
     <tr>
       <th>Type</th>
@@ -22,13 +22,33 @@
       ]</td>
 
       <td class="text-right">
-        <span><%= link "Show", to: user_type_path(@conn, :show, user_type), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: user_type_path(@conn, :edit, user_type), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: user_type_path(@conn, :delete, user_type), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :show, user_type), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :edit, user_type), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :delete, user_type), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
+          </div>
+          <% end %>
+        </div>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New User type", to: user_type_path(@conn, :new) %></span>
+<div id="add">
+  <%= link to: user_type_path(@conn, :new) do %>
+    <button class="primary-button">
+      Agregar Rol
+    </button>
+  <% end %>
+</div>

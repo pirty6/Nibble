@@ -14,6 +14,10 @@ class Cms extends Component {
         title = 'Usuarios';
       } else if (this.props.location.pathname.includes('sectores')) {
         title = 'Secciones';
+      } else if (this.props.location.pathname.includes('roles')) {
+        title = 'Roles';
+      } else if (this.props.location.pathname.includes('llaves')) {
+        title = 'Llaves';
       }
     }
 

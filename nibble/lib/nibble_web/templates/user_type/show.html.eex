@@ -1,6 +1,6 @@
 <h2>Show User type</h2>
 
-<ul>
+<ul id='showBooks'>
 
   <li>
     <strong>Type:</strong>
@@ -17,5 +17,10 @@
 
 </ul>
 
-<span><%= link "Edit", to: user_type_path(@conn, :edit, @user_type) %></span>
-<span><%= link "Back", to: user_type_path(@conn, :index) %></span>
+<div id="back">
+  <%= link to: user_type_path(@conn, :index) do %>
+    <div class="primary-button">
+      Regresar
+    </div>
+  <% end %>
+</div>

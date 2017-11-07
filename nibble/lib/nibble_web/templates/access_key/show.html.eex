@@ -1,6 +1,6 @@
 <h2>Show Access key</h2>
 
-<ul>
+<ul id='showBooks'>
 
   <li>
     <strong>Access key:</strong>
@@ -9,5 +9,10 @@
 
 </ul>
 
-
-<span><%= link "Back", to: access_key_path(@conn, :index) %></span>
+<div id="back">
+  <%= link to: access_key_path(@conn, :index) do %>
+    <div class="primary-button">
+      Regresar
+    </div>
+  <% end %>
+</div>
