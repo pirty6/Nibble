@@ -12,7 +12,6 @@ class Library extends Component {
     this.optionChecked = this.optionChecked.bind(this);
     this.renderBooks = this.renderBooks.bind(this);
     this.showAdvanceSearch = this.showAdvanceSearch.bind(this);
-    // this.setHeight = this.setHeight.bind(this);
   }
 
   state = {
@@ -20,12 +19,7 @@ class Library extends Component {
     inputValue: '',
     selectedOption: 'title',
     showAdvance: false,
-    // height: null,
   };
-
-  // setHeight(sticky) {
-  //   this.setState({ height: sticky });
-  // }
 
   updateInputValue(evt) {
     this.setState({ inputValue: evt.target.value });
