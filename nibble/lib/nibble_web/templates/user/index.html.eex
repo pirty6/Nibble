@@ -3,15 +3,18 @@
 <table id="showBooks" class="table">
   <thead>
     <tr>
+      <th>Nombre</th>
+
       <th>Email</th>
 
-      <th>Type</th>
+      <th>Rol</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for user <- @users do %>
     <tr>
+      <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.user_type.type %></td>
       <td class="text-right">

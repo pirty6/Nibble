@@ -5,6 +5,7 @@ defmodule Nibble.Accounts.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "users" do
+    field :name, :string
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
@@ -19,8 +20,8 @@ defmodule Nibble.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs \\ %{}) do
     user
-    |> cast(attrs, [:email, :password])
-    |> validate_required([:email, :password])
+    |> cast(attrs, [:name, :email, :password])
+    |> validate_required([:name, :email, :password])
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)

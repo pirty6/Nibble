@@ -67,22 +67,10 @@ defmodule NibbleWeb.UserController do
 
   def delete(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
-    cond do
-      user == Guardian.Plug.current_resource(conn) ->
-        case Repo.delete(user) do
-          {:ok, _user} ->
-            conn
-            |> Guardian.Plug.sign_out
-            |> put_flash(:info, "Account deleted")
-            |> redirect(to: page_path(conn, :index))
-          {:error, _} ->
-            conn
-            |> render("show.html", user: user)
-        end
-      true ->
-        conn
-        |> put_flash(:info, "No access")
-        |> redirect(to: page_path(conn, :index))
-    end
+    {:ok, _user} = Accounts.delete_user(user)
+
+    conn
+    |> put_flash(:info, "User deleted successfully.")
+    |> redirect(to: user_path(conn, :index))
   end
 end

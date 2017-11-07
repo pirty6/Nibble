@@ -28,7 +28,7 @@ defmodule NibbleWeb.Router do
     # get "/", PlaceController, :index
     # resources "/bookscms", BookController
     # get "/indexcms", BookController, :indexcms
-    get "/", PageController, :index
+    # get "/new", UserController, :new
     get "/sessions/new", SessionController, :new
   end
 
