@@ -1,10 +1,9 @@
-'use strict';
 import React, { Component } from 'react';
 
-class Cms extends Component{
+class Cms extends Component {
   render() {
     let add = null;
-    let form = document.getElementById('showBooks').outerHTML;
+    const form = document.getElementById('showBooks').outerHTML;
     let title = null;
     let back = null;
 
@@ -33,9 +32,10 @@ class Cms extends Component{
           <div className='title-container'>
             <h2>{ title }</h2>
             {(document.getElementById('add')
-            ? <div
-               dangerouslySetInnerHTML={{ __html: add }} />
-            : null )}
+              ? <div
+                dangerouslySetInnerHTML={{ __html: add }}
+              />
+              : null)}
           </div>
           <div
             className='text'
@@ -43,9 +43,10 @@ class Cms extends Component{
           />
           <div className='back-container'>
             {(document.getElementById('back')
-            ? <div className='cancel-button'
-              dangerouslySetInnerHTML={{ __html: back }} />
-              : null )}
+              ? <div
+                dangerouslySetInnerHTML={{ __html: back }}
+              />
+              : null)}
           </div>
         </div>
       </div>

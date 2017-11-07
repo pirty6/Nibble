@@ -19,7 +19,7 @@
       <td><%= place.description %></td>
       <!-- <td><%= place.url360 %></td>
       <td><%= place.urlthumbimg %></td> -->
-      <td><%= place.sector %></td>
+      <td class='center'><%= place.sector %></td>
 
       <td class="text-right">
         <div class="container">
@@ -51,7 +51,7 @@
 
 <div id="add">
   <%= link to: place_path(@conn, :new) do %>
-  <button class="button">
+  <button class="primary-button">
     Agregar Sección
   </button>
   <% end %>

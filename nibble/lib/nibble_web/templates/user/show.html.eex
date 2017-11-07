@@ -21,7 +21,7 @@
 <span><%= link "Edit", to: user_path(@conn, :index) %></span>
 <div id="back">
   <%= link to: user_path(@conn, :index) do %>
-  <div class='cancel-button'>
+  <div class='primary-button'>
     Regresar
   </div>
   <% end %>
