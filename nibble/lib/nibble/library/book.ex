@@ -3,7 +3,6 @@ defmodule Nibble.Library.Book do
   import Ecto.Changeset
   alias Nibble.Library.Book
 
-
   schema "books" do
     field :author, :string
     field :code, :integer

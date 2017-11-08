@@ -37,7 +37,9 @@ defmodule NibbleWeb.BookController do
     |> put_flash(:info, "Book deleted successfully.")
     |> redirect(to: book_path(conn, :index))
   end
+
   def create(conn, %{"book" => book_params}) do
+    IO.inspect book_params
     case Library.create_book(book_params) do
       {:ok, book} ->
         conn
@@ -49,8 +51,8 @@ defmodule NibbleWeb.BookController do
   end
 
   def update(conn, %{"id" => id, "book" => book_params}) do
+    IO.inspect book_params
     book = Library.get_book!(id)
-
     case Library.update_book(book, book_params) do
       {:ok, book} ->
         conn
