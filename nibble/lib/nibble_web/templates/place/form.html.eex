@@ -17,13 +17,13 @@
     <%= error_tag f, :description %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= label f, :url360, class: "control-label" %>
     <%= file_input f, :url360, class: "form-control" %>
     <%= error_tag f, :url360 %>
   </div>
-
-  <div class="form-group">
+  <br>
+  <div>
     <%= label f, :urlthumbimg, class: "control-label" %>
     <%= file_input f, :urlthumbimg, class: "form-control" %>
     <%= error_tag f, :urlthumbimg %>

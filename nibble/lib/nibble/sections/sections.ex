@@ -53,18 +53,18 @@ defmodule Nibble.Sections do
     if upload = placeParams["url360"] do
       uuid = upload.filename;
       extension = Path.extname(upload.filename)
-      pathbase = Path.absname("360")
+      pathbase = Path.absname("lib/nibble_web/static/assets/images")
       filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
       IO.puts(filepath)
       File.cp!(upload.path, filepath)
       newParams = Map.put(placeParams, "url360", filepath)
     else
-      newParams = bookParams
+      newParams = placeParams
     end
     if upload = placeParams["urlthumbimg"] do
         uuid = upload.filename;
         extension = Path.extname(upload.filename)
-        pathbase = Path.absname("thumbimg")
+        pathbase = Path.absname("lib/nibble_web/static/assets/images")
         filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
         IO.puts(filepath)
         File.cp!(upload.path, filepath)
@@ -107,7 +107,7 @@ defmodule Nibble.Sections do
       File.cp!(upload.path, filepath)
       newParams = Map.put(placeParams, "url360", filepath)
     else
-      newParams = bookParams
+      newParams = placeParams
     end
     if upload = placeParams["urlthumbimg"] do
         uuid = upload.filename;
