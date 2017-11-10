@@ -49,11 +49,36 @@ defmodule Nibble.Sections do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_place(attrs \\ %{}) do
-    %Place{}
-    |> Place.changeset(attrs)
+  def create_place(placeParams) do
+    if upload = placeParams["url360"] do
+      uuid = upload.filename;
+      extension = Path.extname(upload.filename)
+      pathbase = Path.absname("360")
+      filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
+      IO.puts(filepath)
+      File.cp!(upload.path, filepath)
+      newParams = Map.put(placeParams, "url360", filepath)
+    else
+      newParams = bookParams
+    end
+    if upload = placeParams["urlthumbimg"] do
+        uuid = upload.filename;
+        extension = Path.extname(upload.filename)
+        pathbase = Path.absname("thumbimg")
+        filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
+        IO.puts(filepath)
+        File.cp!(upload.path, filepath)
+        newParams = Map.put(newParams, "urlthumbimg", filepath)
+    end
+    place = %Place{}
+    |> Place.changeset(newParams)
     |> Repo.insert()
   end
+  #def create_place(attrs \\ %{}) do
+  #  %Place{}
+  #  |> Place.changeset(attrs)
+  #  |> Repo.insert()
+  #end
 
   @doc """
   Updates a place.
@@ -67,9 +92,34 @@ defmodule Nibble.Sections do
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_place(%Place{} = place, attrs) do
+  #def update_place(%Place{} = place, attrs) do
+  #  place
+  #  |> Place.changeset(attrs)
+  #  |> Repo.update()
+  #end
+  def update_place(%Place{} = place, placeParams) do
+    if upload = placeParams["url360"] do
+      uuid = upload.filename;
+      extension = Path.extname(upload.filename)
+      pathbase = Path.absname("360")
+      filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
+      IO.puts(filepath)
+      File.cp!(upload.path, filepath)
+      newParams = Map.put(placeParams, "url360", filepath)
+    else
+      newParams = bookParams
+    end
+    if upload = placeParams["urlthumbimg"] do
+        uuid = upload.filename;
+        extension = Path.extname(upload.filename)
+        pathbase = Path.absname("thumbimg")
+        filepath = Path.join([pathbase, "/#{uuid}#{extension}"])
+        IO.puts(filepath)
+        File.cp!(upload.path, filepath)
+        newParams = Map.put(newParams, "urlthumbimg", filepath)
+    end
     place
-    |> Place.changeset(attrs)
+    |> Place.changeset(newParams)
     |> Repo.update()
   end
 
