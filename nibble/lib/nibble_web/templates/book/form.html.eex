@@ -1,4 +1,4 @@
-<%= form_for @changeset, @action, [id: "showBooks"], fn f -> %>
+<%= form_for @changeset, @action, [id: "showBooks", multipart: true], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops ¡algo salió mal! Por favor checa los siguientes errores</p>
@@ -41,15 +41,15 @@
     <%= error_tag f, :editorial %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= label f, :urlimg, class: "control-label" %>
-    <%= text_input f, :urlimg, class: "form-control" %>
+    <%= file_input f, :urlimg, class: "form-control" %>
     <%= error_tag f, :urlimg %>
   </div>
-
-  <div class="form-group">
+  <br>
+  <div>
     <%= label f, :urlpdf, class: "control-label" %>
-    <%= text_input f, :urlpdf, class: "form-control" %>
+    <%= file_input f, :urlpdf, class: "form-control" %>
     <%= error_tag f, :urlpdf %>
   </div>
 
