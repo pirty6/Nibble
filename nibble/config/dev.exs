@@ -56,8 +56,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :nibble, Nibble.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "filyvazquez",
-  password: "",
+  username: "postgres",
+  password: "smegmaprty",
   database: "nibble_dev",
   hostname: "localhost",
   pool_size: 10
