@@ -58,7 +58,7 @@ defmodule Nibble.Library do
     if upload = bookParams["urlimg"] do
       uuid = upload.filename;
       extension = Path.extname(upload.filename)
-      pathbase = Path.absname("media")
+      pathbase = Path.absname("lib/nibble_web/static/assets/images")
       filepath = Path.join([pathbase, "/#{uuid}-img#{extension}"])
       IO.puts(filepath)
       File.cp!(upload.path, filepath)
@@ -69,7 +69,7 @@ defmodule Nibble.Library do
     if upload = bookParams["urlpdf"] do
         uuid = upload.filename;
         extension = Path.extname(upload.filename)
-        pathbase = Path.absname("pdf")
+        pathbase = Path.absname("lib/nibble_web/static/assets/pdf") 
         filepath = Path.join([pathbase, "/#{uuid}-pdf#{extension}"])
         IO.puts(filepath)
         File.cp!(upload.path, filepath)

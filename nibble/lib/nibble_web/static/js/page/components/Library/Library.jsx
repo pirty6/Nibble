@@ -12,6 +12,7 @@ class Library extends Component {
     this.optionChecked = this.optionChecked.bind(this);
     this.renderBooks = this.renderBooks.bind(this);
     this.showAdvanceSearch = this.showAdvanceSearch.bind(this);
+    this.cropUrl = this.cropUrl.bind(this);
   }
 
   state = {
@@ -36,6 +37,18 @@ class Library extends Component {
     this.setState({ showAdvance: !this.state.showAdvance });
   }
 
+  cropUrl(url) {
+    if (url.includes('images')) {
+      const index = url.indexOf('images');
+      const newUrl = `/${url.substring(index, url.lenght)}`;
+      return newUrl;
+    } else if (url.includes('pdf')) {
+      const index = url.indexOf('pdf');
+      const newUrl = `/${url.substring(index, url.lenght)}`;
+      return newUrl;
+    }
+    return null;
+  }
 
   renderInformation(element) {
     if (element) {
@@ -47,13 +60,15 @@ class Library extends Component {
               onClick={this.props.toggleModal} role='button'
               tabIndex='0'
             >
+              <span>
                   X
+              </span>
             </div>
           </div>
           <div className='container'>
             <div className='left-column'>
               <div className='square' />
-              { this.renderImage(element.urlimg)}
+              { this.renderImage(this.cropUrl(element.urlimg))}
             </div>
             <div className='right-column'>
               <div className='container-column'>
@@ -65,9 +80,9 @@ class Library extends Component {
                 <p className='enter'><strong>Géneros: </strong>
                   { element.genre }
                 </p>
-                <div className='primary-button' onClick={() => location.href = element.urlpdf} role='button' tabIndex='-1'>
+                <a className='primary-button' target='_blank' href={this.cropUrl(element.urlpdf)} role='button' tabIndex='-1'>
                   <span>Leer</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -91,7 +106,7 @@ class Library extends Component {
         >
           <div
             className='book'
-            style={element.urlimg !== 'null' ? { backgroundImage: `url(${element.urlimg})` }
+            style={element.urlimg !== 'null' ? { backgroundImage: `url(${this.cropUrl(element.urlimg)})` }
               : { backgroundColor: '#7AC9DD' }}
           >
             <h5 className={`title ${element.urlimg !== 'null' ? 'hidden' : 'show'}`}>
