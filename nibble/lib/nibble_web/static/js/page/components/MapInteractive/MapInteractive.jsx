@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Header from '../Header.jsx';
 
@@ -6,6 +5,7 @@ class MapInteractive extends Component {
   constructor(props) {
     super(props);
     this.renderInformation = this.renderInformation.bind(this);
+    this.cropUrl = this.cropUrl.bind(this);
   }
 
   state = {
@@ -13,12 +13,21 @@ class MapInteractive extends Component {
     floor: 1,
   };
 
+  cropUrl(url) {
+    if (url.includes('images')) {
+      const index = url.indexOf('images');
+      const newUrl = `/${url.substring(index, url.lenght)}`;
+      return newUrl;
+    }
+    return null;
+  }
+
   renderInformation(sector, i) {
     if (sector) {
       if (parseInt(sector.sector) === this.state.sector) {
         return (
           <div className='site' key={i} style={(i % 2 === 1 ? { flexDirection: 'row-reverse' } : null)}>
-            <div className='left-column' style={{ backgroundImage: `url(${sector.urlthumbimg})` }} />
+            <div className='left-column' style={{ backgroundImage: `url(${this.cropUrl(sector.urlthumbimg)})` }} />
             <div className='right-column'>
               <div className='container'>
                 <h3>{ sector.name }</h3>
@@ -27,7 +36,7 @@ class MapInteractive extends Component {
                 </div>
                 <div
                   className='primary-button' onClick={() => {
-                    this.props.setId(sector.url360); this.props.goToPage();
+                    this.props.setId(this.cropUrl(sector.url360)); this.props.goToPage();
                   }}
                   role='button' tabIndex={i}
                 >
