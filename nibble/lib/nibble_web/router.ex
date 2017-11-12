@@ -90,9 +90,9 @@ defmodule NibbleWeb.Router do
 
   scope "/", NibbleWeb do
     pipe_through :browser
-    resources "/usuarios", UserController
-    resources "/user_types", UserTypeController
-    resources "/access_keys", AccessKeyController
+    #resources "/usuarios", UserController
+    #resources "/user_types", UserTypeController
+    #resources "/access_keys", AccessKeyController
   end
 
   # Other scopes may use custom stacks.

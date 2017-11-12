@@ -21,6 +21,7 @@ defmodule NibbleWeb.PlaceController do
   end
 
   def create(conn, %{"place" => place_params}) do
+    IO.inspect place_params
     case Sections.create_place(place_params) do
       {:ok, place} ->
         conn
@@ -43,8 +44,8 @@ defmodule NibbleWeb.PlaceController do
   end
 
   def update(conn, %{"id" => id, "place" => place_params}) do
+    IO.inspect place_params
     place = Sections.get_place!(id)
-
     case Sections.update_place(place, place_params) do
       {:ok, place} ->
         conn
