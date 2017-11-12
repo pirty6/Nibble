@@ -10,6 +10,7 @@ defmodule Nibble.Repo.Migrations.CreateBooks do
       add :genre, :string
       add :editorial, :string
       add :urlimg, :string
+      add :urlpdf, :string
 
       timestamps()
     end

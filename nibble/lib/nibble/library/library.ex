@@ -49,9 +49,34 @@ defmodule Nibble.Library do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_book(attrs \\ %{}) do
-    %Book{}
-    |> Book.changeset(attrs)
+  #def create_book(attrs \\ %{}) do
+  #  %Book{}
+  #  |> Book.changeset(attrs)
+  def create_book(bookParams) do
+    #IO.inspect(bookParams)
+    #IO.puts("=============")
+    if upload = bookParams["urlimg"] do
+      uuid = upload.filename;
+      extension = Path.extname(upload.filename)
+      pathbase = Path.absname("media")
+      filepath = Path.join([pathbase, "/#{uuid}-img#{extension}"])
+      IO.puts(filepath)
+      File.cp!(upload.path, filepath)
+      newParams = Map.put(bookParams, "urlimg", filepath)
+    else
+      newParams = bookParams
+    end
+    if upload = bookParams["urlpdf"] do
+        uuid = upload.filename;
+        extension = Path.extname(upload.filename)
+        pathbase = Path.absname("pdf")
+        filepath = Path.join([pathbase, "/#{uuid}-pdf#{extension}"])
+        IO.puts(filepath)
+        File.cp!(upload.path, filepath)
+        newParams = Map.put(newParams, "urlpdf", filepath)
+    end
+    book = %Book{}
+    |> Book.changeset(newParams)
     |> Repo.insert()
   end
 
@@ -67,10 +92,33 @@ defmodule Nibble.Library do
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_book(%Book{} = book, attrs) do
+  def update_book(%Book{} = book, bookParams) do
+    if upload = bookParams["urlimg"] do
+      uuid = upload.filename;
+      extension = Path.extname(upload.filename)
+      pathbase = Path.absname("media")
+      filepath = Path.join([pathbase, "/#{uuid}-img#{extension}"])
+      IO.puts(filepath)
+      File.cp!(upload.path, filepath)
+      newParams = Map.put(bookParams, "urlimg", filepath)
+    else
+      newParams = bookParams
+    end
+    if upload = bookParams["urlpdf"] do
+        uuid = upload.filename;
+        extension = Path.extname(upload.filename)
+        pathbase = Path.absname("pdf")
+        filepath = Path.join([pathbase, "/#{uuid}-pdf#{extension}"])
+        IO.puts(filepath)
+        File.cp!(upload.path, filepath)
+        newParams = Map.put(newParams, "urlpdf", filepath)
+    end
     book
-    |> Book.changeset(attrs)
+    |> Book.changeset(newParams)
     |> Repo.update()
+    #book
+    #|> Book.changeset(bookParams)
+    #|> Repo.update()
   end
 
   @doc """
