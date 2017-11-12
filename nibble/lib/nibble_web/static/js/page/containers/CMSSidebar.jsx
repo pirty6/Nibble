@@ -36,8 +36,8 @@ function mapStateToProps(state) {
       {
         title: 'Roles',
         link: '/roles',
-        icon: '/images/001-people.svg',
-        iconActive: '/images/001-peopleWhite.svg',
+        icon: '/images/hierarchical-structure.svg',
+        iconActive: '/images/hierarchical-structureWhite.svg',
       },
       {
         title: 'Llaves',
