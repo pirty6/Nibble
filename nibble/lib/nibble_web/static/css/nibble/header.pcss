@@ -7,15 +7,8 @@
   background-image: url('/images/DeathtoStock_HomeOffice13.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  &>.image-container{
-    height:30vw;
-    width:100%;
-    background-size:cover;
-    background-repeat: no-repeat;
-    overflow:hidden;
-    @media(--mobile-screens){
-      height: 40vw;
-    }
+  @media(--tablet-screens){
+    background-size: 100% 100%;
   }
   &>.container{
     min-width: 100%;
@@ -40,6 +33,9 @@
         lost-column:3/6;
         font-weight: 400;
         color: #fbfbfb;
+        @media(--tablet-screens){
+          lost-column:4/6;
+        }
         @media(--mobile-screens){
           lost-column:6/6;
         }

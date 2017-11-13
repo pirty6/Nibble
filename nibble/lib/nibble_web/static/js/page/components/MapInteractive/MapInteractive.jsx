@@ -82,8 +82,22 @@ class MapInteractive extends Component {
         } else {
           buttonRender = buttonFirst;
         }
-        mapImageBot = '/images/piso1_esp.png';
-        mapImageTop = '/images/piso2_esp.png';
+        mapImageBot = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso1_espPhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso1_espIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso1_esp.png' />
+            <img src='/images/piso1_esp.png' alt='mapa' />
+          </picture>
+        );
+        mapImageTop = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso2_espPhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso2_espIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso2_esp.png' />
+            <img src='/images/piso2_esp.png' alt='mapa' />
+          </picture>
+        );
       } else if (language === 'en') {
         if (this.state.floor === 1) {
           buttonRender = buttonEnglish;
@@ -91,8 +105,22 @@ class MapInteractive extends Component {
           buttonRender = buttonEnglishFirst;
         }
         headerInformation = headerEnglish;
-        mapImageTop = '/images/piso2_ing.png';
-        mapImageBot = '/images/piso1_ing.png';
+        mapImageTop = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso2_ingPhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso2_ingIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso2_ing.png' />
+            <img src='/images/piso2_ing.png' alt='map' />
+          </picture>
+        );
+        mapImageBot = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso1_ingPhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso1_ingIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso1_ing.png' />
+            <img src='/images/piso1_ing.png' alt='map' />
+          </picture>
+        );
       } else if (language === 'de') {
         if (this.state.floor === 1) {
           buttonRender = buttonGerman;
@@ -100,8 +128,22 @@ class MapInteractive extends Component {
           buttonRender = buttonGermanFirst;
         }
         headerInformation = headerGerman;
-        mapImageBot = '/images/piso1_ale.png';
-        mapImageTop = '/images/piso2_ale.png';
+        mapImageBot = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso1_alePhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso1_aleIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso1_ale.png' />
+            <img src='/images/piso1_ale.png' alt='karte' />
+          </picture>
+        );
+        mapImageTop = (
+          <picture>
+            <source media='(max-width:767px)' srcSet='/images/piso2_alePhone.png' />
+            <source media='(min-width:768px)' srcSet='/images/piso2_aleIpad.png' />
+            <source media='(min-width:1024px)' srcSet='/images/piso2_ale.png' />
+            <img src='/images/piso2_ale.png' alt='map' />
+          </picture>
+        );
       }
     }
 
@@ -142,7 +184,7 @@ class MapInteractive extends Component {
             </div>
           </div>
           <div className='map'>
-            <img src={this.state.floor === 1 ? mapImageBot : mapImageTop} alt='map' />
+            {this.state.floor === 1 ? mapImageBot : mapImageTop}
             <div className='biblioteca absolute' onClick={() => { this.setState({ sector: 1 }); }} />
             <div className='biblioteca-bottom absolute' onClick={() => { this.setState({ sector: 1 }); }} />
             <div className='infantil absolute' onClick={() => { this.setState({ sector: 2 }); }} />
