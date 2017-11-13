@@ -36,6 +36,9 @@
       z-index: 1;
       width: 250px;
       top: 75px;
+      @media(--mobile-screens){
+        width:99.8vw;
+      }
       /*background-color: white;*/
       &>.container {
         display: flex;
@@ -101,6 +104,9 @@
               margin: auto;
               transition: background 0.25s linear;
               -webkit-transition: background 0.25s linear;
+              @media(--mobile-screens){
+                top:1.4px;
+              }
             }
             &>input[type=radio]:checked~.check {
               border: 3px solid var(--principal-color);
@@ -124,6 +130,9 @@
     }
     &>.hidden {
       left: -250px;
+      @media(--mobile-screens){
+        left:-100vw;
+      }
     }
     &>.show {
       left: 0px;
@@ -147,12 +156,19 @@
         flex-direction: column;
         padding-left: 18rem;
       }
+      @media(--mobile-screens){
+        width:100%;
+        margin-left: 0;
+      }
     }
     &>.no-advance{
       @media(--tablet-screens){
         padding-right: 4rem;
         padding-left: 6rem;
         transition: all 0.6s;
+      }
+      @media(--mobile-screens){
+        flex-direction: column;
       }
     }
     &>.container {
@@ -177,6 +193,9 @@
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        @media(--mobile-screens){
+          lost-column:1/1;
+        }
         &>.book {
           width: 296px;
           height: 396px;
@@ -226,6 +245,9 @@
           &>.container {
             display: flex;
             box-sizing: border-box;
+            @media(--mobile-screens){
+              flex-direction: column;
+            }
             &>.left-column {
               lost-column: 1/2;
               display: flex;
@@ -237,6 +259,9 @@
               @media(--tablet-screens){
                 lost-column:3/5;
                 margin-right: 0 !important;
+              }
+              @media(--mobile-screens){
+                display: none;
               }
               &>.square {
                 width: 313px;
@@ -262,6 +287,9 @@
               @media(--tablet-screens){
                 lost-column:2/5;
               }
+              @media(--mobile-screens){
+                lost-column:1/1;
+              }
               &>.container-column {
                 lost-column: 3/4;
                 display: flex;
@@ -269,8 +297,11 @@
                 flex-direction: column;
                 justify-content: center;
                 height: 100vh;
-                @media(--tablet-screens){
+                @media(--tablet-screens), (--mobile-screens){
                   lost-column:1/1;
+                }
+                @media(--mobile-screens){
+                  align-items: center;
                 }
                 &>p{
                   margin-bottom: 12px;
