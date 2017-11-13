@@ -16,18 +16,6 @@ function mapStateToProps(state) {
         iconActive: '/images/002-dashboardWhite.svg',
       },
       {
-        title: 'Reportes',
-        link: '/reportes',
-        icon: '/images/001-graph.svg',
-        iconActive: '/images/001-graphWhite.svg',
-      },
-      {
-        title: 'Bitacora',
-        link: '/bitacora',
-        icon: '/images/003-newspaper.svg',
-        iconActive: '/images/003-newspaperWhite.svg',
-      },
-      {
         title: 'Usuarios',
         link: '/usuarios',
         icon: '/images/004-user.svg',

@@ -322,3 +322,20 @@ input{
     color:var(--error);
   }
 }
+
+select{
+  cursor:pointer;
+  display: block;
+  background-color:-var(--white);
+  outline: none;
+  color: #0c0033;
+  text-overflow: '';
+  text-indent: 5px;
+  border-radius: 3px;
+  border: solid 1px #cbcbcb;
+  &>[multiple=multiple] {
+    height: auto;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+  }
+}
