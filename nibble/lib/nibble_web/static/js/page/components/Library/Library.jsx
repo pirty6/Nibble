@@ -80,7 +80,7 @@ class Library extends Component {
                 <p className='enter'><strong>Géneros: </strong>
                   { element.genre }
                 </p>
-                <a className='primary-button' target='_blank' href={this.cropUrl(element.urlpdf)} role='button' tabIndex='-1'>
+                <a className='primary-button' target='_blank' href={this.cropUrl(element.urlpdf)}>
                   <span>Leer</span>
                 </a>
               </div>
@@ -221,7 +221,7 @@ class Library extends Component {
           </div>
         </div>
         <div className='books-container' ref={(container) => { this.container = container; }}>
-          <div className={`container ${this.state.showAdvance ? 'advance-show' : null}`}>
+          <div className={`container ${this.state.showAdvance ? 'advance-show' : 'no-advance'}`}>
             { currentPage ? book : null }
             <div className={`modal ${toggle ? 'show' : 'hidden'}`}>
               { this.renderInformation(this.state.element) }

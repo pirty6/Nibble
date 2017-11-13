@@ -127,6 +127,7 @@
     }
     &>.show {
       left: 0px;
+      height:100%;
     }
   }
   &>.books-container {
@@ -142,6 +143,17 @@
       width: calc(100% - 250px);
       margin-left: 250px;
       transition: all 0.6s;
+      @media(--tablet-screens){
+        flex-direction: column;
+        padding-left: 18rem;
+      }
+    }
+    &>.no-advance{
+      @media(--tablet-screens){
+        padding-right: 4rem;
+        padding-left: 6rem;
+        transition: all 0.6s;
+      }
     }
     &>.container {
       transition: all 0.6s;
@@ -152,10 +164,6 @@
       justify-content: space-between;
       @media(--tablet-screens), (--mobile-screens) {
         width: 100%;
-      }
-      @media(--tablet-screens) {
-        padding-right: 3rem;
-        padding-left: 3rem;
       }
       @media(--mobile-screens) {
         padding-left: 1rem;
@@ -208,6 +216,13 @@
         top: 0;
         left: 0;
         &>.modal-container {
+          &>.close{
+            & span{
+              margin-left: 1rem;
+              margin-top: 1rem;
+              cursor:pointer;
+            }
+          }
           &>.container {
             display: flex;
             box-sizing: border-box;
@@ -219,6 +234,10 @@
               position: relative;
               box-sizing: border-box;
               height: 100vh;
+              @media(--tablet-screens){
+                lost-column:3/5;
+                margin-right: 0 !important;
+              }
               &>.square {
                 width: 313px;
                 height: 386px;
@@ -228,6 +247,9 @@
                 top: 0;
                 margin-top: 20px;
                 margin-left: -64px;
+                @media(--tablet-screens){
+                  display: none;
+                }
               }
               &>img {
                 width: 321px;
@@ -236,6 +258,10 @@
               }
             }
             &>.right-column {
+              lost-column:1/2;
+              @media(--tablet-screens){
+                lost-column:2/5;
+              }
               &>.container-column {
                 lost-column: 3/4;
                 display: flex;
@@ -243,6 +269,12 @@
                 flex-direction: column;
                 justify-content: center;
                 height: 100vh;
+                @media(--tablet-screens){
+                  lost-column:1/1;
+                }
+                &>p{
+                  margin-bottom: 12px;
+                }
                 &>.rectangle {
                   margin-top: 38px;
                   margin-bottom: 46px;
@@ -254,6 +286,10 @@
                   font-family: var(--font-title);
                   color: var(--paragraph-color);
                   font-size: 1.2rem;
+                }
+                &>.primary-button{
+                  margin-top: 12px;
+                  width:150px;
                 }
               }
             }
