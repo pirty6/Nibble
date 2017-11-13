@@ -20,12 +20,20 @@
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;
+    @media(--tablet-screens), (--mobile-screens){
+      flex-direction:column;
+      width:100%;
+    }
     &>.left-column{
       lost-column:1/3;
       margin-right: 0!important;
       display: flex;
       box-sizing: border-box;
       flex-wrap: wrap;
+      @media(--tablet-screens), (--mobile-screens) {
+        lost-column:1/1;
+        padding-bottom:1rem;
+      }
       &>h6{
         width:100%;
       }
@@ -42,14 +50,23 @@
       lost-column:2/3;
       display: flex;
       flex-direction: column;
+      @media(--tablet-screens), (--mobile-screens) {
+        lost-column:1/1;
+      }
       &>.top{
         display: flex;
         box-sizing: border-box;
         align-self: flex-end;
         width:100%;
         justify-content: space-between;
+        @media(--tablet-screens), (--mobile-screens){
+          flex-wrap:wrap;
+        }
         &>.upLink{
           cursor: pointer;
+          @media(--tablet-screens) {
+            padding-right:12px;
+          }
         }
       }
       &>.bottom{
@@ -62,11 +79,18 @@
       flex-grow:1;
       margin-top:59px;
       padding-right:40px;
+      @media(--tablet-screens), (--mobile-screens){
+        padding-right: 0;
+        flex-direction: column;
+      }
       &>.link{
         lost-column:3/5;
         justify-content: space-between;
         display: flex;
         box-sizing: border-box;
+        @media(--tablet-screens){
+          lost-column:1/1;
+        }
         &>.botLink{
           cursor: pointer;
         }
@@ -79,6 +103,9 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+        @media(--tablet-screens), (--mobile-screens){
+          display:none;
+        }
         &>.container{
           display: flex;
           box-sizing: border-box;
