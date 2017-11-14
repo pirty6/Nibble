@@ -1,0 +1,28 @@
+<h2>Show Log</h2>
+
+<ul>
+
+  <li>
+    <strong>User:</strong>
+    <%= @log.user %>
+  </li>
+
+  <li>
+    <strong>Userid:</strong>
+    <%= @log.userid %>
+  </li>
+
+  <li>
+    <strong>Role:</strong>
+    <%= @log.role %>
+  </li>
+
+  <li>
+    <strong>Change:</strong>
+    <%= @log.change %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: log_path(@conn, :edit, @log) %></span>
+<span><%= link "Back", to: log_path(@conn, :index) %></span>
