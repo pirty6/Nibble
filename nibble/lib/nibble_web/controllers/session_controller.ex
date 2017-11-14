@@ -5,8 +5,7 @@ defmodule NibbleWeb.SessionController do
     if Nibble.Session.logged_in?(conn), do: redirect(conn,to: "/sessions/new"), else: render(conn,"new.html")
   end
 
-  def create(conn, %{"session" => %{"email" => user,
-    "password" => pass}}) do
+  def create(conn, %{"session" => %{"email" => user, "password" => pass}}) do
     case Nibble.Auth.login_by_email_and_pass(conn, user, pass, repo: Nibble.Repo) do
       {:ok, conn} ->
         user = Guardian.Plug.current_resource(conn)

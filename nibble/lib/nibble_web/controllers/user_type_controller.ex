@@ -108,5 +108,20 @@ defmodule NibbleWeb.UserTypeController do
      |> Enum.map(fn {x,y} -> x end)
   end
 
+    ######################################################### json #########################################################
+
+    def indexjson(conn, _params) do
+      IO.inspect conn
+      user_types = Accounts.list_user_types()
+      render(conn, "index.json", user_types: user_types)
+    end
+
+    def showjson(conn, _) do
+      current_user_type = Nibble.Session.current_user(conn).user_type_id
+      #IO.inspect user
+
+      user_type = Accounts.get_user_type!(current_user_type)
+      render(conn, "show.json", user_type: user_type)
+    end
 
 end

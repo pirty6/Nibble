@@ -56,6 +56,10 @@ defmodule NibbleWeb.Router do
     get "/", PlaceController, :indexjson
   end
 
+  scope "/test", NibbleWeb do
+    pipe_through :browser
+    get "/", UserTypeController, :indexjson
+  end
   # scope "/admin", NibbleWeb do
   #   pipe_through :browser
   #   # resources "/", UserController
@@ -86,6 +90,8 @@ defmodule NibbleWeb.Router do
     resources "/sectores", PlaceController
     resources "/roles", UserTypeController
     resources "/llaves", AccessKeyController
+    get "/test", UserTypeController, :indexjson
+    get "/testa", UserTypeController, :showjson
   end
 
   scope "/", NibbleWeb do
