@@ -90,8 +90,7 @@ defmodule NibbleWeb.Router do
     resources "/sectores", PlaceController
     resources "/roles", UserTypeController
     resources "/llaves", AccessKeyController
-    get "/test", UserTypeController, :indexjson
-    get "/testa", UserTypeController, :showjson
+    get "/", UserTypeController, :showjson
   end
 
   scope "/", NibbleWeb do
