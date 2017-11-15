@@ -1,6 +1,6 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
 import {
-  API_BASE_URL
+  API_BASE_URL,
 } from '../constants';
 
 class APIClass {
@@ -14,16 +14,14 @@ class APIClass {
   }
 
   buildAJAX(url) {
-    console.log('pee');
-      return {
-        url: `${this.baseURL}/${url}`,
-        headers: this.headers,
-      };
+    return {
+      url: `${this.baseURL}/${url}`,
+      headers: this.headers,
+    };
     return null;
   }
 
-  /* TOFIX map crashes */
-  getPage(url){
+  getPage(url) {
     console.log(url);
     const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({
