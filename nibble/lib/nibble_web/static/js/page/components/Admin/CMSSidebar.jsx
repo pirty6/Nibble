@@ -25,27 +25,6 @@ class CMSSidebar extends Component {
   }
 
   render() {
-    // let book = false;
-    // let map = false;
-    // let users = false;
-    //
-    // if (this.props.page.state) {
-    //   const aux = this.props.page.state.data.actions;
-    //   for (let i = 0; i < aux.length; i++) {
-    //     if (aux[i].includes('Libros')) {
-    //       book = true;
-    //       console.log(book);
-    //     }
-    //     if (aux[i].includes('Secciones')) {
-    //       map = true;
-    //     }
-    //     if (aux[i].includes('Usuarios')) {
-    //       users = true;
-    //     }
-    //   }
-    // }
-
-
     const link = this.props.links.map((element, index) => (
       this.validate(element) ?
         <div
