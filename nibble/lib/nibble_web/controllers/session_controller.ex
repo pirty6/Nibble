@@ -11,7 +11,7 @@ defmodule NibbleWeb.SessionController do
         user = Guardian.Plug.current_resource(conn)
         conn
         |> put_flash(:info, "Login Successful")
-        |> redirect(to: user_path(conn, :show, user.id ))
+        |> redirect(to: "/cms/dashboard")
 
       {:error, _reason, conn} ->
         conn
