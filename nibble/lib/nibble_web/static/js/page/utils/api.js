@@ -14,16 +14,21 @@ class APIClass {
   }
 
   buildAJAX(url) {
-    console.log(url);
+    // console.log(url);
+    if (url === 'cms') {
+      return {
+        url: `/${url}`,
+        header: this.headers,
+      };
+    }
     return {
       url: `${this.baseURL}/${url}`,
       headers: this.headers,
     };
-    return null;
   }
 
   getPage(url) {
-    console.log(url);
+    // console.log(url);
     const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({
       ...this.buildAJAX(`${page}`),

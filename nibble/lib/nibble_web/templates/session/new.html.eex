@@ -14,7 +14,7 @@
   <span style="cursor:pointer">¿OLVIDASTE TU CONTRASEÑA?</span>
 
   <div class="form-group">
-    <%= submit "Login", class: "primary-button" %>
+    <%= submit "Login", id: "submit", class: "primary-button" %>
   </div>
 <% end %>
 </div>

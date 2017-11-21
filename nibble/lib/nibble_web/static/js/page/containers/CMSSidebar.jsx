@@ -6,6 +6,7 @@ import CMSSidebar from '../components/Admin/CMSSidebar.jsx';
 
 function mapStateToProps(state) {
   return {
+    page: state.page.locationBeforeTransitions,
     location: state.page.locationBeforeTransitions,
     links:
     [
@@ -40,7 +41,7 @@ function mapStateToProps(state) {
         iconActive: '/images/006-open-bookWhite.svg',
       },
       {
-        title: 'Mapa',
+        title: 'Secciones',
         link: '/sectores',
         icon: '/images/005-map.svg',
         iconActive: '/images/005-mapWhite.svg',

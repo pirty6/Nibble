@@ -2,29 +2,74 @@
 import React, { Component } from 'react';
 
 class CMSSidebar extends Component {
+  constructor(props) {
+    super(props);
+    this.validate = this.validate.bind(this);
+  }
+
+  validate(element) {
+    if (element.title === 'Dashboard') {
+      return true;
+    }
+    if (this.props.page.state) {
+      const aux = this.props.page.state.data.actions;
+      for (let i = 0; i < aux.length; i++) {
+        if (element) {
+          if (aux[i].includes(element.title)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   render() {
+    // let book = false;
+    // let map = false;
+    // let users = false;
+    //
+    // if (this.props.page.state) {
+    //   const aux = this.props.page.state.data.actions;
+    //   for (let i = 0; i < aux.length; i++) {
+    //     if (aux[i].includes('Libros')) {
+    //       book = true;
+    //       console.log(book);
+    //     }
+    //     if (aux[i].includes('Secciones')) {
+    //       map = true;
+    //     }
+    //     if (aux[i].includes('Usuarios')) {
+    //       users = true;
+    //     }
+    //   }
+    // }
+
+
     const link = this.props.links.map((element, index) => (
-      <div
-        className='link'
-        role='link'
-        tabIndex='0'
-        key={index}
-        style={this.props.location.pathname.includes(element.link)
-          ? { backgroundColor: '#425967' }
-          : null} onClick={() => { window.location = `/cms${element.link}`; }}
-      >
-        <img
-          src={this.props.location.pathname.includes(element.link)
-            ? element.iconActive : element.icon} alt={`${element.title} icon`}
-        />
-        <span
+      this.validate(element) ?
+        <div
+          className='link'
+          role='link'
+          tabIndex='0'
+          key={index}
           style={this.props.location.pathname.includes(element.link)
-            ? { color: '#fff' }
-            : null}
+            ? { backgroundColor: '#425967' }
+            : null} onClick={() => { window.location = `/cms${element.link}`; }}
         >
-          { element.title }
-        </span>
-      </div>
+          <img
+            src={this.props.location.pathname.includes(element.link)
+              ? element.iconActive : element.icon} alt={`${element.title} icon`}
+          />
+          <span
+            style={this.props.location.pathname.includes(element.link)
+              ? { color: '#fff' }
+              : null}
+          >
+            { element.title }
+          </span>
+        </div>
+        : null
     ));
 
     return (
