@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Cms extends Component {
+  componentDidMount() {
+    this.props.getRole();
+  }
   render() {
     let add = null;
     const form = document.getElementById('showBooks').outerHTML;
