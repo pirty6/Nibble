@@ -261,14 +261,6 @@ form{
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    &>label{
-      font-family: var(--font-title);
-      font-family: 1.25rem;
-      color: #0c0033;
-      letter-spacing: 0.4px;
-      margin-bottom: 8px;
-      margin-top: 24px;
-    }
     &>input, textarea{
       opacity: 0.5;
       border-radius: 3px;
@@ -320,6 +312,27 @@ input{
 .alert-danger{
   &>p{
     color:var(--error);
+  }
+}
+
+label{
+  font-family: var(--font-title);
+  font-family: 1.25rem;
+  color: #0c0033;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+.form-div{
+  display:flex;
+  align-items: center;
+  &>input{
+    cursor:pointer;
+  }
+  &>label{
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
 

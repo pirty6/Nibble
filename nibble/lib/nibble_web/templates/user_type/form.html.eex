@@ -15,7 +15,9 @@
     <%= label f, :actions, class: "control-label" %>
     <br>
     <%= for valid_user_action <- @valid_user_actions do %>
-      <%= checkbox :checked_actions, "#{valid_user_action.action}", checked: valid_user_action.isChecked %> <%= "#{valid_user_action.action}" %> <br>
+    <div class="form-div">
+      <%= checkbox :checked_actions, "#{valid_user_action.action}", checked: valid_user_action.isChecked %> <%= label f, "#{valid_user_action.action}" %>
+    </div>
     <%= end %>
 
     <%= error_tag f, :actions %>
