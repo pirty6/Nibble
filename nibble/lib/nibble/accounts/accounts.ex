@@ -18,7 +18,12 @@ defmodule Nibble.Accounts do
       "Puede Modificar Secciones",
       "Puede Agregar Libros",
       "Puede Modificar Libros",
-      "Puede Cambiar Libros"
+      "Puede Cambiar Libros",
+      "Puede Crear Llaves",
+      "Puede Borrar Llaves",
+      "Puede Agregar Roles",
+      "Puede Borrar Roles",
+      "Puede Modificar Roles",
     ]
     end
 
