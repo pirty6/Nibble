@@ -18,7 +18,7 @@ class APIClass {
     if (url === 'cms') {
       return {
         url: `/${url}`,
-        header: this.headers,
+        headers: this.headers,
       };
     }
     return {
@@ -28,7 +28,12 @@ class APIClass {
   }
 
   getPage(url) {
-    // console.log(url);
+    if (url.payload.includes('cms')) {
+      return ajax({
+        ...this.buildAJAX('cms'),
+        method: 'GET',
+      });
+    }
     const page = url.payload.substring(url.payload.lastIndexOf('/') + 1);
     return ajax({
       ...this.buildAJAX(`${page}`),

@@ -52,7 +52,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    goToPage: link => (dispatch(push(`/cms${link}`))),
   };
 }
 
