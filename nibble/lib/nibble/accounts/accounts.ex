@@ -2,7 +2,7 @@ defmodule Nibble.Accounts do
   @moduledoc """
   The Accounts context.
   """
-  
+
   import Ecto.Query, warn: false
   alias Nibble.Repo
 
@@ -10,15 +10,15 @@ defmodule Nibble.Accounts do
 
 
   def valid_user_actions do
-    [ "can_add_users",
-      "can_delete_users",
-      "can_modify_users",
-      "can_add_sections",
-      "can_delete_sections",
-      "can_modify_sections",
-      "can_add_books",
-      "can_delete_books",
-      "can_change_books"
+    [ "Puede Agregar Usuarios",
+      "Puede Borrar Usuarios",
+      "Puede Modificar Usuarios",
+      "Puede Agregar Secciones",
+      "Puede Borrar Secciones",
+      "Puede Modificar Secciones",
+      "Puede Agregar Libros",
+      "Puede Modificar Libros",
+      "Puede Cambiar Libros"
     ]
     end
 
