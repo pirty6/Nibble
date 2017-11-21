@@ -85,6 +85,7 @@ defmodule NibbleWeb.Router do
     pipe_through [:browser,:browser_auth,:ensure_authed_access]
     # get "/*path", PageController, :apps
     # get "/", UserController, :index
+    get "/dashboard", UserController, :showlogin
     resources "/libreria", BookController
     resources "/usuarios", UserController
     resources "/sectores", PlaceController

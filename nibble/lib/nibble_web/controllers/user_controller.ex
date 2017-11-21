@@ -46,6 +46,11 @@ defmodule NibbleWeb.UserController do
     render(conn, "show.html", user: user)
   end
 
+  def showlogin(conn, %{"id" => id}) do
+    user = Accounts.get_user!(id)
+    render(conn, "showlogin.html", user: user)
+  end
+
   def edit(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
     changeset = Accounts.change_user(user)

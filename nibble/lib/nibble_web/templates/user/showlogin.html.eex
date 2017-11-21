@@ -1,0 +1,19 @@
+<h2>Show User</h2>
+
+<ul id="showBooks">
+  <li>
+    <strong>Nombre:</strong>
+    <%= @user.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
+  <li>
+    <strong>UserType:</strong>
+    <%= @user.user_type.type %>
+  </li>
+
+</ul>
