@@ -1,0 +1,54 @@
+<h2>Listing User types</h2>
+
+<table class="table role-table" id='showBooks'>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Actions</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user_type <- @user_types do %>
+    <tr>
+      <td><%= user_type.type %></td>
+      <td>[
+        <%= case user_type.actions do
+           nil -> ""
+           _ -> Enum.join(user_type.actions,", ")
+        end
+         %>
+      ]</td>
+
+      <td class="text-right">
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :show, user_type), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :edit, user_type), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: user_type_path(@conn, :delete, user_type), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
+          </div>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<div id="add">
+  <%= link to: user_type_path(@conn, :new) do %>
+    <button class="primary-button">
+      Agregar Rol
+    </button>
+  <% end %>
+</div>

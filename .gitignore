@@ -1,6 +1,17 @@
 /_build
 /cover
-/deps
 erl_crash.dump
 *.ez
 *.beam
+
+<<<<<<< Updated upstream
+nibble/node_modules/
+
+nibble/config/dev\.exs
+=======
+nibble/_build/
+
+nibble/node_modules/
+>>>>>>> Stashed changes
+
+nibble/priv/static/

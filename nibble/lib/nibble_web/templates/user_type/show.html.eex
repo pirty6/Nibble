@@ -1,0 +1,26 @@
+<h2>Show User type</h2>
+
+<ul id='showBooks'>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @user_type.type %>
+  </li>
+
+  <li><strong>Actions:</strong>
+    <ul>
+    <%= for action <- @user_type.actions do %>
+      <li><%= "#{action}"  %></li>
+    <%= end %>
+    </ul>
+  </li>
+
+</ul>
+
+<div id="back">
+  <%= link to: user_type_path(@conn, :index) do %>
+    <div class="primary-button">
+      Regresar
+    </div>
+  <% end %>
+</div>

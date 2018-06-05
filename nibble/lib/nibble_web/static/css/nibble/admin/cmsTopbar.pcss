@@ -1,0 +1,37 @@
+.cms-topbar{
+  background-color: var(--cms-topbar);
+  height:var(--cms-topbar-height);
+  position: absolute;
+  top:0;
+  width:100%;
+  &>.container{
+    padding-left: 4rem;
+    max-width:1330px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height:100%;
+    &>.column{
+      flex-grow: 1;
+      display:flex;
+      align-items: center;
+      height:100%;
+      &>.logo{
+        height:30px;
+      }
+      & a{
+        color:var(--cms-color);
+        margin-right: 24px;
+        font-weight: 600;
+      }
+      & img{
+        height:24px;
+        cursor: pointer;
+      }
+    }
+    &>.column-logout{
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<%= form_for @changeset, @action, [id: "showBooks"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= inputs_for f, :user_type, fn utf -> %>
+    <%= label utf, :type, class: "control-label" %>
+    <%= select f, :type, @user_types|> Enum.map(&{&1.type, &1.id}) ,class: "form-control" %>
+    <%= error_tag utf, :type %>
+    <% end %>
+  </div>
+
+
+  <div class="form-submit">
+    <%= link to: access_key_path(@conn, :index) do %>
+    <div class='cancel-button'>
+      Cancelar
+    </div>
+    <% end %>
+    <%= submit "Submit", class: "submit-button" %>
+  </div>
+  <% end %>

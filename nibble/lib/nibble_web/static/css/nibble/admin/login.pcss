@@ -1,0 +1,83 @@
+.login{
+  height:100vh;
+  &>.container{
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    &>.column-image{
+      height: 100%;
+      lost-column:2/5;
+      margin-right: 0 !important;
+      &>.image-container{
+        height: 100%;
+        width:100%;
+        background-image: url('/images/capa-41.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &>.text-container{
+          z-index: 10;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-self: flex-start;
+          margin-top:97px;
+          &>h1{
+            color:var(--white);
+            text-align: center;
+          }
+          &>h6{
+            color:var(--white);
+          }
+          &>span{
+            color:var(--white);
+            position: absolute;
+            bottom:0;
+            margin-bottom: 1rem;
+          }
+          &>img{
+            width: 179px;
+          }
+        }
+        &>.purple{
+          width: 100%;
+          height: 100%;
+          background-image: var(--login-linear);
+          position: absolute;
+          opacity:0.85;
+        }
+      }
+    }
+    &>.column{
+      lost-column:3/5;
+      background-color:var(--cms-background-color);
+      justify-content: center;
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      &>.column-container{
+        lost-column:3/4;
+        display: flex;
+        flex-direction: column;
+        &>h2{
+          color:var(--principal-color);
+          margin-bottom: 24px;
+        }
+        & .primary-button{
+          margin-top: 24px;
+        }
+        & #password{
+          margin-bottom: 0px;
+
+        }
+        & span{
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

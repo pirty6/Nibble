@@ -1,0 +1,43 @@
+<h2>Listing Access keys</h2>
+
+<table class="table" id='showBooks'>
+  <thead>
+    <tr>
+      <th>Access key</th>
+      <th>Good for</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for access_key <- @access_keys do %>
+    <tr>
+      <td><%= access_key.access_key %></td>
+      <td><%= access_key.user_type.type %></td>
+
+      <td class="text-right">
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: access_key_path(@conn, :show, access_key), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: access_key_path(@conn, :show, access_key), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
+          </div>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<div id="add">
+  <%= link to: access_key_path(@conn, :new) do %>
+    <button class="primary-button">
+      Agregar Llave
+    </button>
+  <% end %>
+</div>

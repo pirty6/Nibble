@@ -1,0 +1,54 @@
+<h2>Listing Books</h2>
+
+<table class="table" id='showBooks'>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Editorial</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for book <- @books do %>
+    <tr>
+      <td><%= book.code %></td>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= book.genre %></td>
+      <td><%= book.editorial %></td>
+
+      <td class="text-right">
+        <div class="container">
+          <div class="icon-container">
+            <%= link to: book_path(@conn, :show, book), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/show.svg")%>"/>
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: book_path(@conn, :edit, book), class: "btn btn-default btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/002-edit.svg")%>" />
+          </div>
+          <% end %>
+          <div class="icon-container">
+            <%= link to: book_path(@conn, :delete, book), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+            <img class="icon" src="<%= static_path(@conn, "/images/001-garbage.svg")%>" />
+          </div>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<div id="add">
+<%= link to: book_path(@conn, :new) do %>
+  <button class="primary-button">
+    Agregar Libro
+  </button>
+  <% end %>
+</div>

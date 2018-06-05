@@ -1,0 +1,119 @@
+:root {
+    /* Global variables */
+    --global-font-size: 16px;
+    --global-lineheight: 1.5rem;
+    --global-border-radius: 3px;
+
+    /* Action colours */
+    --success: #05A246;
+    --warning: #FFAE00;
+    --alert: #CC4B37;
+    --dunno: #ffff;
+
+    /* Custom pallete */
+    --moccaccino: #6F1513;
+    --gallery: #ECECEC;
+    --white: #FFFFFF;
+    --raven: #78818C;
+    --boston-blue: #3776C1;
+    --mine-shaft: #2A2A2A;
+    --tundora: #4A4A4A;
+    --gray: #929292;
+    --mystic: #E4E8EE;
+    --pale-sky: #6A7788;
+    --geyser: #D7DEE7;
+    --tundora: #434243;
+
+    /* Specific uses colours */
+    /* Specify the color used for each UI component */
+    /* Use only variable, if not defined define it on custom pallette*/
+    --body-font-color: var(--mine-shaft);
+    --headers-font-color: var(--mine-shaft);
+
+    --accent-color: var(--moccaccino);
+    --sidebar-background: var(--white);
+    --sidebar-link-color: var(--raven);
+    --sidebar-animation-open: .5s;
+    --sidebar-animation-close: .3s;
+    --sidebar-animation-text-show: .5s;
+    --sidebar-animation-text-show-delay: .3s;
+    --sidebar-animation-text-hide: .3s;
+    --sidebar-animation-text-hide-delay: .5s;
+    --sidebar-animation-overlay: .4s;
+    --sidebar-animation-overlay-delay: .4s;
+    --main-pane-background: var(--gallery);
+    --overlay-background: var(--tundora);
+    --overlapped-sections-background: var(--white);
+    --main-pane-content-background: var(--white);
+
+    --main-link-color: var(--boston-blue);
+    --secondary-link-color: var(--mine-shaft);
+
+    --main-button-background: var(--success);
+    --main-button-color: var(--white);
+
+    --secondary-button-background: var(--white);
+    --secondary-button-color: var(--mine-shaft);
+
+    --discrete-button-background: color(var(--white) alpha(-58%));
+    --discrete-button-color: var(--mine-shaft);
+
+    --disabled-button-background: color(var(--tundora) alpha(-20%));
+    --disabled-button-color: color(var(--pale-sky) alpha(-20%));
+
+    --label-color: var(--tundora);
+    --placeholder-color: var(--tundora);
+    --input-border-color: var(--gray);
+    --input-border-color-focus: var(--boston-blue);
+    --input-border-color-hover: var(--pale-sky);
+    --input-focus: color( var(--mystic) alpha(-40%));
+
+    --table-header-background: var(--mystic);
+    --table-header-color: var(--pale-sky);
+    --table-background: var(--white);
+    --table-color: var(--mine-shaft);
+    --table-border: var(--geyser);
+
+    --pagination-li-color: var(--boston-blue);
+    --pagination-li-background: var(--white);
+    --pagination-action-color: var(--white);
+    --pagination-action-background: color(var(--boston-blue) l(+10%));
+    --pagination-disabled-color: var(--pale-sky);
+    --pagination-disabled-background: var(--tundora);
+    --pagination-active-color: var(--white);
+    --pagination-active-background: var(--boston-blue);
+
+    /* Text variables */
+    --main-font: 'Open Sans', sans-serif;
+    --secondary-font: none;
+
+    /* Grid */
+    --hd-grid: 19;
+    --desktop-grid: 15;
+    --tablet-grid: 13;
+    --mobile-grid: 7;
+
+    /* Gutters */
+    --hd-gutter: 24px;
+    --desktop-gutter: 24px;
+    --tablet-gutter: 12px;
+    --mobile-gutter: 12px;
+
+
+    --box-shadow-side: 0 8px 38px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.22);
+
+}
+
+/* Custom selectors */
+@custom-selector :--headers h1,h2,h3,h4,h5,h6;
+@custom-selector :--text-container span, p, a;
+@custom-selector :--enter-action :focus, :active;
+@custom-selector :--button .button, button;
+@custom-selector :--disabled .disabled, :disabled;
+@custom-selector :--inputs textarea, input;
+
+/* Media Queries */
+@custom-media --hd-screens (width >= 1440px);
+@custom-media --desktop-screens (width >= 1024px) and (width < 1440px);
+@custom-media --tablet-screens (width >= 768px) and (width < 1024px);
+@custom-media --mobile-screens (width < 768px);

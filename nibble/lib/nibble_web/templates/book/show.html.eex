@@ -1,0 +1,54 @@
+<h2>Show Book</h2>
+
+<ul id='showBooks'>
+
+  <li>
+    <strong class='title'>Title:</strong>
+    <%= @book.title %>
+  </li>
+
+  <li>
+    <strong class='title'>Author:</strong>
+    <%= @book.author %>
+  </li>
+
+  <li>
+    <strong class='title'>Code:</strong>
+    <%= @book.code %>
+  </li>
+
+  <li>
+    <strong class='title'>Description:</strong>
+    <%= @book.description %>
+  </li>
+
+  <li>
+    <strong class='title'>Genre:</strong>
+    <%= @book.genre %>
+  </li>
+
+  <li>
+    <strong class='title'>Editorial:</strong>
+    <%= @book.editorial %>
+  </li>
+
+  <li>
+    <strong class='title'>Urlimg:</strong>
+    <%= @book.urlimg %>
+  </li>
+
+  <li>
+    <strong>Urlpdf:</strong>
+    <%= @book.urlpdf %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: book_path(@conn, :edit, @book) %></span>
+<div id="back">
+<%= link to: book_path(@conn, :index) do %>
+<div class='primary-button'>
+  Regresar
+</div>
+<% end %>
+</div>
